@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Alta de Correos</title>
+</head>
+<body>
+
+	<h2>Alta de Correos</h2>
+	<p>Este formulario permite dar de alta un correo electrónico
+		asociado a un DNI.</p>
+	<p>El valor, <b>argumento</b>, de todos los campos son obligatorios</p>
+	<p>Ingresar los datos de un nuevo correo para dar de alta:</p>
+	<form id="altaCorreosForm" method="get" target="salidaAltaCorreos">
+		DNI: <input type="text" id="dni" name="dni"><br> 
+		Correo: <input type="text" id="correo" name="correo" value="usuario@servidor.com"><br> 
+		<input type="submit" value="Enviar" name="Enviar">
+	</form>
+	<iframe name="salidaAltaCorreos"
+		style="width: 100%; height: 100px; overflow: auto"></iframe>
+
+	<script>
+		document.getElementById("altaCorreosForm").onsubmit = function(event) {
+			event.preventDefault(); // Evita el envío predeterminado del formulario
+			const dni = document.getElementById("dni").value;
+			const correo = document.getElementById("correo").value;
+
+			// Construir la URL dinámica
+			const url = `correos/guardar/${dni}/${correo}`;
+			this.action = url; // Asignar la URL al atributo action del formulario
+			this.submit(); // Enviar el formulario
+			alert("Nuevo Correo enviado correctamente al servidor: " + url);
+		};
+	</script>
+
+</body>
+</html>

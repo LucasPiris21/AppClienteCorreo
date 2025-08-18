@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listados ...</title>
+</head>
+<body>
+
+	<h2>Mostrar datos de la tabla Clientes</h2>
+	<form action="clientes/listartodos" method="get" target="salidaVerClientes">
+		<input type="submit" value="Mostrar" name="mostrarTodos">
+	</form>
+	<iframe name="salidaVerClientes"
+		style="width: 100%; height: 300px; overflow: auto"></iframe>
+	<hr>
+	
+	<h2>Mostrar datos de la tabla Clientes por DNI</h2>
+	<p>Si no se introduce un DNI, se muestra un clientes vacio o nulo.</p>
+	<form action="clientes/buscarpordni" method="get" target="salidaVerClientesDNI">
+		DNI: <input type="text" name="dni"><br>
+		<input type="submit" value="Mostrar" name="mostrarDNI">
+	</form>
+	<iframe name="salidaVerClientesDNI"
+		style="width: 100%; height: 300px; overflow: auto"></iframe>
+	<hr>	
+	<h2>Mostrar datos de la tabla Correos</h2>
+	<form action="correos/listartodos" method="get" target="salidaVerCorreos">
+		Parte de un correo o DNI. Sin datos muestra todo: <input type="text"
+			name="buscarCorreoDni" id="buscarCorreoDni"><br> <input type="submit"
+			value="Mostrar" name="mostrarTodosCorreos">
+	</form>
+	<iframe name="salidaVerCorreos"
+		style="width: 100%; height: 300px; overflow: auto"></iframe>
+	<hr>
+	<h2>Mostrar datos de la tabla Clientes relacionados con la tabla
+		Correos</h2>
+	<form action="correos/verclientescorreos" method="get"
+		target="salidaVerClientesCorreos">
+		Parte de un DNI o correo. Sin datos muestra todo: <input type="text"
+			name="buscarClientesCorreosDNI" id="buscarClientesCorreosDNI"><br> <input type="submit"
+			value="Mostrar" name="mostrar">
+	</form>
+	<iframe name="salidaVerClientesCorreos"
+		style="width: 100%; height: 300px; overflow: auto"></iframe>
+	<hr>
+
+</body>
+</html>

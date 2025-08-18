@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Borrar Correos</title>
+</head>
+<body>
+
+	<h2>Borrar Correos</h2>
+	<p>Para borrar un correo, ingrese el ID del correo:</p>
+	<p>
+		El valor, <b>argumento</b>, del campo es obligatorio
+	</p>
+	<form id="BorrarCorreoForm" name="BorrarCorreoForm">
+		id-correo: <input type="text" id="idCorreo" name="idCorreo"><br> 
+		<input type="submit" value="Borrar" name="Borrar" id="borrarButton">
+	</form>
+	<hr>
+	<p>La respuesta del servidor se mostrará en este div:</p>
+	
+	<div id="salidaBorrarCorreos"
+		style="width: 100%; height: 400px; overflow: auto; border: 1px solid #ccc;">
+		<!-- Aquí se mostrará la respuesta del servidor -->
+	</div>
+
+	<script>
+    document.getElementById("borrarButton").onclick = async function() {
+    	event.preventDefault(); // Evita el envío predeterminado del formulario
+        const idCorreo = document.getElementById("idCorreo").value;
+
+        if (!idCorreo) {
+            alert("El campo ID es obligatorio.");
+            return;
+        }
+
+        // Construir la URL dinámica
+        const url = `correos/borrar/${idCorreo}`;
+
+        try {
+            // Enviar la solicitud DELETE al servidor
+            const response = await fetch(url, {
+                method: 'DELETE'
+            });
+
+            // Leer la respuesta del servidor
+            const result = await response.text();
+
+            // Mostrar la respuesta en el div
+            document.getElementById("salidaBorrarCorreos").innerText = result + "\n\n" + " Respuesta del servidor.";
+            //alert("Correo borrado ... URL=" + url);
+        } catch (error) {
+            // Manejar errores de red u otros problemas
+            document.getElementById("salidaBorrarCorreos").innerText = "Error al intentar borrar el correo: (error de red o en el servidor.) " + 
+            error.message + " \nComprobar que el servidor esté en funcionamiento, la red esté disponible o la URL sea correcta.";
+        }
+    };
+</script>
+
+
+</body>
+</html>

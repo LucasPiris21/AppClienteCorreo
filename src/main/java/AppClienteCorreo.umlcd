@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_666bgFa6EfCzmszw-kpebw">
+  <modelElement href="AppClienteCorreo.uml#_7St3gFa6EfCzmszw-kpebw"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8G9-8Fa6EfCzmszw-kpebw" sourceAnchor="0.0,100.0" targetAnchor="402.0,271.0" target="_8IoL0Fa6EfCzmszw-kpebw" source="_8G_NEFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7fxcEFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_ptugYFhzEfC4r9nIFs9MRA" lineWidth="3.0"/>
+    <stereotypes xmi:id="_8G9-8Va6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7f4w0Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8G9-8la6EfCzmszw-kpebw" text="gestionaServiciosCliente">
+      <visualProperties xmi:id="_8QIiAFa6EfCzmszw-kpebw" position="-103.0,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8G9-81a6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7fxcEVa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QHT4Fa6EfCzmszw-kpebw" position="-33.0,2.0"/>
+      <visibility xmi:id="_8G9-9Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G9-9Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8G9-9la6EfCzmszw-kpebw" aggregationKind="SHARED" name="serviciosCliente" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7eu6QFa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QIiAVa6EfCzmszw-kpebw" position="91.0,-65.0"/>
+      <stereotypes xmi:id="_ZnaYgFbQEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7evhUFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G9-91a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8G9--Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8G-mAFa6EfCzmszw-kpebw" sourceAnchor="314.0,232.0" targetAnchor="315.0,0.0" target="_8H2vwFa6EfCzmszw-kpebw" source="_8G_NEFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7f5X4Fa6EfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_8G-mAVa6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gAsoFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8G-mAla6EfCzmszw-kpebw" text="clienteAdministrado">
+      <visualProperties xmi:id="_8QKXMFa6EfCzmszw-kpebw" position="41.0,19.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8G-mA1a6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7f5X4Va6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QJJEFa6EfCzmszw-kpebw" position="2.0,9.0"/>
+      <visibility xmi:id="_8G-mBFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G-mBVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8G-mBla6EfCzmszw-kpebw" name="clienteNuevo" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7evhUla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QKXMVa6EfCzmszw-kpebw" position="-129.0,-73.0"/>
+      <visibility xmi:id="_8G-mB1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8G-mCFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8HVLUFa6EfCzmszw-kpebw" sourceAnchor="0.0,168.0" targetAnchor="402.0,143.0" target="_8IoL0Fa6EfCzmszw-kpebw" source="_8Haq6Va6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gIBYVa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_kI60AFhzEfC4r9nIFs9MRA" lineWidth="3.0"/>
+    <stereotypes xmi:id="_8HXnkla6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gLrwFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8HXAgFa6EfCzmszw-kpebw" text="gestionaServiciosCliente">
+      <visualProperties xmi:id="_8QLlUFa6EfCzmszw-kpebw" position="-219.0,1.9999999999999432"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8HXnkFa6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gIBYla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QK-QFa6EfCzmszw-kpebw" position="-54.0,-65.0"/>
+      <visibility xmi:id="_8HYOoVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HYOoFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8HXnkVa6EfCzmszw-kpebw" aggregationKind="SHARED" name="serviciosCliente" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7ewvcla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QLlUVa6EfCzmszw-kpebw" position="1.0,-104.0000000000001"/>
+      <stereotypes xmi:id="_Zna_kFbQEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7exWgFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HYOo1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HYOola6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8HVyYFa6EfCzmszw-kpebw" sourceAnchor="75.0,232.0" targetAnchor="631.0,119.0" target="_8H2vwFa6EfCzmszw-kpebw" source="_8Haq6Va6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gP9MFa6EfCzmszw-kpebw"/>
+    <bendpoints xmi:id="_2zYnsFh2EfC4r9nIFs9MRA" sourceY="406" targetX="172"/>
+    <stereotypes xmi:id="_8HXnlla6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gTAgFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8HXnk1a6EfCzmszw-kpebw" text="clienteAdministrado">
+      <visualProperties xmi:id="_8QNagFa6EfCzmszw-kpebw" position="2.0,-98.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8HXnlFa6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gP9MVa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QMzcFa6EfCzmszw-kpebw" position="2.0,49.0"/>
+      <visibility xmi:id="_8HY1sVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HY1sFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8HXnlVa6EfCzmszw-kpebw" name="cliente" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7ex9kFa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QNagVa6EfCzmszw-kpebw" position="98.0,-104.0"/>
+      <visibility xmi:id="_8HY1s1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HY1sla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8HaD0Fa6EfCzmszw-kpebw" sourceAnchor="661.0,232.0" targetAnchor="611.0,338.0" target="_8IgQAFa6EfCzmszw-kpebw" source="_8Haq6Va6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gAsoVa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_pEOQYFhzEfC4r9nIFs9MRA" lineWidth="3.0"/>
+    <bendpoints xmi:id="_2zYnsVh2EfC4r9nIFs9MRA" sourceY="562" targetX="1588"/>
+    <stereotypes xmi:id="_8HaD0Va6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gIBYFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8HaD0la6EfCzmszw-kpebw" text="gestionaServiciosCorreos">
+      <visualProperties xmi:id="_8QOooFa6EfCzmszw-kpebw" position="-928.0,-27.999999999999773"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8HaD01a6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gAsola6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QOBkFa6EfCzmszw-kpebw" position="-18.0,56.0"/>
+      <visibility xmi:id="_8HaD1Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HaD1Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8HaD1la6EfCzmszw-kpebw" aggregationKind="SHARED" name="serviciosCorreo" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7ewIYFa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QPPsFa6EfCzmszw-kpebw" position="1.0,-103.99999999999977"/>
+      <stereotypes xmi:id="_ZnbmoFbQEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7ewvcFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HaD11a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HaD2Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8Haq4Fa6EfCzmszw-kpebw" sourceAnchor="368.0,232.0" targetAnchor="278.0,0.0" target="_8IN8IFa6EfCzmszw-kpebw" source="_8Haq6Va6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gLrwVa6EfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_8Haq4Va6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gPWIFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8Haq4la6EfCzmszw-kpebw" text="correoAdministrado">
+      <visualProperties xmi:id="_8QQd0Fa6EfCzmszw-kpebw" position="-224.0,-25.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8Haq41a6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gLrwla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QP2wFa6EfCzmszw-kpebw" position="-18.0,46.0"/>
+      <visibility xmi:id="_8Haq5Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Haq5Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8Haq5la6EfCzmszw-kpebw" name="correoNuevo" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7exWgla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QQd0Va6EfCzmszw-kpebw" position="-127.0,-109.0"/>
+      <visibility xmi:id="_8Haq51a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8Haq6Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8HoGQFa6EfCzmszw-kpebw" source="_8HotUFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gTnkFa6EfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_8HoGQVa6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gXR8Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8HoGQla6EfCzmszw-kpebw" text=""/>
+    <sourceRole xmi:id="_8HoGQ1a6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gTnkVa6EfCzmszw-kpebw"/>
+      <visibility xmi:id="_8HoGRFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HoGRVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8HoGRla6EfCzmszw-kpebw" aggregationKind="NONE" name="miVariableEntorno" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7eykoFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_ZncNsFbQEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7ezLsFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HoGR1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HoGSFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8H0TgFa6EfCzmszw-kpebw" sourceAnchor="631.0,154.0" targetAnchor="0.0,106.0" target="_8IN8IFa6EfCzmszw-kpebw" source="_8H2vwFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7ffIMFa6EfCzmszw-kpebw"/>
+    <nameVisual xmi:id="_8H06kFa6EfCzmszw-kpebw" text="">
+      <visualProperties xmi:id="_8QSTAFa6EfCzmszw-kpebw" position="-5.0,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8H1hoFa6EfCzmszw-kpebw" name="cliente06" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7fH70Fa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QRr8Fa6EfCzmszw-kpebw" position="31.0,-65.0"/>
+      <stereotypes xmi:id="_8H2IsVa6EfCzmszw-kpebw" name="JoinColumns">
+        <modelElement href="AppClienteCorreo.uml#_7fH70Va6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8H2Isla6EfCzmszw-kpebw" name="FetchStrategy">
+        <modelElement href="AppClienteCorreo.uml#_7fIi4Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2IsFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H1hola6EfCzmszw-kpebw" label="0..1" max="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8H1hoVa6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7fd6EVa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QSTAVa6EfCzmszw-kpebw" position="-59.0,-65.0"/>
+      <visibility xmi:id="_8H2ItFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2Is1a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8IS0oFa6EfCzmszw-kpebw" sourceAnchor="0.0,18.0" targetAnchor="181.0,44.0" target="_8IUCwFa6EfCzmszw-kpebw" source="_8IgQAFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7ga8UVa6EfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_8ITbs1a6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7gdYkFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8ITbsFa6EfCzmszw-kpebw" text="usaServiciosJPASpring">
+      <visualProperties xmi:id="_8QThIFa6EfCzmszw-kpebw" position="-80.0,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8ITbsVa6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7ga8Ula6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QS6EFa6EfCzmszw-kpebw" position="-33.0,-65.0"/>
+      <visibility xmi:id="_8ITbtVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8ITbtFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8ITbsla6EfCzmszw-kpebw" aggregationKind="NONE" name="correosRepositorio" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7fKYEla6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QThIVa6EfCzmszw-kpebw" position="1.0,41.0"/>
+      <stereotypes xmi:id="_8ITbuFa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7fK_IFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8ITbt1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8ITbtla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8IV38Fa6EfCzmszw-kpebw" sourceAnchor="0.0,32.0" targetAnchor="182.0,44.0" target="_8IXGEFa6EfCzmszw-kpebw" source="_8IoL0Fa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7gXR8Va6EfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_8IWfA1a6EfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_7ga8UFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_8IWfAFa6EfCzmszw-kpebw" text="usaServiciosJPASpring">
+      <visualProperties xmi:id="_8QVWUFa6EfCzmszw-kpebw" position="-158.0,1.9999999999999858"/>
+    </nameVisual>
+    <sourceRole xmi:id="_8IWfAVa6EfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_7gXR8la6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QUvQFa6EfCzmszw-kpebw" position="-33.0,2.0"/>
+      <visibility xmi:id="_8IWfBVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IWfBFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_8IWfAla6EfCzmszw-kpebw" aggregationKind="NONE" name="clientesRepositorio" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_7fJxAFa6EfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_8QVWUVa6EfCzmszw-kpebw" position="96.00000000000006,-65.00000000000014"/>
+      <stereotypes xmi:id="_8IWfCFa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7fKYEFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IWfB1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8IWfBla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_8IYUMFa6EfCzmszw-kpebw" sourceAnchor="0.0,143.0" targetAnchor="335.0,142.0" dashed="true" superClass="_8IdzwFa6EfCzmszw-kpebw" subClass="_8IoL0Fa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7daEkFa6EfCzmszw-kpebw"/>
+    <bendpoints xmi:id="_2zZOwFh2EfC4r9nIFs9MRA" sourceX="-30" targetX="286" targetY="-98"/>
+    <bendpoints xmi:id="_2zZOwVh2EfC4r9nIFs9MRA" sourceX="-30" sourceY="98" targetX="286"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_8IY7QFa6EfCzmszw-kpebw" sourceAnchor="305.0,0.0" targetAnchor="335.0,142.0" dashed="true" superClass="_8IdzwFa6EfCzmszw-kpebw" subClass="_8IgQAFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7dfkIVa6EfCzmszw-kpebw"/>
+    <bendpoints xmi:id="_2zZOwlh2EfC4r9nIFs9MRA" sourceY="-100" targetX="636" targetY="90"/>
+    <bendpoints xmi:id="_2zZOw1h2EfC4r9nIFs9MRA" sourceX="-350" sourceY="-100" targetX="286" targetY="90"/>
+    <bendpoints xmi:id="_2zZOxFh2EfC4r9nIFs9MRA" sourceX="-350" sourceY="-190" targetX="286"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_baQXgFbCEfCzmszw-kpebw" sourceAnchor="370.0,0.0" targetAnchor="295.0,124.0" target="_8GJfkFa6EfCzmszw-kpebw" source="_8G2DIFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_bZ2H0FbCEfCzmszw-kpebw"/>
+    <stereotypes xmi:id="_baQXgVbCEfCzmszw-kpebw" name="Reference">
+      <modelElement href="AppClienteCorreo.uml#_baBuAFbCEfCzmszw-kpebw"/>
+    </stereotypes>
+    <nameVisual xmi:id="_baQXglbCEfCzmszw-kpebw" text="">
+      <visualProperties xmi:id="_Qnlr4FbSEfC7L5Y3EyGd7w" position="-26.0,-13.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_baQXg1bCEfCzmszw-kpebw" aggregationKind="NONE" name="">
+      <modelElement href="AppClienteCorreo.uml#_bZ2H0VbCEfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_QnlE01bSEfC7L5Y3EyGd7w" position="-21.0,-68.0"/>
+      <visibility xmi:id="_baQXhFbCEfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_baQXhVbCEfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_baQXhlbCEfCzmszw-kpebw" aggregationKind="NONE" name="appClienteCorreoApplication" navigable="true">
+      <modelElement href="AppClienteCorreo.uml#_bZ0SoFbCEfCzmszw-kpebw"/>
+      <visualProperties xmi:id="_QnmS8FbSEfC7L5Y3EyGd7w" position="11.0,5.0"/>
+      <stereotypes xmi:id="_baYTUFbCEfCzmszw-kpebw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Znep8FbQEfC7L5Y3EyGd7w" name="LegacyStyledElement">
+        <modelElement href="AppClienteCorreo.uml#_bZ05sFbCEfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_baQXh1bCEfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_baQXiFbCEfCzmszw-kpebw" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_Te03YFbVEfC7L5Y3EyGd7w" sourceAnchor="0.0,230.0" targetAnchor="574.0,75.0" dashed="true" superClass="_8Ifo8Fa6EfCzmszw-kpebw" subClass="_8IgQAFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_TexNAFbVEfC7L5Y3EyGd7w"/>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8GJfkFa6EfCzmszw-kpebw" name="AppClienteCorreoApplication" associationsIn="_baQXgFbCEfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7UDUQFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8GJfkVa6EfCzmszw-kpebw" position="85.0,2283.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_8GJfkla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7UHlsFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8GJfk1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7UNsUFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8GJflFa6EfCzmszw-kpebw" label="+"/>
+    <operations xmi:id="_8GJflVa6EfCzmszw-kpebw" name="AppClienteCorreoApplication">
+      <modelElement href="AppClienteCorreo.uml#_7UIz0Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8GJflla6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8GJfl1a6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7ULQEFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8GJfmFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8GJfmVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8GJfmla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UKpAFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8GJfm1a6EfCzmszw-kpebw" name="AppClienteCorreoApplication">
+          <modelElement href="AppClienteCorreo.uml#_7UDUQFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8GJfnFa6EfCzmszw-kpebw" name="main" staticOperation="true">
+      <modelElement href="AppClienteCorreo.uml#_7ULQEVa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8GJfnVa6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7UL3IVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8GJfnla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8GJfn1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8GJfoFa6EfCzmszw-kpebw" name="args">
+        <modelElement href="AppClienteCorreo.uml#_7UL3IFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8GJfoVa6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_8GJfola6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8G2DIFa6EfCzmszw-kpebw" name="ServletInitializer" associationsOut="_baQXgFbCEfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7UO6cFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8G2DIVa6EfCzmszw-kpebw" position="10.0,2647.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_8G2DIla6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_baSMsFbCEfCzmszw-kpebw" defaultValue="null" name="appClienteCorreoApplication">
+      <modelElement href="AppClienteCorreo.uml#_bZ0SoFbCEfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn9LEFbQEfC7L5Y3EyGd7w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Zn9yIFbQEfC7L5Y3EyGd7w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Zn9yIVbQEfC7L5Y3EyGd7w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_1Bu-gFhjEfC4r9nIFs9MRA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_1BvlkFhjEfC4r9nIFs9MRA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_1BwzsFhjEfC4r9nIFs9MRA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_CBzhUFkOEfCgbskeRmphJQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_CB0vcFkOEfCgbskeRmphJQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_CB1WgFkOEfCgbskeRmphJQ" name="LegacyStyledElement"/>
+      <visibility xmi:id="_baSMslbCEfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_baSMs1bCEfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_baSMtFbCEfCzmszw-kpebw" name="AppClienteCorreoApplication">
+        <modelElement href="AppClienteCorreo.uml#_7UDUQFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8G2DI1a6EfCzmszw-kpebw" name="configure">
+      <modelElement href="AppClienteCorreo.uml#_7dnf8Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G2DJFa6EfCzmszw-kpebw" name="LegacyStyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7doHAla6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8G2DJVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7douEFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G2DJla6EfCzmszw-kpebw" label="#"/>
+      <cardinality xmi:id="_8G2DJ1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G2DKFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7doHAVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G2DKVa6EfCzmszw-kpebw" name="SpringApplicationBuilder">
+          <modelElement href="AppClienteCorreo.uml#_7bVA8Fa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8G2DKla6EfCzmszw-kpebw" name="application">
+        <modelElement href="AppClienteCorreo.uml#_7doHAFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G2DK1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G2DLFa6EfCzmszw-kpebw" name="SpringApplicationBuilder">
+          <modelElement href="AppClienteCorreo.uml#_7bVA8Fa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8HotUFa6EfCzmszw-kpebw" name="GlobalExceptionHandler" associationsOut="_8HoGQFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7U3zoFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8HotUVa6EfCzmszw-kpebw" position="810.0,2274.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_8HotUla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7U5BwFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8HotU1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7U96QFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8HotVFa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8HotVVa6EfCzmszw-kpebw" name="miVariableEntorno">
+      <modelElement href="AppClienteCorreo.uml#_7eykoFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn3rgFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn4SkFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_ZoAOYFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1BnpwFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1Bo34FhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1Bz3AFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBqXYFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CBq-cFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB19kFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8HotV1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HotWFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8HotWVa6EfCzmszw-kpebw" name="Environment">
+        <modelElement href="AppClienteCorreo.uml#_7cEn0Va6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8HotWla6EfCzmszw-kpebw" name="GlobalExceptionHandler">
+      <modelElement href="AppClienteCorreo.uml#_7U5o0Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8HotW1a6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8HotXFa6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7U5o1Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotXVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotXla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotX1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7U5o01a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotYFa6EfCzmszw-kpebw" name="GlobalExceptionHandler">
+          <modelElement href="AppClienteCorreo.uml#_7U3zoFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8HotYVa6EfCzmszw-kpebw" name="pilaErrores">
+      <modelElement href="AppClienteCorreo.uml#_7U8sIFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotYla6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7U9TMFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotY1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8HotZFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotZVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7U8sIVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotZla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8HotZ1a6EfCzmszw-kpebw" name="handleConstraintViolation">
+      <modelElement href="AppClienteCorreo.uml#_7cdCUFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotaFa6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7cgssFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8HotaVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7chTwFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8Hotala6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Hota1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotbFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eTccla6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotbVa6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8Hotbla6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7cdCUVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8Hotb1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HotcFa6EfCzmszw-kpebw" name="ConstraintViolationException">
+          <modelElement href="AppClienteCorreo.uml#_7cBkgFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HotcVa6EfCzmszw-kpebw" name="handleValidationException">
+      <modelElement href="AppClienteCorreo.uml#_7ch60Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8Hotcla6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7ck-IFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Hotc1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7cllMFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotdFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotdVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8Hotdla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eTcc1a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8Hotd1a6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HoteFa6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7ch60Va6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HoteVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8Hotela6EfCzmszw-kpebw" name="MethodArgumentNotValidException">
+          <modelElement href="AppClienteCorreo.uml#_7cOY0Fa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8Hote1a6EfCzmszw-kpebw" name="handleNotFound">
+      <modelElement href="AppClienteCorreo.uml#_7dp8MFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotfFa6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7ds_gFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8HotfVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7dtmkVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8Hotfla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Hotf1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotgFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7dtmkFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotgVa6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8Hotgla6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7dp8MVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8Hotg1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HothFa6EfCzmszw-kpebw" name="NoHandlerFoundException">
+          <modelElement href="AppClienteCorreo.uml#_7cYw4Va6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HothVa6EfCzmszw-kpebw" name="handleIllegalArgument">
+      <modelElement href="AppClienteCorreo.uml#_7dxQ8Va6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8Hothla6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7d1iYFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Hoth1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7d2JcVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotiFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotiVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8Hotila6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7d2JcFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8Hoti1a6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HotjFa6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7dxQ8la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HotjVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8Hotjla6EfCzmszw-kpebw" name="IllegalArgumentException">
+          <modelElement href="AppClienteCorreo.uml#_7duNola6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8Hotj1a6EfCzmszw-kpebw" name="handleNullPointer">
+      <modelElement href="AppClienteCorreo.uml#_7d5z0Va6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotkFa6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7d83IFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8HotkVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7d9eMVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8Hotkla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Hotk1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotlFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7d9eMFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotlVa6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8Hotlla6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7d6a4Fa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8Hotl1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HotmFa6EfCzmszw-kpebw" name="NullPointerException">
+          <modelElement href="AppClienteCorreo.uml#_7d2wgFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HotmVa6EfCzmszw-kpebw" name="handleIndexOutOfBounds">
+      <modelElement href="AppClienteCorreo.uml#_7eBIkVa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8Hotmla6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7eEL4Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Hotm1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7eEy8Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotnFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotnVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8Hotnla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eEL4Va6EfCzmszw-kpebw"/>
+        <type xmi:id="_8Hotn1a6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HotoFa6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7eBIkla6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HotoVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8Hotola6EfCzmszw-kpebw" name="IndexOutOfBoundsException">
+          <modelElement href="AppClienteCorreo.uml#_7d-FQFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8Hoto1a6EfCzmszw-kpebw" name="handleNumberFormat">
+      <modelElement href="AppClienteCorreo.uml#_7eIdUFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotpFa6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7eLgoFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8HotpVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7eMHsFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8Hotpla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Hotp1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotqFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eLgoVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotqVa6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8Hotqla6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7eIdUVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8Hotq1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HotrFa6EfCzmszw-kpebw" name="NumberFormatException">
+          <modelElement href="AppClienteCorreo.uml#_7eEy81a6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HotrVa6EfCzmszw-kpebw" name="handleUnsupportedOperation">
+      <modelElement href="AppClienteCorreo.uml#_7ePyEFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8Hotrla6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7eSOUFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Hotr1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7eS1YVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotsFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotsVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8Hotsla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eS1YFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8Hots1a6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HottFa6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7ePyEVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HottVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8Hottla6EfCzmszw-kpebw" name="UnsupportedOperationException">
+          <modelElement href="AppClienteCorreo.uml#_7eMuwFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8Hott1a6EfCzmszw-kpebw" name="handleNoSuchMethod">
+      <modelElement href="AppClienteCorreo.uml#_7eXG0Va6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HotuFa6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7eZjEFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8HotuVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7eaKIVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8Hotula6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Hotu1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HotvFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eaKIFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HotvVa6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8Hotvla6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7eXG0la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8Hotv1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HotwFa6EfCzmszw-kpebw" name="NoSuchMethodException">
+          <modelElement href="AppClienteCorreo.uml#_7eUDgFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HotwVa6EfCzmszw-kpebw" name="handleGenericException">
+      <modelElement href="AppClienteCorreo.uml#_7ed0gVa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8Hotwla6EfCzmszw-kpebw" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_7eg30Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Hotw1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7ehe4Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HotxFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HotxVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8Hotxla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7eg30Va6EfCzmszw-kpebw"/>
+        <type xmi:id="_8Hotx1a6EfCzmszw-kpebw" name="ResponseEntity">
+          <modelElement href="AppClienteCorreo.uml#_7cLVgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HotyFa6EfCzmszw-kpebw" name="ex">
+        <modelElement href="AppClienteCorreo.uml#_7eebkFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HotyVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8Hotyla6EfCzmszw-kpebw" name="Exception">
+          <modelElement href="AppClienteCorreo.uml#_7eaxMFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8H2vwFa6EfCzmszw-kpebw" name="Cliente06" associationsIn="_8G-mAFa6EfCzmszw-kpebw _8HVyYFa6EfCzmszw-kpebw" associationsOut="_8H0TgFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8H2vwVa6EfCzmszw-kpebw" position="1491.0,500.0" size="-1.0,-1.0" backgroundColor="51,209,122"/>
+    <stereotypes xmi:id="_8H2vwla6EfCzmszw-kpebw" name="Table">
+      <modelElement href="AppClienteCorreo.uml#_7VNK0Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8H2vw1a6EfCzmszw-kpebw" name="JPA1StyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7VNx4Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8H2vxFa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8H2vxVa6EfCzmszw-kpebw" name="dni">
+      <modelElement href="AppClienteCorreo.uml#_7ezywFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8H2vxla6EfCzmszw-kpebw" name="Column">
+        <modelElement href="AppClienteCorreo.uml#_7e2PAFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8H2vx1a6EfCzmszw-kpebw" name="PrimaryKey">
+        <modelElement href="AppClienteCorreo.uml#_7e22EFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2vyFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2vyVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8H2vyla6EfCzmszw-kpebw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8H2vy1a6EfCzmszw-kpebw" name="nombre">
+      <modelElement href="AppClienteCorreo.uml#_7e3dIFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8H2vzFa6EfCzmszw-kpebw" name="Column">
+        <modelElement href="AppClienteCorreo.uml#_7e55YFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2vzVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2vzla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8H2vz1a6EfCzmszw-kpebw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8H2v0Fa6EfCzmszw-kpebw" name="apellido">
+      <modelElement href="AppClienteCorreo.uml#_7e6gcFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8H2v0Va6EfCzmszw-kpebw" name="Column">
+        <modelElement href="AppClienteCorreo.uml#_7e88sFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2v0la6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2v01a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8H2v1Fa6EfCzmszw-kpebw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8H2v1Va6EfCzmszw-kpebw" name="Cliente06">
+      <modelElement href="AppClienteCorreo.uml#_7VOY8Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8H2v1la6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8H2v11a6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7VPAAVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2v2Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2v2Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8H2v2la6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7VPAAFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8H2v21a6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8H2v3Fa6EfCzmszw-kpebw" name="Cliente06">
+      <modelElement href="AppClienteCorreo.uml#_7VPnEFa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8H2v3Va6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8H2v3la6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7VQ1MFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2v31a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2v4Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8H2v4Va6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7VQOJFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8H2v4la6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8H2v41a6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7VPnEVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8H2v5Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8H2v5Va6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8H2v5la6EfCzmszw-kpebw" name="nombre">
+        <modelElement href="AppClienteCorreo.uml#_7VQOIFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8H2v51a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8H2v6Fa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8H2v6Va6EfCzmszw-kpebw" name="apellido">
+        <modelElement href="AppClienteCorreo.uml#_7VQOIVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8H2v6la6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8H2v61a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8H2v7Fa6EfCzmszw-kpebw" name="toString">
+      <modelElement href="AppClienteCorreo.uml#_7VRcQFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8H2v7Va6EfCzmszw-kpebw" name="LegacyStyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7VSqYFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8H2v7la6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7VSqYVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8H2v71a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8H2v8Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8H2v8Va6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7VSDUFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8H2v8la6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8G_NEFa6EfCzmszw-kpebw" name="ClienteControlador" associationsOut="_8G9-8Fa6EfCzmszw-kpebw _8G-mAFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7URWsFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8G_NEVa6EfCzmszw-kpebw" position="1492.0,177.0" size="-1.0,-1.0" backgroundColor="255,120,0"/>
+    <stereotypes xmi:id="_8G_NEla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7USk0Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8G_NE1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7Uh1YVa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8G_NFFa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8G_NFVa6EfCzmszw-kpebw" name="serviciosCliente">
+      <modelElement href="AppClienteCorreo.uml#_7eu6QFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Znxk4FbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_ZnzaEFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn-ZMFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1Bft8FhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BiKMFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BxawFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1G3ucFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1G4VgFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1G48kFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBc8AFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CBf_UFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB3LsFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8G_NF1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8G_NGFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8G_NGVa6EfCzmszw-kpebw" name="ServiciosCliente">
+        <modelElement href="AppClienteCorreo.uml#_7V8xsFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8G_NGla6EfCzmszw-kpebw" defaultValue="null" name="clienteNuevo">
+      <modelElement href="AppClienteCorreo.uml#_7evhUla6EfCzmszw-kpebw"/>
+      <visibility xmi:id="_8G_NG1a6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8G_NHFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8G_NHVa6EfCzmszw-kpebw" name="Cliente06">
+        <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8G_NHla6EfCzmszw-kpebw" name="ClienteControlador">
+      <modelElement href="AppClienteCorreo.uml#_7UTL4Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8G_NH1a6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8G_NIFa6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7UTy8Fa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NIVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NIla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G_NI1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UTL41a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NJFa6EfCzmszw-kpebw" name="ClienteControlador">
+          <modelElement href="AppClienteCorreo.uml#_7URWsFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8G_NJVa6EfCzmszw-kpebw" name="guardar">
+      <modelElement href="AppClienteCorreo.uml#_7UVBEFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G_NJla6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UXdUFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NJ1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NKFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G_NKVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UVBFFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NKla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8G_NK1a6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7UVBEVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NLFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NLVa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8G_NLla6EfCzmszw-kpebw" name="nombre">
+        <modelElement href="AppClienteCorreo.uml#_7UVBEla6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NL1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NMFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8G_NMVa6EfCzmszw-kpebw" name="apellido">
+        <modelElement href="AppClienteCorreo.uml#_7UVBE1a6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NMla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NM1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8G_NNFa6EfCzmszw-kpebw" name="listarTodos">
+      <modelElement href="AppClienteCorreo.uml#_7UXdU1a6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G_NNVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UZSgFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NNla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NN1a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8G_NOFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UYEYFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NOVa6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8G_NOla6EfCzmszw-kpebw" name="buscarPorId">
+      <modelElement href="AppClienteCorreo.uml#_7UZ5kFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G_NO1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UbuwFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NPFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NPVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G_NPla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7b_IQFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NP1a6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8G_NQFa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7UZ5kVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NQVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NQla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8G_NQ1a6EfCzmszw-kpebw" name="actualizar">
+      <modelElement href="AppClienteCorreo.uml#_7UcV0Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G_NRFa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UfZIVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NRVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NRla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G_NR1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7Uc841a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NSFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8G_NSVa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7Uc84Fa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NSla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NS1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8G_NTFa6EfCzmszw-kpebw" name="nombre">
+        <modelElement href="AppClienteCorreo.uml#_7Uc84Va6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NTVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NTla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8G_NT1a6EfCzmszw-kpebw" name="apellido">
+        <modelElement href="AppClienteCorreo.uml#_7Uc84la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NUFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NUVa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8G_NUla6EfCzmszw-kpebw" name="eliminarPorId">
+      <modelElement href="AppClienteCorreo.uml#_7UgAMFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8G_NU1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UhOU1a6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8G_NVFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8G_NVVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8G_NVla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UgnQFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8G_NV1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8G_NWFa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7UgAMVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8G_NWVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8G_NWla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8IN8IFa6EfCzmszw-kpebw" name="Correo06" associationsIn="_8H0TgFa6EfCzmszw-kpebw _8Haq4Fa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IN8IVa6EfCzmszw-kpebw" position="2309.0,548.0" size="-1.0,-1.0" backgroundColor="51,209,122"/>
+    <stereotypes xmi:id="_8IN8Ila6EfCzmszw-kpebw" name="Table">
+      <modelElement href="AppClienteCorreo.uml#_7VkXMFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8IN8I1a6EfCzmszw-kpebw" name="JPA1StyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7Vk-QFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8IN8JFa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8IN8JVa6EfCzmszw-kpebw" name="idCorreo">
+      <modelElement href="AppClienteCorreo.uml#_7e-x4Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IN8Jla6EfCzmszw-kpebw" name="PrimaryKey">
+        <modelElement href="AppClienteCorreo.uml#_7e-x4Va6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8IN8J1a6EfCzmszw-kpebw" name="Column">
+        <modelElement href="AppClienteCorreo.uml#_7fDDUFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8IN8KFa6EfCzmszw-kpebw" name="GeneratedValueMapping">
+        <modelElement href="AppClienteCorreo.uml#_7fDDUVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IN8KVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8Kla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8IN8K1a6EfCzmszw-kpebw" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8IN8LFa6EfCzmszw-kpebw" name="correo">
+      <modelElement href="AppClienteCorreo.uml#_7fERcFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IN8LVa6EfCzmszw-kpebw" name="Column">
+        <modelElement href="AppClienteCorreo.uml#_7fGtsFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IN8Lla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8L1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8IN8MFa6EfCzmszw-kpebw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8IN8MVa6EfCzmszw-kpebw" defaultValue="null" name="cliente06">
+      <modelElement href="AppClienteCorreo.uml#_7fH70Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn5gsFbQEfC7L5Y3EyGd7w" name="JoinColumns"/>
+      <stereotypes xmi:id="_Zn5gsVbQEfC7L5Y3EyGd7w" name="FetchStrategy"/>
+      <stereotypes xmi:id="_Zn6HwFbQEfC7L5Y3EyGd7w" name="JoinColumns"/>
+      <stereotypes xmi:id="_Zn6HwVbQEfC7L5Y3EyGd7w" name="FetchStrategy"/>
+      <stereotypes xmi:id="_ZoBcgFbQEfC7L5Y3EyGd7w" name="JoinColumns"/>
+      <stereotypes xmi:id="_ZoBcgVbQEfC7L5Y3EyGd7w" name="FetchStrategy"/>
+      <stereotypes xmi:id="_1Bpe8FhjEfC4r9nIFs9MRA" name="JoinColumns"/>
+      <stereotypes xmi:id="_1Bpe8VhjEfC4r9nIFs9MRA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_1BqtEFhjEfC4r9nIFs9MRA" name="JoinColumns"/>
+      <stereotypes xmi:id="_1BqtEVhjEfC4r9nIFs9MRA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_1B1FIFhjEfC4r9nIFs9MRA" name="JoinColumns"/>
+      <stereotypes xmi:id="_1B1FIVhjEfC4r9nIFs9MRA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_3eIVMFhzEfC4r9nIFs9MRA" name="JoinColumns"/>
+      <stereotypes xmi:id="_3eI8QFhzEfC4r9nIFs9MRA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_7aakkFhzEfC4r9nIFs9MRA" name="JoinColumns"/>
+      <stereotypes xmi:id="_7abLoFhzEfC4r9nIFs9MRA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_CBsMkFkOEfCgbskeRmphJQ" name="JoinColumns"/>
+      <stereotypes xmi:id="_CBsMkVkOEfCgbskeRmphJQ" name="FetchStrategy"/>
+      <stereotypes xmi:id="_CBtasFkOEfCgbskeRmphJQ" name="JoinColumns"/>
+      <stereotypes xmi:id="_CBuBwFkOEfCgbskeRmphJQ" name="FetchStrategy"/>
+      <stereotypes xmi:id="_CB4Z0FkOEfCgbskeRmphJQ" name="JoinColumns"/>
+      <stereotypes xmi:id="_CB5A4FkOEfCgbskeRmphJQ" name="FetchStrategy"/>
+      <visibility xmi:id="_8IN8Mla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8M1a6EfCzmszw-kpebw" label="0..1" max="1"/>
+      <type xmi:id="_8IN8NFa6EfCzmszw-kpebw" name="Cliente06">
+        <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8IN8NVa6EfCzmszw-kpebw" name="Correo06">
+      <modelElement href="AppClienteCorreo.uml#_7VllUFa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8IN8Nla6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8IN8N1a6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7VmMYFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IN8OFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8OVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IN8Ola6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7VllU1a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IN8O1a6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IN8PFa6EfCzmszw-kpebw" name="toString">
+      <modelElement href="AppClienteCorreo.uml#_7VnagFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IN8PVa6EfCzmszw-kpebw" name="LegacyStyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7VoBkFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8IN8Pla6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7VoBkVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IN8P1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8QFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IN8QVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7VnagVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IN8Qla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IN8Q1a6EfCzmszw-kpebw" name="Correo06">
+      <modelElement href="AppClienteCorreo.uml#_7dJl4Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8IN8RFa6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8IN8RVa6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7dJl5la6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IN8Rla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IN8R1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IN8SFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7dJl5Va6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IN8SVa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8IN8Sla6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7dJl4Va6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IN8S1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IN8TFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8IN8TVa6EfCzmszw-kpebw" name="cliente06">
+        <modelElement href="AppClienteCorreo.uml#_7dJl4la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IN8Tla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IN8T1a6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8Haq6Va6EfCzmszw-kpebw" name="CorreoControlador" associationsOut="_8HVLUFa6EfCzmszw-kpebw _8HVyYFa6EfCzmszw-kpebw _8HaD0Fa6EfCzmszw-kpebw _8Haq4Fa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7UlfwFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8Haq6la6EfCzmszw-kpebw" position="2219.0,-19.0" size="-1.0,-1.0" backgroundColor="255,120,0"/>
+    <stereotypes xmi:id="_8Haq61a6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7Umt4Fa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8Haq7Fa6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7U0JQFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8Haq7Va6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8Haq7la6EfCzmszw-kpebw" name="serviciosCorreo">
+      <modelElement href="AppClienteCorreo.uml#_7ewIYFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn2dYFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn3EcFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn_AQFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1Bl0kFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BmboFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1ByB0FhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_uBUBAFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_uBYScFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_uBaHoFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBmtAFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CBoiMFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB6PAFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8Haq8Fa6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8Haq8Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8Haq8la6EfCzmszw-kpebw" name="ServiciosCorreo">
+        <modelElement href="AppClienteCorreo.uml#_7WEtgFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8Haq81a6EfCzmszw-kpebw" name="serviciosCliente">
+      <modelElement href="AppClienteCorreo.uml#_7ewvcla6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn0oMFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn1PQFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn_nUFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1BjYUFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BkmcFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1Byo4FhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_hurxwFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_hutm8FhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_huuOAFhpEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBibkFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CBk30FkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB62EFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8Haq9Va6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8Haq9la6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8Haq91a6EfCzmszw-kpebw" name="ServiciosCliente">
+        <modelElement href="AppClienteCorreo.uml#_7V8xsFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8Haq-Fa6EfCzmszw-kpebw" defaultValue="null" name="correoNuevo">
+      <modelElement href="AppClienteCorreo.uml#_7exWgla6EfCzmszw-kpebw"/>
+      <visibility xmi:id="_8Haq-Va6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8Haq-la6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8Haq-1a6EfCzmszw-kpebw" name="Correo06">
+        <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_8Haq_Fa6EfCzmszw-kpebw" defaultValue="null" name="cliente">
+      <modelElement href="AppClienteCorreo.uml#_7ex9kFa6EfCzmszw-kpebw"/>
+      <visibility xmi:id="_8Haq_Va6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8Haq_la6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8Haq_1a6EfCzmszw-kpebw" name="Cliente06">
+        <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8HarAFa6EfCzmszw-kpebw" name="CorreoControlador">
+      <modelElement href="AppClienteCorreo.uml#_7UnU8Fa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8HarAVa6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8HarAla6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7Un8AVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarA1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarBFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HarBVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7Un8AFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarBla6EfCzmszw-kpebw" name="CorreoControlador">
+          <modelElement href="AppClienteCorreo.uml#_7UlfwFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8HarB1a6EfCzmszw-kpebw" name="guardar">
+      <modelElement href="AppClienteCorreo.uml#_7UpKIFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HarCFa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UqYQ1a6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarCVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarCla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HarC1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UpKI1a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarDFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HarDVa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7UpKIVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarDla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarD1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8HarEFa6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7UpKIla6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarEVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarEla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HarE1a6EfCzmszw-kpebw" name="listarTodos">
+      <modelElement href="AppClienteCorreo.uml#_7Uq_Ula6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HarFFa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7Us0gFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarFVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarFla6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8HarF1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UrmYVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarGFa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HarGVa6EfCzmszw-kpebw" name="buscarCorreoDni">
+        <modelElement href="AppClienteCorreo.uml#_7UrmYFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarGla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarG1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HarHFa6EfCzmszw-kpebw" name="verclientescorreos">
+      <modelElement href="AppClienteCorreo.uml#_7UtbkFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HarHVa6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UvQwFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarHla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarH1a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8HarIFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UuCoFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarIVa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HarIla6EfCzmszw-kpebw" name="buscarClientesCorreosDNI">
+        <modelElement href="AppClienteCorreo.uml#_7UtbkVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarI1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarJFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HarJVa6EfCzmszw-kpebw" name="actualizar">
+      <modelElement href="AppClienteCorreo.uml#_7Uv30Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HarJla6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UxtAVa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarJ1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarKFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HarKVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7Uwe4Fa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarKla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HarK1a6EfCzmszw-kpebw" name="idCorreo">
+        <modelElement href="AppClienteCorreo.uml#_7Uv30Va6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarLFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarLVa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_8HarLla6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7Uv30la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarL1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarMFa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8HarMVa6EfCzmszw-kpebw" name="eliminarPorId">
+      <modelElement href="AppClienteCorreo.uml#_7UyUEFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8HarMla6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7UziMFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8HarM1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8HarNFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8HarNVa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7UyUEla6EfCzmszw-kpebw"/>
+        <type xmi:id="_8HarNla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8HarN1a6EfCzmszw-kpebw" name="idCorreo">
+        <modelElement href="AppClienteCorreo.uml#_7UyUEVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8HarOFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8HarOVa6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_8IXGEFa6EfCzmszw-kpebw" name="ClientesRepositorio" associationsIn="_8IV38Fa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7Vrr8Fa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IXGEVa6EfCzmszw-kpebw" position="14.0,-6.0" size="-1.0,-1.0" backgroundColor="205,171,143"/>
+    <stereotypes xmi:id="_8IXGEla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7VsTAFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8IXGE1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7Vs6EFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8IXGFFa6EfCzmszw-kpebw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_8IdzwFa6EfCzmszw-kpebw" name="RequerimientosCRUD" subclassedBy="_8IYUMFa6EfCzmszw-kpebw _8IY7QFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7VvWUFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IdzwVa6EfCzmszw-kpebw" position="15.0,105.0" size="-1.0,-1.0" backgroundColor="248,228,92"/>
+    <stereotypes xmi:id="_8Idzwla6EfCzmszw-kpebw" name="Generics">
+      <modelElement href="AppClienteCorreo.uml#_7V68gFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8Idzw1a6EfCzmszw-kpebw" label="+"/>
+    <operations xmi:id="_8IdzxFa6EfCzmszw-kpebw" name="guardar">
+      <modelElement href="AppClienteCorreo.uml#_7eseAVa6EfCzmszw-kpebw"/>
+      <visibility xmi:id="_8IdzxVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8Idzxla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8Idzx1a6EfCzmszw-kpebw" name="unaEntidad">
+        <modelElement href="AppClienteCorreo.uml#_7eseAla6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IdzyFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IdzyVa6EfCzmszw-kpebw" name="T">
+          <modelElement href="AppClienteCorreo.uml#_7eqBwFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_32ls4FbQEfC7L5Y3EyGd7w" name="actualizar">
+      <modelElement href="AppClienteCorreo.uml#_32bU0FbQEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_32ls4VbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32ls4lbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <parameters xmi:id="_32ls41bQEfC7L5Y3EyGd7w" name="unaEntidad">
+        <modelElement href="AppClienteCorreo.uml#_32b74FbQEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_32ls5FbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_32ls5VbQEfC7L5Y3EyGd7w" name="T">
+          <modelElement href="AppClienteCorreo.uml#_7eqBwFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_32niEFbQEfC7L5Y3EyGd7w" name="eliminar">
+      <modelElement href="AppClienteCorreo.uml#_32b74VbQEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_32niEVbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32niElbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <parameters xmi:id="_32niE1bQEfC7L5Y3EyGd7w" name="unaEntidad">
+        <modelElement href="AppClienteCorreo.uml#_32ci8FbQEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_32niFFbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_32niFVbQEfC7L5Y3EyGd7w" name="T">
+          <modelElement href="AppClienteCorreo.uml#_7eqBwFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_32pXQFbQEfC7L5Y3EyGd7w" name="listarTodos">
+      <modelElement href="AppClienteCorreo.uml#_32ci8VbQEfC7L5Y3EyGd7w"/>
+      <stereotypes xmi:id="_32p-UFbQEfC7L5Y3EyGd7w" name="Generics">
+        <modelElement href="AppClienteCorreo.uml#_32iCgFbQEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_32p-UVbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32p-UlbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_32p-U1bQEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_32ci8lbQEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_32p-VFbQEfC7L5Y3EyGd7w" name="List">
+          <modelElement href="AppClienteCorreo.uml#_7beK4Fa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_32rMcFbQEfC7L5Y3EyGd7w" name="buscarPorId">
+      <modelElement href="AppClienteCorreo.uml#_32jQoFbQEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_32rMcVbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32rMclbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_32rMc1bQEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_32j3sFbQEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_32rMdFbQEfC7L5Y3EyGd7w" name="T">
+          <modelElement href="AppClienteCorreo.uml#_7eqBwFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_32rMdVbQEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_32jQoVbQEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_32rMdlbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_32rMd1bQEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_32tBoFbQEfC7L5Y3EyGd7w" name="eliminarPorId">
+      <modelElement href="AppClienteCorreo.uml#_32j3sVbQEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_32tBoVbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32tBolbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <parameters xmi:id="_32tBo1bQEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_32j3slbQEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_32tBpFbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_32tBpVbQEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_32u20FbQEfC7L5Y3EyGd7w" name="existePorId">
+      <modelElement href="AppClienteCorreo.uml#_32j3s1bQEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_32u20VbQEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_32u20lbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_32u201bQEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_32kewFbQEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_32u21FbQEfC7L5Y3EyGd7w" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_32u21VbQEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_32j3tFbQEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_32u21lbQEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_32u211bQEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_8IUCwFa6EfCzmszw-kpebw" name="CorreosRepositorio" associationsIn="_8IS0oFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7VthIFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IUCwVa6EfCzmszw-kpebw" position="16.0,411.0" size="-1.0,-1.0" backgroundColor="205,171,143"/>
+    <stereotypes xmi:id="_8IUCwla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7VuIMFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8IUCw1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7VuvQFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8IUCxFa6EfCzmszw-kpebw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8IoL0Fa6EfCzmszw-kpebw" name="ServiciosCliente" associationsIn="_8G9-8Fa6EfCzmszw-kpebw _8HVLUFa6EfCzmszw-kpebw" associationsOut="_8IV38Fa6EfCzmszw-kpebw" generalizations="_8IYUMFa6EfCzmszw-kpebw">
+    <modelElement href="AppClienteCorreo.uml#_7V8xsFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IoL0Va6EfCzmszw-kpebw" position="666.0,6.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_8IoL0la6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7V9YwFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8IoL01a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7WBqMVa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8IoL1Fa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8IoL1Va6EfCzmszw-kpebw" name="clientesRepositorio">
+      <modelElement href="AppClienteCorreo.uml#_7fJxAFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn788FbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn8kAFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_ZoCqoFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1BtJUFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BtwYFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1B2TQFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_yCH08FhyEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_yCJDEFhyEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBxsIFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CByTMFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB8EMFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8IoL1la6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8IoL11a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8IoL2Fa6EfCzmszw-kpebw" name="ClientesRepositorio">
+        <modelElement href="AppClienteCorreo.uml#_7Vrr8Fa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8IoL2Va6EfCzmszw-kpebw" name="ServiciosCliente">
+      <modelElement href="AppClienteCorreo.uml#_7V9YwVa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8IoL2la6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8IoL21a6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7V9_01a6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoL3Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoL3Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IoL3la6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7V9_0la6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IoL31a6EfCzmszw-kpebw" name="ServiciosCliente">
+          <modelElement href="AppClienteCorreo.uml#_7V8xsFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IoL4Fa6EfCzmszw-kpebw" name="listarTodos">
+      <modelElement href="AppClienteCorreo.uml#_7V-m4Fa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_LmAd0FbREfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_Ll5JEFbREfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoL4la6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoL41a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8IoL5Fa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7V-m4Va6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IoL5Va6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IoL5la6EfCzmszw-kpebw" name="buscarPorId">
+      <modelElement href="AppClienteCorreo.uml#_7V_N8Va6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_LmGkcFbREfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_Ll6XMFbREfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoL6Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoL6Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IoL6la6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7deWA1a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IoL61a6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8IoL7Fa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7V_N8la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoL7Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoL7la6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IoL71a6EfCzmszw-kpebw" name="eliminarPorId">
+      <modelElement href="AppClienteCorreo.uml#_7WAcEFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_FRjnwFbSEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_FRfWUFbSEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoL8Va6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoL8la6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IoL81a6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7WAcEVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoL9Fa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoL9Va6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IoL9la6EfCzmszw-kpebw" name="existePorId">
+      <modelElement href="AppClienteCorreo.uml#_7WBDIFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_FRmrEFbSEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_FRf9Y1bSEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoL-Fa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoL-Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IoL-la6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WBDIla6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IoL-1a6EfCzmszw-kpebw" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8IoL_Fa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7WBDIVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoL_Va6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoL_la6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IoL_1a6EfCzmszw-kpebw" name="actualizar">
+      <modelElement href="AppClienteCorreo.uml#_7deWAFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_LmDhIFbREfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_Ll5wIFbREfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoMAVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoMAla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IoMA1a6EfCzmszw-kpebw" name="cliente">
+        <modelElement href="AppClienteCorreo.uml#_7deWAVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoMBFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoMBVa6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IoMBla6EfCzmszw-kpebw" name="guardar">
+      <modelElement href="AppClienteCorreo.uml#_7de9EFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IoMB1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7de9Ela6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoMCFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoMCVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IoMCla6EfCzmszw-kpebw" name="cliente">
+        <modelElement href="AppClienteCorreo.uml#_7de9EVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoMC1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoMDFa6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IoMDVa6EfCzmszw-kpebw" name="eliminar">
+      <modelElement href="AppClienteCorreo.uml#_7de9FFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_FRmEAFbSEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_FRf9YVbSEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IoMD1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IoMEFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IoMEVa6EfCzmszw-kpebw" name="cliente">
+        <modelElement href="AppClienteCorreo.uml#_7de9FVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IoMEla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IoME1a6EfCzmszw-kpebw" name="Cliente06">
+          <modelElement href="AppClienteCorreo.uml#_7VKHgVa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_8IgQAFa6EfCzmszw-kpebw" name="ServiciosCorreo" associationsIn="_8HaD0Fa6EfCzmszw-kpebw" associationsOut="_8IS0oFa6EfCzmszw-kpebw" generalizations="_8IY7QFa6EfCzmszw-kpebw _Te03YFbVEfC7L5Y3EyGd7w">
+    <modelElement href="AppClienteCorreo.uml#_7WEtgFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8IgQAVa6EfCzmszw-kpebw" position="681.0,437.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_8IgQAla6EfCzmszw-kpebw" name="LegacyStyledElement">
+      <modelElement href="AppClienteCorreo.uml#_7WFUkFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_8IgQA1a6EfCzmszw-kpebw" name="Annotations">
+      <modelElement href="AppClienteCorreo.uml#_7WLbMFa6EfCzmszw-kpebw"/>
+    </stereotypes>
+    <visibility xmi:id="_8IgQBFa6EfCzmszw-kpebw" label="+"/>
+    <attributes xmi:id="_8IgQBVa6EfCzmszw-kpebw" name="correosRepositorio">
+      <modelElement href="AppClienteCorreo.uml#_7fKYEla6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_Zn6u0FbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_Zn7V4FbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_ZoCDkFbQEfC7L5Y3EyGd7w" name="Annotations"/>
+      <stereotypes xmi:id="_1Br7MFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1BsiQFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_1B1sMFhjEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_43FhoFhyEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_43GIsFhyEfC4r9nIFs9MRA" name="Annotations"/>
+      <stereotypes xmi:id="_CBv28FkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CBweAFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <stereotypes xmi:id="_CB9SUFkOEfCgbskeRmphJQ" name="Annotations"/>
+      <visibility xmi:id="_8IgQBla6EfCzmszw-kpebw" label="-"/>
+      <cardinality xmi:id="_8IgQB1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <type xmi:id="_8IgQCFa6EfCzmszw-kpebw" name="CorreosRepositorio">
+        <modelElement href="AppClienteCorreo.uml#_7VthIFa6EfCzmszw-kpebw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_8IgQCVa6EfCzmszw-kpebw" name="ServiciosCorreo">
+      <modelElement href="AppClienteCorreo.uml#_7WF7oFa6EfCzmszw-kpebw"/>
+      <keywords xmi:id="_8IgQCla6EfCzmszw-kpebw" keyword="create"/>
+      <stereotypes xmi:id="_8IgQC1a6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7WF7pFa6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQDFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQDVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_8IgQDla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WF7o1a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IgQD1a6EfCzmszw-kpebw" name="ServiciosCorreo">
+          <modelElement href="AppClienteCorreo.uml#_7WEtgFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IgQEFa6EfCzmszw-kpebw" name="listarTodos">
+      <modelElement href="AppClienteCorreo.uml#_7WGisFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_WJKBkFbTEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_WIQpsFbTEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQEla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQE1a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8IgQFFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WGisVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IgQFVa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IgQL1a6EfCzmszw-kpebw" name="listarPorDni">
+      <modelElement href="AppClienteCorreo.uml#_7WI-8Va6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_ZOP4UFbVEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_ZOMN8FbVEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQMVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQMla6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8IgQM1a6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WI-81a6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IgQNFa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8IgQNVa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7WI-8la6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IgQNla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IgQN1a6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IgQOFa6EfCzmszw-kpebw" name="listarCorreosConClientes">
+      <modelElement href="AppClienteCorreo.uml#_7WJmAla6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_ZOSUkFbVEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_ZOM1AVbVEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQOla6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQO1a6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8IgQPFa6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WKNEFa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IgQPVa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_8IgQPla6EfCzmszw-kpebw" name="listarCorreosConClientesPorDni">
+      <modelElement href="AppClienteCorreo.uml#_7WKNE1a6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_ZOUJwFbVEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_ZOM1A1bVEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQQFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQQVa6EfCzmszw-kpebw" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_8IgQQla6EfCzmszw-kpebw">
+        <modelElement href="AppClienteCorreo.uml#_7WK0IVa6EfCzmszw-kpebw"/>
+        <type xmi:id="_8IgQQ1a6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_8IgQRFa6EfCzmszw-kpebw" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_7WK0IFa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IgQRVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IgQRla6EfCzmszw-kpebw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IgQR1a6EfCzmszw-kpebw" name="actualizar">
+      <modelElement href="AppClienteCorreo.uml#_7djOgFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_WJNE4FbTEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_WIRQwVbTEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQSVa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQSla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IgQS1a6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7djOgVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IgQTFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IgQTVa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IgQTla6EfCzmszw-kpebw" name="guardar">
+      <modelElement href="AppClienteCorreo.uml#_7dj1kFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IgQT1a6EfCzmszw-kpebw" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_7dj1kla6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQUFa6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQUVa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IgQUla6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7dj1kVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IgQU1a6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IgQVFa6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_8IgQVVa6EfCzmszw-kpebw" name="eliminar">
+      <modelElement href="AppClienteCorreo.uml#_7dkcoFa6EfCzmszw-kpebw"/>
+      <stereotypes xmi:id="_8IgQVla6EfCzmszw-kpebw" name="StyledElement">
+        <modelElement href="AppClienteCorreo.uml#_7dkcola6EfCzmszw-kpebw"/>
+      </stereotypes>
+      <visibility xmi:id="_8IgQV1a6EfCzmszw-kpebw" label="+"/>
+      <cardinality xmi:id="_8IgQWFa6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_8IgQWVa6EfCzmszw-kpebw" name="correo">
+        <modelElement href="AppClienteCorreo.uml#_7dkcoVa6EfCzmszw-kpebw"/>
+        <cardinality xmi:id="_8IgQWla6EfCzmszw-kpebw" label="1" max="1" min="1"/>
+        <type xmi:id="_8IgQW1a6EfCzmszw-kpebw" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_WIsHgFbTEfC7L5Y3EyGd7w" name="eliminarPorId">
+      <modelElement href="AppClienteCorreo.uml#_WIUUEFbTEfC7L5Y3EyGd7w"/>
+      <stereotypes xmi:id="_WIsHgVbTEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_WIUUElbTEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_WIsHglbTEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_WIsHg1bTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <parameters xmi:id="_WIsHhFbTEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_WIUUEVbTEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_WIsHhVbTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_WIsHhlbTEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_WIt8sFbTEfC7L5Y3EyGd7w" name="existePorId">
+      <modelElement href="AppClienteCorreo.uml#_WIU7IFbTEfC7L5Y3EyGd7w"/>
+      <stereotypes xmi:id="_WIt8sVbTEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_WIU7I1bTEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_WIt8slbTEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_WIt8s1bTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_WIt8tFbTEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_WIU7IlbTEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_WIt8tVbTEfC7L5Y3EyGd7w" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_WIt8tlbTEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_WIU7IVbTEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_WIt8t1bTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_WIt8uFbTEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_WIxnEFbTEfC7L5Y3EyGd7w" name="buscarPorId">
+      <modelElement href="AppClienteCorreo.uml#_WIViMFbTEfC7L5Y3EyGd7w"/>
+      <stereotypes xmi:id="_WIxnEVbTEfC7L5Y3EyGd7w" name="Annotations">
+        <modelElement href="AppClienteCorreo.uml#_WIViM1bTEfC7L5Y3EyGd7w"/>
+      </stereotypes>
+      <visibility xmi:id="_WIxnElbTEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_WIxnE1bTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_WIxnFFbTEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_WIViMlbTEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_WIxnFVbTEfC7L5Y3EyGd7w" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_WIxnFlbTEfC7L5Y3EyGd7w" name="id">
+        <modelElement href="AppClienteCorreo.uml#_WIViMVbTEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_WIxnF1bTEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_WIxnGFbTEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_8Ifo8Fa6EfCzmszw-kpebw" name="RequerimientosFuncionesDeNegocio" subclassedBy="_Te03YFbVEfC7L5Y3EyGd7w">
+    <modelElement href="AppClienteCorreo.uml#_7V7jkFa6EfCzmszw-kpebw"/>
+    <visualProperties xmi:id="_8Ifo8Va6EfCzmszw-kpebw" position="21.0,592.0" size="-1.0,-1.0" backgroundColor="248,228,92"/>
+    <visibility xmi:id="_8Ifo8la6EfCzmszw-kpebw" label="+"/>
+    <operations xmi:id="_JJmI8FbVEfC7L5Y3EyGd7w" name="listarCorreosConClientes">
+      <modelElement href="AppClienteCorreo.uml#_JJjFoFbVEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_JJmI8VbVEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_JJmI8lbVEfC7L5Y3EyGd7w" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_JJmI81bVEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_JJjFoVbVEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_JJmI9FbVEfC7L5Y3EyGd7w" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_JKVv0FbVEfC7L5Y3EyGd7w" name="listarPorDni">
+      <modelElement href="AppClienteCorreo.uml#_JJkTwFbVEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_JKVv0VbVEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_JKVv0lbVEfC7L5Y3EyGd7w" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_JKVv01bVEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_JJkTwlbVEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_JKVv1FbVEfC7L5Y3EyGd7w" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_JKVv1VbVEfC7L5Y3EyGd7w" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_JJkTwVbVEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_JKVv1lbVEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_JKVv11bVEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_JKaBQFbVEfC7L5Y3EyGd7w" name="listarCorreosConClientesPorDni">
+      <modelElement href="AppClienteCorreo.uml#_JJk60FbVEfC7L5Y3EyGd7w"/>
+      <visibility xmi:id="_JKaBQVbVEfC7L5Y3EyGd7w" label="+"/>
+      <cardinality xmi:id="_JKaBQlbVEfC7L5Y3EyGd7w" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_JKaBQ1bVEfC7L5Y3EyGd7w">
+        <modelElement href="AppClienteCorreo.uml#_JJk60lbVEfC7L5Y3EyGd7w"/>
+        <type xmi:id="_JKaBRFbVEfC7L5Y3EyGd7w" name="Correo06">
+          <modelElement href="AppClienteCorreo.uml#_7VUfkFa6EfCzmszw-kpebw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_JKaBRVbVEfC7L5Y3EyGd7w" name="dni">
+        <modelElement href="AppClienteCorreo.uml#_JJk60VbVEfC7L5Y3EyGd7w"/>
+        <cardinality xmi:id="_JKaBRlbVEfC7L5Y3EyGd7w" label="1" max="1" min="1"/>
+        <type xmi:id="_JKaBR1bVEfC7L5Y3EyGd7w" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

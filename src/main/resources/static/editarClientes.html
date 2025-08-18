@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editar Clientes</title>
+</head>
+<body>
+
+	<h2>Editar Clientes</h2> 
+	<p>Para editar un cliente, ingrese su DNI y los nuevos datos:</p>
+	<p>El valor, <b>argumento</b>, de todos los campos son obligatorios</p>
+	<form id="EditarClienteForm">
+		DNI: <input type="text" id="dni" name="dni" required><br>
+		Nombre: <input type="text" id="nombre" name="nombre" required><br>
+		Apellido: <input type="text" id="apellido" name="apellido" required><br>
+		<input type="button" value="Enviar" id="enviarButton">
+	</form>
+	<div id="salidaEditarClientes"
+		style="width: 100%; height: 400px; overflow: auto; border: 1px solid #ccc;">
+		<!-- Aquí se mostrará la respuesta del servidor -->
+	</div>
+
+	<script>
+        document.getElementById("enviarButton").onclick = async function() {
+        	            event.preventDefault(); // Evita el envío predeterminado del formulario
+            const dni = document.getElementById("dni").value;
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+
+            if (!dni || !nombre || !apellido) {
+                alert("Todos los campos son obligatorios.");
+                return;
+            }
+
+            // Construir la URL dinámica
+            const url = `clientes/actualizar/${dni}/${nombre}/${apellido}`;
+
+            try {
+                // Enviar la solicitud POST al servidor
+                const response = await fetch(url, {
+                    method: 'POST'
+                });
+
+                // Leer la respuesta del servidor
+                const result = await response.text();
+
+                // Mostrar la respuesta en el div
+                document.getElementById("salidaEditarClientes").innerText = result;
+            } catch (error) {
+                // Manejar errores de red u otros problemas
+                document.getElementById("salidaEditarClientes").innerText = "Error al intentar actualizar el cliente: " + error.message;
+            }
+        };
+    </script>
+
+</body>
+</html>

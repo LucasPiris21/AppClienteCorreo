@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Borrar Clientes</title>
+</head>
+<body>
+
+	<h2>Borrar Clientes</h2>
+	<p>Para borrar un cliente, ingrese su DNI:</p>
+	<p>
+		El valor, <b>argumento</b>, del campo es obligatorio
+	</p>
+	<form id="BorrarClienteForm">
+		DNI: <input type="text" id="dni" name="dni" required><br>
+		<input type="button" value="Borrar" id="borrarButton">
+	</form>
+	
+	<div id="salidaBorrarClientes"
+		style="width: 100%; height: 400px; overflow: auto; border: 1px solid #ccc;">
+		<!-- Aquí se mostrará la respuesta del servidor -->
+	</div>
+	
+	<hr>
+
+	<script>
+    document.getElementById("borrarButton").onclick = async function() {
+    	event.preventDefault(); // Evita el envío predeterminado del formulario
+        const dni = document.getElementById("dni").value;
+
+        if (!dni) {
+            alert("El campo DNI es obligatorio.");
+            return;
+        }
+
+        // Construir la URL dinámica
+        const url = `clientes/borrar/${dni}`;
+
+        try {
+            // Enviar la solicitud DELETE al servidor
+            const response = await fetch(url, {
+                method: 'DELETE'
+            });
+
+            // Leer la respuesta del servidor
+            const result = await response.text();
+
+            // Mostrar la respuesta en el div
+            document.getElementById("salidaBorrarClientes").innerText = result;
+        } catch (error) {
+            // Manejar errores de red u otros problemas
+            document.getElementById("salidaBorrarClientes").innerText = "Error al intentar borrar el cliente: (error de red o en el servidor.) " + 
+            error.message + " \nComprobar que el servidor esté en funcionamiento, la red esté disponible o la URL sea correcta.";
+        }
+    };
+</script>
+
+
+</body>
+</html>

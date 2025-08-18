@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editar Correos</title>
+</head>
+<body>
+
+	<h2>Editar Correos</h2>
+	<p>Para editar un correo, ingrese el ID del correo y el nuevo correo:</p>
+	<p>El valor, <b>argumento</b>, de todos los campos son obligatorios</p>
+	<p>El ID del correo es un n�mero entero y el correo debe ser una direcci�n de correo electr�nico v�lida.</p>
+	
+	<form action="EditarCorreosForm">
+		idCorreo: <input type="text" name="idCorreo" id="idCorreo"><br>
+		Correo: <input type="text" name="correo" id="correo" value="editarCorreo@servidor.com"><br>
+		<input type="submit" value="Enviar" name="Enviar" id="enviarButton">
+	</form>
+
+	<div id="salidaEditarCorreos"
+		style="width: 100%; height: 400px; overflow: auto; border: 1px solid #ccc;">
+		<!-- Aqu� se mostrar� la respuesta del servidor -->
+     </div>
+     
+		<script>
+        document.getElementById("enviarButton").onclick = async function() {
+        	event.preventDefault(); // Evita el env�o predeterminado del formulario
+            const idCorreo = document.getElementById("idCorreo").value;
+            const correo = document.getElementById("correo").value;
+
+            if (!idCorreo || !correo) {
+                alert("Todos los campos son obligatorios.");
+                return;
+            }
+
+            // Construir la URL din�mica
+            const url = `correos/actualizar/${idCorreo}/${correo}`;
+
+            try {
+                // Enviar la solicitud POST al servidor
+                const response = await fetch(url, {
+                    method: 'POST'
+                });
+
+                // Leer la respuesta del servidor
+                const result = await response.text();
+
+                // Mostrar la respuesta en el div
+                document.getElementById("salidaEditarCorreos").innerText = result;
+            } catch (error) {
+                // Manejar errores de red u otros problemas
+                document.getElementById("salidaEditarCorreos").innerText = "Error al intentar actualizar el correo: " + error.message;
+            }
+        };
+    </script>
+</body>
+</html>
