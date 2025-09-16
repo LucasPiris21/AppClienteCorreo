@@ -1,0 +1,9 @@
+Menú Principal (Titulo e iconos para "Clientes" y "Servidores")
+    - Clientes (Tabla que muestra la información. Opciones para realizar la alta, baja y modificar en cada fila. Usaré fetch para obtener los datos de la base de datos. Usaré Thymeleaf para renderizar la información en el caso de las acciones de Modificar, tal vez)
+        - Alta
+        - Baja
+        - Modificar
+    - Correos (Tabla que muestra la información. Opciones para realizar la alta, baja y modificar en cada fila. Usaré fetch para obtener los datos de la base de datos. Usaré Thymeleaf para renderizar la información en el caso de las acciones de Modificar, tal vez)
+        - Alta
+        - Baja
+        - Modificar
