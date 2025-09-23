@@ -474,6 +474,9 @@
       <stereotypes xmi:id="_aMi44I0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMjf8I0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMvGII0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hL4sAJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hL6hMJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMRGgJi6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_sV8zR4zeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_sV8zSIzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_sV8zSYzeEfC_4ZK1YqriHA" name="CorreosRepositorio">
@@ -683,6 +686,9 @@
       <stereotypes xmi:id="_aMgcoI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMhqwI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMufEI0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hLzzgJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hL3d4Ji6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMRtkJi6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_sVcc94zeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_sVcc-IzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_sVcc-YzeEfC_4ZK1YqriHA" name="ClientesRepositorio">
@@ -836,6 +842,9 @@
       <stereotypes xmi:id="_aMnxYI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMo_gI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMyJcI0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hMESMJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMFgUJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMSUoJi6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_8W0O14zeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_8W0O2IzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_8W0O2YzeEfC_4ZK1YqriHA" name="ServiciosCorreo">
@@ -847,6 +856,9 @@
       <stereotypes xmi:id="_aMpmkI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMqNoI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMywgI0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hMHVgJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMIjoJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMTiwJi6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_8W0O3IzeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_8W0O3YzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_8W0O3ozeEfC_4ZK1YqriHA" name="ServiciosCliente">
@@ -1019,6 +1031,9 @@
       <stereotypes xmi:id="_aMl8MI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMmjQI0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMzXkI0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hMAn0Ji6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMB18Ji6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMVX8Ji6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_8Wqd14zeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_8Wqd2IzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_8Wqd2YzeEfC_4ZK1YqriHA" name="ServiciosCliente">
@@ -1221,6 +1236,12 @@
       <stereotypes xmi:id="_aMlVII0VEfCix_3WyILp5A" name="FetchStrategy"/>
       <stereotypes xmi:id="_aMwUQI0VEfCix_3WyILp5A" name="JoinColumns"/>
       <stereotypes xmi:id="_aMwUQY0VEfCix_3WyILp5A" name="FetchStrategy"/>
+      <stereotypes xmi:id="_hL7vUJi6EfCvh-iKhy07rA" name="JoinColumns"/>
+      <stereotypes xmi:id="_hL8WYJi6EfCvh-iKhy07rA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_hL9kgJi6EfCvh-iKhy07rA" name="JoinColumns"/>
+      <stereotypes xmi:id="_hL-LkJi6EfCvh-iKhy07rA" name="FetchStrategy"/>
+      <stereotypes xmi:id="_hMXNIJi6EfCvh-iKhy07rA" name="JoinColumns"/>
+      <stereotypes xmi:id="_hMX0MJi6EfCvh-iKhy07rA" name="FetchStrategy"/>
       <visibility xmi:id="_2YLtQozeEfC_4ZK1YqriHA" label="+"/>
       <cardinality xmi:id="_2YLtQ4zeEfC_4ZK1YqriHA" label="0..1" max="1"/>
       <type xmi:id="_2YLtRIzeEfC_4ZK1YqriHA" name="Cliente06">
@@ -1419,6 +1440,9 @@
       <stereotypes xmi:id="_aMsC0I0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMsp4I0VEfCix_3WyILp5A" name="Annotations"/>
       <stereotypes xmi:id="_aMw7UI0VEfCix_3WyILp5A" name="Annotations"/>
+      <stereotypes xmi:id="_hMMOAJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMNcIJi6EfCvh-iKhy07rA" name="Annotations"/>
+      <stereotypes xmi:id="_hMZpYJi6EfCvh-iKhy07rA" name="Annotations"/>
       <visibility xmi:id="_8W68kIzeEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_8W68kYzeEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_8W68kozeEfC_4ZK1YqriHA" name="Environment">
@@ -1704,6 +1728,9 @@
       <stereotypes xmi:id="_aMtQ8I0VEfCix_3WyILp5A" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_aMt4AI0VEfCix_3WyILp5A" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_aMxiYI0VEfCix_3WyILp5A" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_hMOqQJi6EfCvh-iKhy07rA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_hMP4YJi6EfCvh-iKhy07rA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_hMa3gJi6EfCvh-iKhy07rA" name="LegacyStyledElement"/>
       <visibility xmi:id="_EWYGZYzfEfC_4ZK1YqriHA" label="-"/>
       <cardinality xmi:id="_EWYGZozfEfC_4ZK1YqriHA" label="1" max="1" min="1"/>
       <type xmi:id="_EWYGZ4zfEfC_4ZK1YqriHA" name="AppClienteCorreoApplication">
