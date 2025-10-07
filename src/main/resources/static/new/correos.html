@@ -13,9 +13,10 @@
                 <th>ID Correo</th>
                 <th>Correo</th>
                 <th>Cliente</th>
+                <th>Acciones</th>
             </tr>
         </thead>
-        <tbody id="tabla-clientes">
+        <tbody id="tabla-correos">
 
         </tbody>
     </table>
@@ -23,20 +24,18 @@
 </html>
 
 <script>
-    fetch('/clientes/listartodos')
-    .then(clientes => clientes.json())
-    .then(clientes => {
-        const tablaClientes = document.getElementById("tabla-clientes");
-        clientes.forEach(cliente => {
-            tablaClientes.innerHTML += `
+    fetch('/correos/listartodos')
+    .then(correos => correos.json())
+    .then(correos => {
+        const tablaCorreos = document.getElementById("tabla-correos");
+        correos.forEach(correo => {
+            tablaCorreos.innerHTML += `
             <tr>
-                <td>${cliente.dni}</td>
-                <td>${cliente.nombre}</td>
-                <td>${cliente.apellido}</td>
+                <td>${correo.idCorreo}</td>
+                <td>${correo.correo}</td>
+                <td>${correo.cliente06.nombre}</td>
                 <td>
                     <button>Editar</button>
-                </td>
-                <td>
                     <button>Eliminar</button>
                 </td>
             </tr>
