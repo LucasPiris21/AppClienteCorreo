@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correos</title>
+</head>
+<body>
+    <h3>Correos</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Correo</th>
+                <th>Correo</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-clientes">
+
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    fetch('/clientes/listartodos')
+    .then(clientes => clientes.json())
+    .then(clientes => {
+        const tablaClientes = document.getElementById("tabla-clientes");
+        clientes.forEach(cliente => {
+            tablaClientes.innerHTML += `
+            <tr>
+                <td>${cliente.dni}</td>
+                <td>${cliente.nombre}</td>
+                <td>${cliente.apellido}</td>
+                <td>
+                    <button>Editar</button>
+                </td>
+                <td>
+                    <button>Eliminar</button>
+                </td>
+            </tr>
+            `; 
+        });
+
+    })
+</script>
