@@ -28,12 +28,13 @@
     .then(correos => correos.json())
     .then(correos => {
         const tablaCorreos = document.getElementById("tabla-correos");
+        console.log(correos)
         correos.forEach(correo => {
             tablaCorreos.innerHTML += `
             <tr>
                 <td>${correo.idCorreo}</td>
                 <td>${correo.correo}</td>
-                <td>${correo.cliente06.nombre}</td>
+                <td>${correo.cliente06Dni}</td>
                 <td>
                     <button>Editar</button>
                     <button>Eliminar</button>

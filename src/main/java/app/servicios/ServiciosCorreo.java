@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.entidades.Correo06;
+import app.projections.CorreoProjection;
 import app.repositorios.CorreosRepositorio;
 import app.requerimientos.RequerimientosCRUD;
 import app.requerimientos.RequerimientosFuncionesDeNegocio;
@@ -28,6 +29,11 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 	public List<Correo06> listarTodos() {
         return correosRepositorio.findAll();
     }
+
+	public List<CorreoProjection> listarTodoProjection() {
+		return correosRepositorio.findAllProjectedBy();
+	}
+
 	@Override
 	public void actualizar(Correo06 correo) {
 		correosRepositorio.save(correo);

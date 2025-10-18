@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import app.entidades.Correo06;
+import app.projections.CorreoProjection;
 
 @Repository
 public interface CorreosRepositorio extends JpaRepository<Correo06, Integer> {
@@ -20,5 +21,6 @@ public interface CorreosRepositorio extends JpaRepository<Correo06, Integer> {
 	
 	//Preguntar a la IA si es necesario agregar algo más
 	
+	List<CorreoProjection> findAllProjectedBy();
 	
 }

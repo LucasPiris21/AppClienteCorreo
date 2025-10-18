@@ -22,6 +22,9 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
 	public List<Cliente06> listarTodos() {
         return clientesRepositorio.findAll();
     }
+	public List<?> listarClientesCorreosJoin(){
+		return clientesRepositorio.findClienteCorreosFullOuterJoin();
+	}
 	@Override
 	public void actualizar(Cliente06 cliente) {
 		clientesRepositorio.save(cliente);

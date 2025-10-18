@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.entidades.Cliente06;
 import app.entidades.Correo06;
+import app.projections.CorreoProjection;
 import app.servicios.ServiciosCliente;
 import app.servicios.ServiciosCorreo;
 
@@ -58,29 +59,32 @@ public class CorreoControlador {
 
 	// CRUD:Read, listar todos los correos
 	@GetMapping("/listartodos")
-	public List<Correo06> listarTodos(
-			@RequestParam(value = "buscarCorreoDni", defaultValue = "") String buscarCorreoDni) {
-		// Aquí puedes implementar la lógica para listar los correos
-		// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
-		// de datos
-		List<Correo06> respuesta = null;
-		buscarCorreoDni = buscarCorreoDni.trim(); // Limpiar espacios en blanco del dni
-		if (buscarCorreoDni != null && !buscarCorreoDni.isEmpty() && !buscarCorreoDni.isBlank()
-				&& buscarCorreoDni.length() > 0) {
-			respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
-			if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-				return List.of(); // O puedes retornar una lista vacía si prefieres
-			}
-		} else {
-			respuesta = serviciosCorreo.listarTodos();
-			if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-				return List.of(); // O puedes retornar una lista vacía si prefieres
-			}
-		}
-		return respuesta; // Reemplaza con la lista de correos obtenida
+	public List<CorreoProjection> listarTodo() {
+		return serviciosCorreo.listarTodoProjection();
 	}
 
-	
+	// public List<Correo06> listarTodos(
+	// 		@RequestParam(value = "buscarCorreoDni", defaultValue = "") String buscarCorreoDni) {
+	// 	// Aquí puedes implementar la lógica para listar los correos
+	// 	// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
+	// 	// de datos
+	// 	List<Correo06> respuesta = null;
+	// 	buscarCorreoDni = buscarCorreoDni.trim(); // Limpiar espacios en blanco del dni
+	// 	if (buscarCorreoDni != null && !buscarCorreoDni.isEmpty() && !buscarCorreoDni.isBlank()
+	// 			&& buscarCorreoDni.length() > 0) {
+	// 		respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
+	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
+	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
+	// 		}
+	// 	} else {
+	// 		respuesta = serviciosCorreo.listarTodos();
+	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
+	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
+	// 		}
+	// 	}
+	// 	return respuesta; // Reemplaza con la lista de correos obtenida
+	// }
+
 	// CRUD:Read, listar todos los correos
 	@GetMapping("/verclientescorreos")
 	public List<Correo06> verclientescorreos(

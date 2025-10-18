@@ -75,6 +75,12 @@ public class ClienteControlador {
 		}
 		return respuesta; // Reemplaza con la lista de clientes obtenida
 	}
+
+	@GetMapping("/listarClientesCorreos")
+	public List<?> listarClientesCorreso() {
+		return serviciosCliente.listarClientesCorreosJoin();
+	}
+
 	// CRUD:Read, leer un cliente por DNI
 	@GetMapping("/buscarpordni")
 	public Cliente06 buscarPorId(@RequestParam(value = "dni", defaultValue = "") String dni) {
