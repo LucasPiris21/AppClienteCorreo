@@ -1,8 +1,11 @@
 package app.controladores;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +30,7 @@ public class ClienteControlador {
 	private Cliente06 clienteNuevo = null;
 	// CRUD:Create, guardar dni, nombre y el apellido
 	@GetMapping("/guardar/{dni}/{nombre}/{apellido}")
-	public String guardar(@PathVariable("dni") String dni, 
+	public ResponseEntity<String> guardar(@PathVariable("dni") String dni, 
 								@PathVariable("nombre") String nombre,
 								@PathVariable("apellido")String apellido) {
 		// Aquí puedes implementar la lógica para guardar un cliente por su DNI
@@ -42,7 +45,8 @@ public class ClienteControlador {
 			nombre = nombre.trim(); // Limpiar espacios en blanco del nombre
 			apellido = apellido.trim(); // Limpiar espacios en blanco del apellido
 		} catch (Exception e) {
-			return "Error al procesar los datos dni, nombre y apellido: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar los datos dni, nombre y apellido: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+			// return "Error al procesar los datos dni, nombre y apellido: " + e.getMessage();
 		}
 		clienteNuevo = serviciosCliente.buscarPorId(dni);
 		if (clienteNuevo == null) {
@@ -52,13 +56,10 @@ public class ClienteControlador {
 			clienteNuevo.setApellido(apellido);
 			clienteNuevo.setDni(dni); // Asignar el DNI al cliente nuevo
 			serviciosCliente.guardar(clienteNuevo);
-			return "Cliente agregado correctamente: " + 
-			        clienteNuevo.getNombre() + " " + 
-			        clienteNuevo.getApellido() + " con DNI: " + 
-			        clienteNuevo.getDni();
+			return new ResponseEntity<>("Cliente agregado correctamente: " + clienteNuevo.getNombre() + " " + clienteNuevo.getApellido() + " con DNI: " + clienteNuevo.getDni(), HttpStatus.CREATED);
 		} else {
 			// Manejar el caso si el cliente ya existe
-			return "Existe un cliente con ese DNI: " + dni + ". No se ha agregado un Cliente nuevo.";
+			return new ResponseEntity<>("Existe un cliente con ese DNI: " + dni + ". No se ha agregado un Cliente nuevo.", HttpStatus.CONFLICT);
 		}
 	}
 	// CRUD:Read, listar todos los clientes

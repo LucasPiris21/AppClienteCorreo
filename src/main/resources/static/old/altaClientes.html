@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Alta de Clientes</title>
+</head>
+<body>
+
+	<h2>Alta de Clientes</h2>
+	<p>El valor, <b>argumento</b>, de todos los campos son obligatorios</p>
+	<p>Ingresar los datos de un nuevo cliente para dar de alta:</p>
+	<form id="altaClientesForm" method="get" target="salidaAltaClientes">
+		DNI: <input type="text" id="dni" name="dni"><br> 
+		Nombre: <input type="text" id="nombre" name="nombre"><br> 
+		Apellido: <input type="text" id="apellido" name="apellido"><br> 
+		<input type="submit" value="Enviar" name="Enviar">
+	</form>
+	<hr>
+	<iframe name="salidaAltaClientes"
+		style="width: 100%; height: 200px; overflow: auto"></iframe>
+
+	<script>
+		document.getElementById("altaClientesForm").onsubmit = function(event) {
+			event.preventDefault(); // Evita el envío predeterminado del formulario
+			const dni = document.getElementById("dni").value;
+			const nombre = document.getElementById("nombre").value;
+			const apellido = document.getElementById("apellido").value;
+
+			// Construir la URL dinámica
+			const url = `clientes/guardar/${dni}/${nombre}/${apellido}`;
+			this.action = url; // Asignar la URL al atributo action del formulario
+			this.submit(); // Enviar el formulario
+			alert("Nuevo Cliente enviado correctamente al servidor: " + url);
+		};
+	</script>
+
+</body>
+</html>

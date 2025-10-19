@@ -3,6 +3,8 @@ package app.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,7 +39,7 @@ public class CorreoControlador {
 
 	// CRUD:Create, guardar el correo dado el dni de un cliente
 	@GetMapping("/guardar/{dni}/{correo}")
-	public String guardar(@PathVariable("dni") String dni, @PathVariable("correo") String correo) {
+	public ResponseEntity<String> guardar(@PathVariable("dni") String dni, @PathVariable("correo") String correo) {
 		// Aquí puedes implementar la lógica para guardar un correo dado un DNI
 		// Por ejemplo, podrías llamar a un servicio que verifique el correo
 		correoNuevo = new Correo06();
@@ -45,16 +47,16 @@ public class CorreoControlador {
 			dni = dni.trim(); // Limpiar espacios en blanco del DNI
 			correo = correo.trim(); // Limpiar espacios en blanco del correo
 		} catch (Exception e) {
-			return "Error al procesar los datos dni y correo: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar los datos dni y correo: " + e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		cliente = serviciosCliente.buscarPorId(dni);
 		if (cliente == null) {
-			return "No existe un cliente con el DNI: " + dni + ". No se ha agregado un correo nuevo.";
+			return new ResponseEntity<>("No existe un cliente con el DNI: " + dni + ". No se ha agregado un correo nuevo.", HttpStatus.NOT_FOUND);
 		}
 		correoNuevo.setCliente06(cliente);
 		correoNuevo.setCorreo(correo);
 		serviciosCorreo.guardar(correoNuevo);
-		return "Correo agregado correctamente para el dni: " + dni + " - " + correo;
+		return new ResponseEntity<>("Correo agregado correctamente para el dni: " + dni + " - " + correo, HttpStatus.CREATED);
 	}
 
 	// CRUD:Read, listar todos los correos
@@ -86,33 +88,30 @@ public class CorreoControlador {
 	// }
 
 	// CRUD:Read, listar todos los correos
-	@GetMapping("/verclientescorreos")
-	public List<Correo06> verclientescorreos(
-			@RequestParam(value = "buscarClientesCorreosDNI", defaultValue = "") String buscarClientesCorreosDNI) {
-		// Aquí puedes implementar la lógica para listar los correos
-		// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
-		// de datos
-		List<Correo06> respuesta = null;
-		buscarClientesCorreosDNI = buscarClientesCorreosDNI.trim(); // Limpiar espacios en blanco del dni
-		if (buscarClientesCorreosDNI != null && !buscarClientesCorreosDNI.isEmpty() && !buscarClientesCorreosDNI.isBlank()
-				&& buscarClientesCorreosDNI.length() > 0) {
-			//respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
-			respuesta = serviciosCorreo.listarCorreosConClientesPorDni(buscarClientesCorreosDNI);
-			if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-				return List.of(); // O puedes retornar una lista vacía si prefieres
-			}
-		} else {
-			//respuesta = serviciosCorreo.listarTodos();
-			respuesta = serviciosCorreo.listarCorreosConClientes();
-			if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-				return List.of(); // O puedes retornar una lista vacía si prefieres
-			}
-		}
-		return respuesta; // Reemplaza con la lista de correos obtenida
-	}
-	
-	
-	
+	// @GetMapping("/verclientescorreos")
+	// public List<Correo06> verclientescorreos(
+	// 		@RequestParam(value = "buscarClientesCorreosDNI", defaultValue = "") String buscarClientesCorreosDNI) {
+	// 	// Aquí puedes implementar la lógica para listar los correos
+	// 	// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
+	// 	// de datos
+	// 	List<Correo06> respuesta = null;
+	// 	buscarClientesCorreosDNI = buscarClientesCorreosDNI.trim(); // Limpiar espacios en blanco del dni
+	// 	if (buscarClientesCorreosDNI != null && !buscarClientesCorreosDNI.isEmpty() && !buscarClientesCorreosDNI.isBlank()
+	// 			&& buscarClientesCorreosDNI.length() > 0) {
+	// 		//respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
+	// 		respuesta = serviciosCorreo.listarCorreosConClientesPorDni(buscarClientesCorreosDNI);
+	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
+	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
+	// 		}
+	// 	} else {
+	// 		//respuesta = serviciosCorreo.listarTodos();
+	// 		respuesta = serviciosCorreo.listarCorreosConClientes();
+	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
+	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
+	// 		}
+	// 	}
+	// 	return respuesta; // Reemplaza con la lista de correos obtenida
+	// }
 	
 	// CRUD:Update, actualizar el correo dado el id de correo
 	@PostMapping("/actualizar/{idCorreo}/{correo}")
