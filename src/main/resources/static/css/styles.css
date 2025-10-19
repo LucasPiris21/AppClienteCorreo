@@ -1,0 +1,143 @@
+:root {
+    /* Tipografías */
+    --font-main: "Montserrat", sans-serif;
+    --font-alt: "Roboto", sans-serif;
+
+
+    /* Colores */
+    --green: #77dd77;
+    --red: #ff6961;
+    --yelow: #fdfd96;
+    --blue: #84b6f4;
+    --black: #000;
+    --white: #fff;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: 1.6rem;
+    background-color: var(--blue);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--white);
+  border-radius: 1.5rem;
+}
+
+/* Contenedor del logo + título */
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre el ícono y el texto */
+}
+
+/* Ajustes del SVG */
+.logo-header svg {
+  width: 40px;
+  height: 40px;
+  stroke: currentColor; /* toma el color del texto */
+}
+
+/* Título */
+.logo-header h1 {
+  font-family: var(--font-main);
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0;
+}
+
+/* Navegación */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+
+
+/* Botones */
+.btn {
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 2rem;
+    background-color: var(--black);
+    padding: .8rem;
+    border-radius: .5rem;
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+    transition: ease-in-out .3s;
+}
+
+.btn-enviar {
+    display: inline-flex;
+    gap: .8rem;
+    align-items: center;
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 2rem;
+    background-color: var(--black);
+    padding: .8rem;
+    border-radius: .5rem;
+    border-color: var(--black);
+    color: var(--white);    
+}
+
+.btn-enviar:hover {
+    cursor: pointer;
+    background-color: var(--green);
+    transition: ease-in-out .2s;
+}
+
+/* Formularios */
+
+.alta-clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    background-color: var(--white);
+}
