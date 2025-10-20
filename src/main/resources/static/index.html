@@ -26,7 +26,7 @@
 					<path d="M3 7l9 6l2.983 -1.989l6.017 -4.011" />
 					<path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z" />
 				</svg>
-				<h1>Sistema Agenda de Correos</h1>
+				<h1 class="bold">Sistema Agenda de Correos</h1>
 			</div>
 			<nav>
 				<a href="clientes.html">Clientes</a>
@@ -34,29 +34,33 @@
 				<a href="clientesCorreos.html">Clientes-Correos</a>
 			</nav>
 		</header>
-		<div class="contenedor alta-clientes">
-			<h2>Alta de Clientes</h2>
-			<form id="altaClientesForm" method="get" target="salidaAltaClientes">
-				DNI: <input type="text" id="dni" name="dni"><br> 
-				Nombre: <input type="text" id="nombre" name="nombre"><br> 
-				Apellido: <input type="text" id="apellido" name="apellido"><br> 
-			<button class="btn-enviar" type="submit" name="Enviar">
-				Enviar
-				<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="20"
-				height="20"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				>
-				<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-				</svg>
-			</button>
-			</form>
+		<button class="btn" id="openFormBtn">Abrir formulario</button>
+		<div class="modal" id="modal">
+			<span id="closeModal" class="close">&times;</span>
+			<div class="contenedor alta-clientes">
+				<h2 class="bold">Alta de Clientes</h2>
+				<form id="altaClientesForm" method="get" target="salidaAltaClientes">
+					DNI: <input type="text" id="dni" name="dni" placeholder="00000000"><br> 
+					Nombre: <input type="text" id="nombre" name="nombre" placeholder="Juan"><br> 
+					Apellido: <input type="text" id="apellido" name="apellido" placeholder="Pérez"><br> 
+				<button class="btn-enviar" type="submit" name="Enviar">
+					Enviar
+					<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					>
+					<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+					</svg>
+				</button>
+				</form>
+			</div>
 		</div>
 	</body>
 	<script src="js/index.js"></script>

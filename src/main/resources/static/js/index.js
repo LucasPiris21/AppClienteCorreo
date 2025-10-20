@@ -19,3 +19,24 @@ document.getElementById("altaClientesForm").onsubmit = function(event) {
 		})
 	};
 
+
+// Ocultar modal
+const modal = document.getElementById('modal');
+const openBtn = document.getElementById('openFormBtn');
+const closeBtn = document.getElementById('closeModal');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.add('show');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+});
+
+window.addEventListener('click', (e) => {
+  if(e.target === modal) {
+    modal.classList.remove('show');
+  }
+});
+
+
