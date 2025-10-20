@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editar Clientes</title>
+</head>
+<body>
+
+	<h2>Editar Clientes</h2> 
+	<form id="EditarClienteForm">
+		DNI: <input type="text" id="dni" name="dni" value="Cargando dni..." disabled><br>
+		Nombre: <input type="text" id="nombre" name="nombre" value="Cargando nombre..."><br>
+		Apellido: <input type="text" id="apellido" name="apellido" value="Cargando apellido..." required><br>
+		<input type="submit" value="Enviar" id="enviarButton">
+	</form>
+
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const dniParam = urlParams.get("dni")
+        const dni = document.getElementById("dni")
+        const nombre = document.getElementById("nombre");
+        const apellido = document.getElementById("apellido");
+        fetch(`clientes/buscarpordni?dni=${dniParam}`)
+        .then(results => results.json())
+        .then(results => {
+            dni.value = results.dni
+            nombre.value = results.nombre
+            apellido.value = results.apellido
+        })
+    })
+    
+    document.getElementById("EditarClienteForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const dni = document.getElementById("dni").value;
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+        fetch(`clientes/actualizar/${dni}/${nombre}/${apellido
+        }`, {
+            method: "POST"
+        })
+        .then(async results => {
+			if (!results.ok) {
+				const message = await results.text();
+				return alert(message)
+			}
+
+			const message = await results.text();
+			alert(message)
+			window.location.replace("clientes.html")
+			
+		})
+    });
+</script>
+</html>

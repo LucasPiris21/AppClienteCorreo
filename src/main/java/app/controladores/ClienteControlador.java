@@ -110,7 +110,7 @@ public class ClienteControlador {
 	}
 	// CRUD:Update, actualizar el nombre y el apellido dado el dni
 	@PostMapping("/actualizar/{dni}/{nombre}/{apellido}")
-	public String actualizar(@PathVariable("dni") String dni, 
+	public ResponseEntity<String> actualizar(@PathVariable("dni") String dni, 
 				    		@PathVariable("nombre") String nombre,
 							@PathVariable("apellido")String apellido) {
 		// Aquí puedes implementar la lógica para actualizar un cliente por su DNI
@@ -120,7 +120,7 @@ public class ClienteControlador {
 			nombre = nombre.trim(); // Limpiar espacios en blanco del nombre
 			apellido = apellido.trim(); // Limpiar espacios en blanco del apellido
 		} catch (Exception e) {
-			return "Error al procesar los datos dni, nombre y apellido: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar los datos dni, nombre y apellido: " + e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		Cliente06 clienteExistente = serviciosCliente.buscarPorId(dni);
 		if (clienteExistente != null) {
@@ -129,10 +129,10 @@ public class ClienteControlador {
 			clienteExistente.setNombre(nombre);
 			clienteExistente.setApellido(apellido);
 			serviciosCliente.guardar(clienteExistente);
-			return "Cliente actualizado correctamente: " + clienteExistente.getNombre() + " " + clienteExistente.getApellido();
+			return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteExistente.getNombre() + " " + clienteExistente.getApellido(), HttpStatus.OK);
 		} else {
 			// Manejar el caso en que no se encuentra el cliente
-			return "Cliente no encontrado con DNI: " + dni + ". No se pudo actualizar.";
+			return new ResponseEntity<>("Cliente no encontrado con DNI: " + dni + ". No se pudo actualizar.", HttpStatus.NOT_FOUND);
 		}
 	}
 	// CRUD:Delete por DNI
