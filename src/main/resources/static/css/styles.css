@@ -1,225 +1,152 @@
 :root {
-    /* Tipografías */
-    --font-main: "Montserrat", sans-serif;
-    --font-alt: "Roboto", sans-serif;
-
-
-    /* Colores */
-    --green: #77dd77;
-    --red: #ff6961;
-    --yelow: #fdfd96;
-    --blue: #84b6f4;
-    --black: #000;
-    --white: #fff;
-}
-/* Globales */
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+  --bg: #f8f9fb;
+  --text: #222;
+  --primary: #0058ff;
+  --border: #ddd;
+  --card: #fff;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
+* { box-sizing: border-box; }
 body {
-    font-family: var(--font-main);
-    font-size: 1.6rem;
-    background-color: var(--blue);
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  display: flex;
+  height: 100vh;
 }
 
-img {
-    max-width: 100%;
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.sidebar nav button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  text-align: left;
+  font-size: 1em;
+  color: var(--text);
+  cursor: pointer;
+}
+.sidebar nav button:hover {
+  color: var(--primary);
 }
 
-h1 {
-    font-size: 4rem;
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
-.contenedor {
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-}
-
-/* Utilidades */
-
-.bold {
-    font-weight: 900;
-}
-
-/* Encabezado */
 .header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--white);
-  border-radius: 1.5rem;
-  margin-bottom: 6rem;
+}
+.view {
+  padding: 24px;
+  overflow: auto;
 }
 
-/* Contenedor del logo + título */
-.logo-header {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* espacio entre el ícono y el texto */
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 
-/* Ajustes del SVG */
-.logo-header svg {
-  width: 40px;
-  height: 40px;
-  stroke: currentColor; /* toma el color del texto */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.table th {
+  background: #fafafa;
+  text-align: left;
 }
 
-/* Título */
-.logo-header h1 {
-  font-family: var(--font-main);
-  font-size: 2rem;
-  color: #222;
-  margin: 0;
-}
-
-/* Navegación */
-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-NEcesito 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: var(--blue);
-}
-
-
-
-/* Botones */
 .btn {
-    font-family: var(--font-main);
-    font-weight: 900;
-    font-size: 2rem;
-    background-color: var(--black);
-    padding: .8rem;
-    border-radius: .5rem;
-    border-color: var(--black);
-    color: var(--white);
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.2s;
 }
-
 .btn:hover {
-    cursor: pointer;
-    background-color: var(--white);
-    color: var(--black);
-    transition: ease-in-out .3s;
+  background: #f2f2f2;
+}
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+.btn.primary:hover {
+  background: #0041c4;
 }
 
-.btn-enviar {
-    display: inline-flex;
-    gap: .8rem;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-main);
-    font-weight: 900;
-    font-size: 2rem;
-    background-color: var(--black);
-    padding: .8rem;
-    border-radius: .5rem;
-    border-color: var(--black);
-    color: var(--white);    
+.label {
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 4px;
+}
+.input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
-.btn-enviar:hover {
-    cursor: pointer;
-    background-color: var(--green);
-    transition: ease-in-out .2s;
+.form-row {
+  display: flex;
+  gap: 10px;
 }
 
 .modal {
-  display: none; /* oculto por defecto */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  pointer-events: none;
+  transition: 0.25s;
 }
-
-.modal.show {
-  display: flex; /* se muestra */
+.modal[aria-hidden="false"] {
   opacity: 1;
+  pointer-events: all;
 }
-
 .modal-content {
-  background-color: white;
-  padding: 2rem; /* ahora en rem */
-  border-radius: 0.8rem;
-  width: 30rem;
-  max-width: 90%;
-  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.3);
-  transform: scale(0.7);
-  transition: transform 0.3s ease;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 500px;
   position: relative;
 }
-
-.modal.show .modal-content {
-  transform: scale(1);
-}
-
-.close {
+.modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  width: 6rem;
-  height: 6rem;
-  background-color: var(--white);
-  color: var(--black);
-  font-weight: 900;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: none;
+  font-size: 1.5em;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.close:hover {
-  background-color: var(--red);
-  transform: scale(1.1);
-}
-
-
-/* Formularios */
-
-.alta-clientes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30rem;
-    height: auto;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    border-radius: .5rem;
-    background-color: var(--white);
-}
-
-.alta-clientes form {
-    padding-bottom: 3rem;
-    font-size: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
 }

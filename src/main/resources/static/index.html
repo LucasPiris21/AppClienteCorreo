@@ -1,67 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sistema Agenda de Correos</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Agenda de Correos</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-	<body>
-		<header class="header">
-			<div class="logo-header">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="128"
-					height="128"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.75"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<path d="M10.5 19h-5.5a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4" />
-					<path d="M3 7l9 6l2.983 -1.989l6.017 -4.011" />
-					<path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z" />
-				</svg>
-				<h1 class="bold">Sistema Agenda de Correos</h1>
-			</div>
-			<nav>
-				<a href="clientes.html">Clientes</a>
-				<a href="correos.html">Correos</a>
-				<a href="clientesCorreos.html">Clientes-Correos</a>
-			</nav>
-		</header>
-		<button class="btn" id="openFormBtn">Abrir formulario</button>
-		<div class="modal" id="modal">
-			<span id="closeModal" class="close">&times;</span>
-			<div class="contenedor alta-clientes">
-				<h2 class="bold">Alta de Clientes</h2>
-				<form id="altaClientesForm" method="get" target="salidaAltaClientes">
-					DNI: <input type="text" id="dni" name="dni" placeholder="00000000"><br> 
-					Nombre: <input type="text" id="nombre" name="nombre" placeholder="Juan"><br> 
-					Apellido: <input type="text" id="apellido" name="apellido" placeholder="Pérez"><br> 
-				<button class="btn-enviar" type="submit" name="Enviar">
-					Enviar
-					<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					>
-					<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-					</svg>
-				</button>
-				</form>
-			</div>
-		</div>
-	</body>
-	<script src="js/index.js"></script>
+<body>
+  <aside class="sidebar">
+    <h2>Agenda</h2>
+    <nav>
+      <button class="nav-btn" data-route="clientes">Clientes</button>
+      <!-- <button class="nav-btn" data-route="correos">Correos</button>
+      <button class="nav-btn" data-route="clientesCorreos">Relaciones</button> -->
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <h1 id="view-title">Agenda</h1>
+      <button id="btn-add" class="btn primary">Agregar</button>
+    </header>
+    <section id="view" class="view"></section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
 </html>
