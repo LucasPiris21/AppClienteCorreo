@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editar Correos</title>
+</head>
+<body>
+
+	<h2>Editar Correos</h2>
+	
+	<form action="EditarCorreosForm">
+		idCorreo: <input type="text" name="idCorreo" id="idCorreo" value="Cargando ID de correo..." disabled required><br>
+		Correo: <input type="email" name="correo" id="correo" value="Cargando correo..." required><br>
+        Cliente: <input type="text" name="dni" id="dni" value="Cargando cliente..." required><br>
+		<input type="submit" value="Enviar" name="Enviar" id="enviarButton">
+	</form>
+     
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idParam = urlParams.get("id_Correo")
+        const id_correo = document.getElementById("idCorreo")
+        const correo = document.getElementById("correo");
+        const dni = document.getElementById("dni");
+        fetch(`correos/buscarporid?idCorreo=${idParam}`)
+        .then(results => results.json())
+        .then(results => {
+            id_correo.value = results.dni
+            correo.value = results.nombre
+            dni.value = results.apellido
+        })
+    })
+</script>
+</html>

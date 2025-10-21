@@ -137,22 +137,22 @@ public class ClienteControlador {
 	}
 	// CRUD:Delete por DNI
 	@DeleteMapping("/borrar/{dni}")
-	public String eliminarPorId(@PathVariable("dni") String dni) {
+	public ResponseEntity<String> eliminarPorId(@PathVariable("dni") String dni) {
 		// Aquí puedes implementar la lógica para eliminar un cliente por su DNI
 		// Por ejemplo, podrías llamar a un servicio que elimine el cliente de la base
 		// de datos
 		try {
 			dni = dni.trim(); // Limpiar espacios en blanco del DNI
 		} catch (Exception e) {
-			return "Error al procesar el DNI: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar el DNI: " + e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		Cliente06 clienteExistente = serviciosCliente.buscarPorId(dni);
 		if (clienteExistente != null) {
 			serviciosCliente.eliminarPorId(dni);
-			return "Cliente eliminado correctamente con DNI: " + dni;
+			return new ResponseEntity<>("Cliente eliminado correctamente con DNI: " + dni, HttpStatus.OK);
 		} else {
 			// Manejar el caso en que no se encuentra el cliente
-			return "Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.";
+			return new ResponseEntity<>("Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.", HttpStatus.NOT_FOUND);
 		}
 	}
 }

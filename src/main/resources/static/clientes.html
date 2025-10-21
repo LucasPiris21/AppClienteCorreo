@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
 </head>
+
 <body>
     <h3>Clientes</h3>
     <table>
@@ -21,15 +23,16 @@
     </table>
     <a href="altaClientes.html">Agregar cliente</a>
 </body>
+
 </html>
 
 <script>
     fetch('/clientes/listartodos')
-    .then(clientes => clientes.json())
-    .then(clientes => {
-        const tablaClientes = document.getElementById("tabla-clientes");
-        clientes.forEach(cliente => {
-            tablaClientes.innerHTML += `
+        .then(clientes => clientes.json())
+        .then(clientes => {
+            const tablaClientes = document.getElementById("tabla-clientes");
+            clientes.forEach(cliente => {
+                tablaClientes.innerHTML += `
             <tr>
                 <td>${cliente.dni}</td>
                 <td>${cliente.nombre}</td>
@@ -38,11 +41,35 @@
                     <a href="editarClientes.html?dni=${cliente.dni}"><button>Editar</button></a>
                 </td>
                 <td>
-                    <button>Eliminar</button>
+                    <button class="buttonDelete" value="${cliente.dni}">Eliminar</button>
                 </td>
             </tr>
-            `; 
-        });
+            `;
+            });
 
-    })
+            const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+
+            deleteButtons.forEach(button => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm('¿Está seguro de querer eliminar este cliente?')) {
+                        const dni = button.value
+                        fetch(`clientes/borrar/${dni}`, {
+                            method: "DELETE"
+                        })
+                        .then(async results => {
+                            if (!results.ok) {
+                                const message = await results.text();
+                                return alert(message)
+                            }
+
+                            const message = await results.text();
+                            alert(message)
+                            window.location.replace(window.location.href);
+                        })
+                    };
+                })
+            });
+
+        })
 </script>

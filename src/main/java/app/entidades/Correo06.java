@@ -35,7 +35,7 @@ public class Correo06 {
     @JoinColumn(name = "cliente06DNIfk", referencedColumnName = "dni", nullable=false)
     
     @ManyToOne(fetch = FetchType.EAGER, cascade={CascadeType.ALL}) //Un cliente muchos correos
-    private Cliente06 cliente06=null; //Se creará la columna foránea en la tabla correo.
+    private Cliente06 cliente06; //Se creará la columna foránea en la tabla correo.
     //Fin mapeo //////////////////////////////////////
     
     public Correo06(String correo, Cliente06 cliente06) {
