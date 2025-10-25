@@ -27,6 +27,6 @@ public interface CorreosRepositorio extends JpaRepository<Correo06, Integer> {
 	CorreoProjection findByIdCorreo(int idCorreo);
 	@Query(value = "select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from cliente cl left join correo co on cl.dni = co.cliente06dnifk union select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from correo co left join cliente cl on cl.dni = co.cliente06dnifk", nativeQuery = true)
 	List<?> findClienteCorreosFullOuterJoin();
-	List<CorreoProjection> findByCorreoContainingIgnoreCase(String stringSearch);
+	List<CorreoProjection> findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(int idCorreo, String correo, String dniCliente);
 	
 }

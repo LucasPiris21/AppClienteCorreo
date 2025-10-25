@@ -17,7 +17,7 @@
     <a href="../">Volver</a>
     <h3>Correos</h3>
     <form action="GET" id="search">
-        <input type="text" name="correo" id="correo" placeholder="Ingrese correo...">
+        <input type="text" name="searchTerm" id="searchTerm">
         <input type="submit" value="Buscar" name="Buscar">
     </form>
     <br>
@@ -88,8 +88,8 @@
 
     document.getElementById("search").addEventListener("submit", (e) => {
         e.preventDefault()
-        const correo = document.getElementById("correo").value;
-        fetch(`correos/search?correo=${correo}`)
+        const searchTerm = document.getElementById("searchTerm").value;
+        fetch(`correos/search?searchTerm=${searchTerm}`)
         .then(correos => correos.json())
         .then(correos => {
             const tablaCorreos = document.getElementById("tabla-correos");

@@ -29,7 +29,5 @@ public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
 	
 	//Esta clase permite escalar la entidad Cliente06 en el futuro
 	// agregando nuevas funciones de negocio o consultas específicas
-	List<Cliente06> findByDniContaining(String searchString);
-	List<Cliente06> findByNombreContainingIgnoreCase(String searchString);
-	List<Cliente06> findByApellidoContainingIgnoreCase(String searchString);
+	List<Cliente06> findByDniContainingOrNombreContainingOrApellidoAllIgnoreCase(String dni, String nombre, String apellido);
 }

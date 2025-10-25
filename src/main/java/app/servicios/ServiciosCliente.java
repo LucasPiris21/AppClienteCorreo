@@ -23,8 +23,8 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
         return clientesRepositorio.findAll();
     }
 
-	public List<Cliente06> searchByDni(String searchDni){
-		return clientesRepositorio.findByDniContaining(searchDni);
+	public List<Cliente06> search(String searchTermn){
+		return clientesRepositorio.findByDniContainingOrNombreContainingOrApellidoAllIgnoreCase(searchTermn, searchTermn, searchTermn);
 	}
 
 	@Override

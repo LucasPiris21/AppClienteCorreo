@@ -76,12 +76,12 @@ public class CorreoControlador {
 	}
 
 	@GetMapping("/search")
-	public List<CorreoProjection> search(@RequestParam String correo) {
-		correo = correo.trim();
-		if (correo.isBlank()) {
+	public List<CorreoProjection> search(@RequestParam String searchTerm) {
+		searchTerm = searchTerm.trim();
+		if (searchTerm.isBlank()) {
 			return serviciosCorreo.listarTodoProjection();
 		}
-		return serviciosCorreo.searchByCorreo(correo);
+		return serviciosCorreo.search(searchTerm);
 	}
 	
 

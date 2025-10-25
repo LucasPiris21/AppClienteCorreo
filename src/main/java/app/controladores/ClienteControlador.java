@@ -1,6 +1,5 @@
 package app.controladores;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,12 +78,12 @@ public class ClienteControlador {
 	}
 
 	@GetMapping("/search")
-	public List<Cliente06> search(@RequestParam String dni) {
-		dni = dni.trim();
-		if (dni.isBlank()){
+	public List<Cliente06> search(@RequestParam String searchTerm) {
+		searchTerm = searchTerm.trim();
+		if (searchTerm.isBlank()){
 			return serviciosCliente.listarTodos();
 		}
-		return serviciosCliente.searchByDni(dni);
+		return serviciosCliente.search(searchTerm);
 	}
 	
 

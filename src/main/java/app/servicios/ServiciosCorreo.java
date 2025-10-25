@@ -34,8 +34,15 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		return correosRepositorio.findAllProjectedBy();
 	}
 
-	public List<CorreoProjection> searchByCorreo(String searchCorreo) {
-		return correosRepositorio.findByCorreoContainingIgnoreCase(searchCorreo);
+	public List<CorreoProjection> search(String searchTerm) {
+		int searchTermInt;
+		try {
+			searchTermInt = Integer.valueOf(searchTerm);
+		} catch (Exception e) {
+			searchTermInt = -1;
+		}
+		
+		return correosRepositorio.findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(searchTermInt, searchTerm, searchTerm);
 	}
 
 	@Override
