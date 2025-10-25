@@ -3,3 +3,4 @@
 /.project
 /.settings/
 *.properties
+src/main/resources/application.properties
