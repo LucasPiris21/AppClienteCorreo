@@ -65,102 +65,77 @@ public class CorreoControlador {
 		return serviciosCorreo.listarTodoProjection();
 	}
 
-	// public List<Correo06> listarTodos(
-	// 		@RequestParam(value = "buscarCorreoDni", defaultValue = "") String buscarCorreoDni) {
-	// 	// Aquí puedes implementar la lógica para listar los correos
-	// 	// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
-	// 	// de datos
-	// 	List<Correo06> respuesta = null;
-	// 	buscarCorreoDni = buscarCorreoDni.trim(); // Limpiar espacios en blanco del dni
-	// 	if (buscarCorreoDni != null && !buscarCorreoDni.isEmpty() && !buscarCorreoDni.isBlank()
-	// 			&& buscarCorreoDni.length() > 0) {
-	// 		respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
-	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
-	// 		}
-	// 	} else {
-	// 		respuesta = serviciosCorreo.listarTodos();
-	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
-	// 		}
-	// 	}
-	// 	return respuesta; // Reemplaza con la lista de correos obtenida
-	// }
+	@GetMapping("/buscarporid")
+	public CorreoProjection buscarPorId(@RequestParam String idCorreo){
+		return serviciosCorreo.buscarPorIdProjection(idCorreo);
+	}
 
-	// CRUD:Read, listar todos los correos
-	// @GetMapping("/verclientescorreos")
-	// public List<Correo06> verclientescorreos(
-	// 		@RequestParam(value = "buscarClientesCorreosDNI", defaultValue = "") String buscarClientesCorreosDNI) {
-	// 	// Aquí puedes implementar la lógica para listar los correos
-	// 	// Por ejemplo, podrías llamar a un servicio que obtenga los correos de la base
-	// 	// de datos
-	// 	List<Correo06> respuesta = null;
-	// 	buscarClientesCorreosDNI = buscarClientesCorreosDNI.trim(); // Limpiar espacios en blanco del dni
-	// 	if (buscarClientesCorreosDNI != null && !buscarClientesCorreosDNI.isEmpty() && !buscarClientesCorreosDNI.isBlank()
-	// 			&& buscarClientesCorreosDNI.length() > 0) {
-	// 		//respuesta = serviciosCorreo.listarPorDni(buscarCorreoDni);
-	// 		respuesta = serviciosCorreo.listarCorreosConClientesPorDni(buscarClientesCorreosDNI);
-	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
-	// 		}
-	// 	} else {
-	// 		//respuesta = serviciosCorreo.listarTodos();
-	// 		respuesta = serviciosCorreo.listarCorreosConClientes();
-	// 		if (respuesta.isEmpty() || respuesta == null || respuesta.size() == 0) {
-	// 			return List.of(); // O puedes retornar una lista vacía si prefieres
-	// 		}
-	// 	}
-	// 	return respuesta; // Reemplaza con la lista de correos obtenida
-	// }
+	@GetMapping("/listarClientesCorreos")
+	public List<?> listarClientesCorreso() {
+		return serviciosCorreo.listarCorreosConClientes();
+	}
+
+	@GetMapping("/search")
+	public List<CorreoProjection> search(@RequestParam String correo) {
+		correo = correo.trim();
+		if (correo.isBlank()) {
+			return serviciosCorreo.listarTodoProjection();
+		}
+		return serviciosCorreo.searchByCorreo(correo);
+	}
 	
+
 	// CRUD:Update, actualizar el correo dado el id de correo
-	@PostMapping("/actualizar/{idCorreo}/{correo}")
-	public String actualizar(@PathVariable("idCorreo") String idCorreo, @PathVariable("correo") String correo) {
+	@PostMapping("/actualizar/{idCorreo}/{correo}/{dni}")
+	public ResponseEntity<String> actualizar(@PathVariable("idCorreo") String idCorreo, @PathVariable("correo") String correo, @PathVariable ("dni") String dni) {
 		// Aquí puedes implementar la lógica para actualizar un correo por su idCorreo
 		// Por ejemplo, podrías llamar a un servicio que actualice el correo en la base
 		try {
 			idCorreo = idCorreo.trim(); // Limpiar espacios en blanco del idCorreo
 			correo = correo.trim(); // Limpiar espacios en blanco del correo
+			dni = dni.trim();
 		} catch (Exception e) {
-			return "Error al procesar los datos idCorreo y correo: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar los datos: " + e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		Correo06 correoExistente = serviciosCorreo.buscarPorId(idCorreo);
+		Cliente06 nuevoCliente = serviciosCliente.buscarPorId(dni);
 		if (correoExistente != null) {
 			// Actualizar los campos del cliente existente con los nuevos valores
 			correoExistente.setCorreo(correo);
 			// Agrega aquí otros campos que necesites actualizar
+			correoExistente.setCliente06(nuevoCliente);
 
 			// Guardar el correo actualizado
-			serviciosCorreo.guardar(correoExistente);
-			return "Correo actualizado correctamente: " + idCorreo + " - " + correo + " - para el cliente: "
-					+ correoExistente.getCliente06().getNombre() + " " + correoExistente.getCliente06().getApellido();
+			serviciosCorreo.actualizar(correoExistente);
+			return new ResponseEntity<>("Correo actualizado correctamente: " + idCorreo + " - " + correo + " - para el cliente: "
+					+ correoExistente.getCliente06().getNombre() + " " + correoExistente.getCliente06().getApellido(), HttpStatus.OK);
 		} else {
 			// Manejar el caso en que no se encuentra el cliente
-			return "Correo no encontrado con idCorreo: " + idCorreo + ". No se pudo actualizar.";
+			return new ResponseEntity<>("Correo no encontrado con idCorreo: " + idCorreo + ". No se pudo actualizar.", HttpStatus.NOT_FOUND);
 		}
 	}
 
 	// CRUD:Delete, borrar correo por idCorreo
 	@DeleteMapping("/borrar/{idCorreo}")
-	public String eliminarPorId(@PathVariable("idCorreo") String idCorreo) {
+	public ResponseEntity<String> eliminarPorId(@PathVariable("idCorreo") String idCorreo) {
 		// Aquí puedes implementar la lógica para eliminar un correo por su idCorreo
 		// Por ejemplo, podrías llamar a un servicio que elimine el correo de la base
 		// de datos
 		try {
 			idCorreo = idCorreo.trim(); // Limpiar espacios en blanco del idCorreo
 		} catch (Exception e) {
-			return "Error al procesar el idCorreo: " + e.getMessage();
+			return new ResponseEntity<>("Error al procesar el idCorreo: " + e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		Correo06 correoExistente = serviciosCorreo.buscarPorId(idCorreo);
 		if (correoExistente != null) {
 			serviciosCorreo.eliminarPorId(idCorreo);
-			return "Correo eliminado correctamente con idCorreo: " + idCorreo + " - " + correoExistente.getCorreo()
+			return new ResponseEntity<>("Correo eliminado correctamente con idCorreo: " + idCorreo + " - " + correoExistente.getCorreo()
 					+ " - para el cliente: " + correoExistente.getCliente06().getNombre() + " "
 					+ correoExistente.getCliente06().getApellido() + " - DNI del cliente: "
-					+ correoExistente.getCliente06().getDni();
+					+ correoExistente.getCliente06().getDni(), HttpStatus.OK);
 		} else {
 			// Manejar el caso donde no se encuentra el correo
-			return "Correo no encontrado con idCorreo: " + idCorreo + ". No se pudo eliminar.";
+			return new ResponseEntity<>("Correo no encontrado con idCorreo: " + idCorreo + ". No se pudo eliminar.", HttpStatus.NOT_FOUND);
 		}
 	}
 }

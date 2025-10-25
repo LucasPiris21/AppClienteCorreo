@@ -34,15 +34,25 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		return correosRepositorio.findAllProjectedBy();
 	}
 
+	public List<CorreoProjection> searchByCorreo(String searchCorreo) {
+		return correosRepositorio.findByCorreoContainingIgnoreCase(searchCorreo);
+	}
+
 	@Override
 	public void actualizar(Correo06 correo) {
 		correosRepositorio.save(correo);
 	}
 	@Override
 	public Correo06 buscarPorId(String id) {
-		int idInt = Integer.parseInt(id);
+		Integer idInt = Integer.parseInt(id);
         return correosRepositorio.findById(idInt).orElse(null);
     }
+
+	public CorreoProjection buscarPorIdProjection(String id) {
+		int idInt = Integer.parseInt(id);
+		return correosRepositorio.findByIdCorreo(idInt);
+	}
+
 	@Override
 	public void guardar(Correo06 correo) {
 		correosRepositorio.save(correo);
@@ -72,8 +82,8 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 	// es decir la intersección de ambos conjuntos o cuando la clave primaria de clientes es igual a la clave 
 	// foránea de correos.
 	@Override
-	public List<Correo06> listarCorreosConClientes() {
-		return correosRepositorio.findAll().stream().filter(correo -> correo.getCliente06() != null).toList();
+	public List<?> listarCorreosConClientes() {
+		return correosRepositorio.findClienteCorreosFullOuterJoin();
 	}
 	//Copilot necesito un método para mostrar todos los registros de la tabla clientes y los correos de esos clientes,
 	// es decir la intersección de ambos conjuntos o cuando la clave primaria de clientes es igual a la clave

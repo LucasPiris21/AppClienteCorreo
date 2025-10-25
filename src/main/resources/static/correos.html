@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Correos</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
 </head>
+
 <body>
+    <a href="../">Volver</a>
     <h3>Correos</h3>
+    <form action="GET" id="search">
+        <input type="text" name="correo" id="correo" placeholder="Ingrese correo...">
+        <input type="submit" value="Buscar" name="Buscar">
+    </form>
+    <br>
     <table>
         <thead>
             <tr>
@@ -20,29 +34,104 @@
 
         </tbody>
     </table>
+    <br>
     <a href="altaCorreos.html">Agregar correo</a>
 </body>
+
 </html>
 
 <script>
     fetch('/correos/listartodos')
-    .then(correos => correos.json())
-    .then(correos => {
-        const tablaCorreos = document.getElementById("tabla-correos");
-        console.log(correos)
-        correos.forEach(correo => {
-            tablaCorreos.innerHTML += `
+        .then(correos => correos.json())
+        .then(correos => {
+            const tablaCorreos = document.getElementById("tabla-correos");
+            console.log(correos)
+            correos.forEach(correo => {
+                tablaCorreos.innerHTML += `
             <tr>
                 <td>${correo.idCorreo}</td>
                 <td>${correo.correo}</td>
                 <td>${correo.cliente06Dni}</td>
                 <td>
-                    <a href="editarCorreos.html?dni=${correos.id_Correo}"><button>Editar</button></a>
-                    <button>Eliminar</button>
+                    <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
+                    <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
                 </td>
             </tr>
-            `; 
-        });
+            `;
+            });
 
-    })
+            const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+
+            deleteButtons.forEach(button => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm('¿Está seguro de querer eliminar este correo?')) {
+                        const idCorreo = button.value
+                        fetch(`correos/borrar/${idCorreo}`, {
+                            method: "DELETE"
+                        })
+                        .then(async results => {
+                            if (!results.ok) {
+                                const message = await results.text();
+                                return alert(message)
+                            }
+
+                            const message = await results.text();
+                            alert(message)
+                            window.location.replace(window.location.href);
+                        })
+                    };
+                })
+            });
+
+        })
+
+    document.getElementById("search").addEventListener("submit", (e) => {
+        e.preventDefault()
+        const correo = document.getElementById("correo").value;
+        fetch(`correos/search?correo=${correo}`)
+        .then(correos => correos.json())
+        .then(correos => {
+            const tablaCorreos = document.getElementById("tabla-correos");
+            tablaCorreos.replaceChildren();
+            correos.forEach(correo => {
+                tablaCorreos.innerHTML += `
+            <tr>
+                <td>${correo.idCorreo}</td>
+                <td>${correo.correo}</td>
+                <td>${correo.cliente06Dni}</td>
+                <td>
+                    <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
+                    <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
+                </td>
+            </tr>
+            `;
+            });
+
+            const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+
+            deleteButtons.forEach(button => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (confirm('¿Está seguro de querer eliminar este correo?')) {
+                        const idCorreo = button.value
+                        fetch(`correos/borrar/${idCorreo}`, {
+                            method: "DELETE"
+                        })
+                        .then(async results => {
+                            if (!results.ok) {
+                                const message = await results.text();
+                                return alert(message)
+                            }
+
+                            const message = await results.text();
+                            alert(message)
+                            window.location.replace(window.location.href);
+                        })
+                    };
+                })
+            });
+
+        })
+    });
 </script>

@@ -29,8 +29,7 @@ public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
 	
 	//Esta clase permite escalar la entidad Cliente06 en el futuro
 	// agregando nuevas funciones de negocio o consultas específicas
-
-	@Query(value = "select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from cliente cl left join correo co on cl.dni = co.cliente06dnifk union select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from correo co left join cliente cl on cl.dni = co.cliente06dnifk", nativeQuery = true)
-	List<?> findClienteCorreosFullOuterJoin();
-
+	List<Cliente06> findByDniContaining(String searchString);
+	List<Cliente06> findByNombreContainingIgnoreCase(String searchString);
+	List<Cliente06> findByApellidoContainingIgnoreCase(String searchString);
 }

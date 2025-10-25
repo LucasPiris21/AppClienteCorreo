@@ -62,6 +62,7 @@ public class ClienteControlador {
 			return new ResponseEntity<>("Existe un cliente con ese DNI: " + dni + ". No se ha agregado un Cliente nuevo.", HttpStatus.CONFLICT);
 		}
 	}
+	
 	// CRUD:Read, listar todos los clientes
 	@GetMapping("/listartodos")
 	public List<Cliente06> listarTodos() {
@@ -77,14 +78,19 @@ public class ClienteControlador {
 		return respuesta; // Reemplaza con la lista de clientes obtenida
 	}
 
-	@GetMapping("/listarClientesCorreos")
-	public List<?> listarClientesCorreso() {
-		return serviciosCliente.listarClientesCorreosJoin();
+	@GetMapping("/search")
+	public List<Cliente06> search(@RequestParam String dni) {
+		dni = dni.trim();
+		if (dni.isBlank()){
+			return serviciosCliente.listarTodos();
+		}
+		return serviciosCliente.searchByDni(dni);
 	}
+	
 
 	// CRUD:Read, leer un cliente por DNI
 	@GetMapping("/buscarpordni")
-	public Cliente06 buscarPorId(@RequestParam(value = "dni", defaultValue = "") String dni) {
+	public Cliente06 buscarPorId(@RequestParam(defaultValue = "") String dni) {
 		// Aquí puedes implementar la lógica para buscar un cliente por su DNI
 		// Por ejemplo, podrías llamar a un servicio que obtenga el cliente de la base
 		// de datos

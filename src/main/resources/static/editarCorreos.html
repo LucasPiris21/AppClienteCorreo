@@ -8,28 +8,68 @@
 
 	<h2>Editar Correos</h2>
 	
-	<form action="EditarCorreosForm">
+	<form id="EditarCorreosForm">
 		idCorreo: <input type="text" name="idCorreo" id="idCorreo" value="Cargando ID de correo..." disabled required><br>
 		Correo: <input type="email" name="correo" id="correo" value="Cargando correo..." required><br>
-        Cliente: <input type="text" name="dni" id="dni" value="Cargando cliente..." required><br>
+        Cliente: <select id="dni" name="dni" required>
+                    <option value="" selected disabled hidden>Cargando cliente...</option>
+                </select><br>
 		<input type="submit" value="Enviar" name="Enviar" id="enviarButton">
 	</form>
      
 </body>
 <script>
+    function cargarClientesEditar(clienteOriginalDni) {
+        const dniSelect = document.getElementById("dni");
+		fetch("clientes/listartodos")
+		.then(results => results.json())
+		.then(results => {
+			results.forEach(cliente => {
+				const option = new Option(`${cliente.apellido} ${cliente.nombre} (${cliente.dni})`, cliente.dni);
+				dniSelect.add(option)
+
+                if (cliente.dni == clienteOriginalDni) {
+                    option.defaultSelected = true;
+                }
+			});
+		})
+    }
+
     window.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const idParam = urlParams.get("id_Correo")
+        const idParam = urlParams.get("idCorreo")
         const id_correo = document.getElementById("idCorreo")
         const correo = document.getElementById("correo");
         const dni = document.getElementById("dni");
         fetch(`correos/buscarporid?idCorreo=${idParam}`)
         .then(results => results.json())
         .then(results => {
-            id_correo.value = results.dni
-            correo.value = results.nombre
-            dni.value = results.apellido
+            console.log(results)
+            id_correo.value = results.idCorreo;
+            correo.value = results.correo;
+            cargarClientesEditar(results.cliente06Dni);
         })
     })
+
+    document.getElementById("EditarCorreosForm").addEventListener("submit", (e) =>  {
+        e.preventDefault()
+        const idCorreo = document.getElementById("idCorreo").value;
+        const correo = document.getElementById("correo").value;
+        const dni = document.getElementById("dni").value;
+        fetch(`correos/actualizar/${idCorreo}/${correo}/${dni}`, {
+            method: "POST"
+        })
+        .then(async results => {
+			if (!results.ok) {
+				const message = await results.text();
+				return alert(message)
+			}
+
+			const message = await results.text();
+			alert(message)
+			window.location.replace("correos.html")
+			
+		})
+    });
 </script>
 </html>

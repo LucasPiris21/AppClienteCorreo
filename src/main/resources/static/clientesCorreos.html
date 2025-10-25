@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes-Correos</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
+    <a href="../">Volver</a>
     <h3>Cliente-Correos</h3>
     <table>
         <thead>
@@ -26,7 +33,7 @@
 </html>
 
 <script>
-    fetch('/clientes/listarClientesCorreos')
+    fetch('/correos/listarClientesCorreos')
     .then(clientesCorreos => clientesCorreos.json())
     .then(clientesCorreos => {
         const tablaClientesCorreos = document.getElementById("tabla-clientesCorreos");

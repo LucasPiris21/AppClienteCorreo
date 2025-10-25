@@ -2,7 +2,12 @@ package app.entidades;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
 @Entity
@@ -27,6 +32,9 @@ public class Cliente06 {
     @Column(name="Apellido", nullable=false, length=50)
     private String apellido;
     // Fin mapeo //////////////////////////////
+
+    @OneToMany(mappedBy = "cliente06", cascade = CascadeType.ALL)
+    private List<Correo06> correos;
     
     public void setDni(String dni) {
         this.dni = dni;
