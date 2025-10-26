@@ -70,25 +70,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>io.bit3</groupId>
-				<artifactId>sass-maven-plugin</artifactId>
-				<version>2.12.4</version>
-				<executions>
-					<execution>
-						<id>compile-sass</id>
-						<goals>
-							<goal>update-stylesheets</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<inputDirectory>${project.basedir}/src/main/sass</inputDirectory>
-					<outputDirectory>${project.basedir}/src/main/resources/static/css</outputDirectory>
-					<outputStyle>compressed</outputStyle>
-					<sourceMapEmbed>true</sourceMapEmbed>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 

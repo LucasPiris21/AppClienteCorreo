@@ -12,7 +12,7 @@
 		DNI: <select id="dni" name="dni" required>
         	<option value="" selected disabled hidden>-- Seleccionar DNI --</option>
 		</select>
-		Correo: <input type="email" id="correo" name="correo" value="usuario@servidor.com"><br> 
+		Correo: <input type="email" id="correo" name="correo" placeholder="usuario@servidor.com"><br> 
 		<input type="submit" value="Enviar" name="Enviar">
 	</form>
 
@@ -33,10 +33,19 @@
 
 	document.getElementById("altaCorreosForm").onsubmit = function(event) {
 		event.preventDefault(); // Evita el envío predeterminado del formulario
-		const dni = document.getElementById("dni").value;
-		const correo = document.getElementById("correo").value;
+		const dni = document.getElementById("dni").value.trim();
+		const correo = document.getElementById("correo").value.trim();
 
-		fetch(`/correos/guardar/${dni}/${correo}`)
+		fetch('correos/guardar', {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				correo: correo,
+				clienteDni: dni
+			})
+		})
 		.then(async results => {
 			if (!results.ok) {
 				const message = await results.text();

@@ -54,10 +54,17 @@
     document.getElementById("EditarCorreosForm").addEventListener("submit", (e) =>  {
         e.preventDefault()
         const idCorreo = document.getElementById("idCorreo").value;
-        const correo = document.getElementById("correo").value;
-        const dni = document.getElementById("dni").value;
-        fetch(`correos/actualizar/${idCorreo}/${correo}/${dni}`, {
-            method: "POST"
+        const correo = document.getElementById("correo").value.trim();
+        const dni = document.getElementById("dni").value.trim();
+        fetch(`/correos/actualizar/${idCorreo}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                correo: correo,
+                clienteDni: dni 
+            })
         })
         .then(async results => {
 			if (!results.ok) {

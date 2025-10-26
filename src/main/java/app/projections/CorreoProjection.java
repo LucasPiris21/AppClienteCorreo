@@ -1,7 +1,8 @@
 package app.projections;
 
 public interface CorreoProjection {
-    String getIdCorreo();
+    int getIdCorreo();
     String getCorreo();   
-    int getCliente06Dni();
+    String getCliente06Dni();
 }
+

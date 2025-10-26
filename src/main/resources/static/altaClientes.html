@@ -18,11 +18,21 @@
 <script>
 	document.getElementById("altaClientesForm").onsubmit = function(event) {
 		event.preventDefault(); // Evita el envío predeterminado del formulario
-		const dni = document.getElementById("dni").value;
-		const nombre = document.getElementById("nombre").value;
-		const apellido = document.getElementById("apellido").value;
+		const dni = document.getElementById("dni").value.trim();
+		const nombre = document.getElementById("nombre").value.trim();
+		const apellido = document.getElementById("apellido").value.trim();
 
-		fetch(`/clientes/guardar/${dni}/${nombre}/${apellido}`)
+		fetch("/clientes/guardar", {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				dni: dni,
+				nombre: nombre,
+				apellido: apellido
+			})
+		})
 		.then(async results => {
 			if (!results.ok) {
 				const message = await results.text();
