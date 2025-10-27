@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-easily {
+    @include m.contenedor;
+
+    @include m.tablet {
+        @include m.grid(2);
+    }
+
+    .imagen-home {
+        img {
+            border-radius: .9rem;
+        }
+    }
+
+}
+
+.contenido-home {
+    margin-top: 5rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 2rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 2rem;
+                height: 1.2rem;
+                transform: translateY(-50%);
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%235856d6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M5 12l5 5l10 -10'/></svg>");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &:hover::before {
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23ff6600' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M5 12l5 5l10 -10'/></svg>");
+            }
+        }
+    }
+}

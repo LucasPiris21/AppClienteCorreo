@@ -1,0 +1,78 @@
+// Tipografías
+$fuente-principal: 'Montserrat', sans-serif;
+$fuente-titulo: 'Poppins', sans-serif;
+
+// Colores principales
+$azul-principal: #1C4C96;
+$azul-secundario: #256Edc;
+$azul-complementario: #427ed7;
+$celeste: #5f95e7;
+$celeste-claro: #97bdf5;
+
+$lila-easily: #9249bc;
+$lila-easily-hover: #71249a;
+$lila-principal: #9249bc;
+$lila-secundario: #7a3aa1;
+$lila-opaco: rgba(146, 73, 188, 0.548);
+$azul-principal-opaco: rgba(9, 9, 121, 0.548);
+
+// Colores base
+$blanco: #fff;
+$blanco-secundario: #f9f9f9;
+$negro: #000;
+$gris: #e0e0e0;
+$gris-claro: #f4f4f4;
+$gris-oscuro: #333;
+
+// Colores de estado
+$verde: #28a745;
+$rojo: #ff6961;
+$amarillo: #ffc107;
+$azul: #007bff;
+
+// Colores de interfaz
+$color-form: #f8f8f8;
+$color-etiqueta: #333;
+$color-texto: #333;
+$color-sidebar: #ffffff;
+$color-topbar: #f5f5f5;
+$color-card: #f9f9f9;
+$color-fondo-body: #f5f7fa;
+$color-fondo-tabla: #fff;
+$color-fondo-th: #f0f2f5;
+
+// Bordes
+$borde-1: #ccc;
+$borde-2: #dcdcdc;
+$borde-principal: 1px solid $borde-1;
+$borde-grueso: 4px solid $lila-easily;
+
+
+// Medidas y espaciado
+$border-radius: 8px;
+$border-radius-small: 5px;
+$border-radius-large: 15px;
+$border-radius-circle: 50%;
+
+// Sombras
+$sombra-card: 0 4px 8px rgba(0, 0, 0, 0.1);
+$sombra-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+$sombra-tabla: 0 2px 8px rgba(0, 0, 0, 0.05);
+$sombra-modal: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+// Transiciones
+$transicion-base: 0.3s ease;
+$transicion-rapida: 0.2s ease;
+$transicion-lenta: 0.5s ease;
+
+// Z-index
+$z-sidebar: 100;
+$z-header: 5000;
+$z-modal: 1000;
+$z-tooltip: 2000;
+
+// Media Queries
+$telefono: 480px;
+$tablet: 768px;
+$desktop: 1200px;
+$desktopXL: 1400px;

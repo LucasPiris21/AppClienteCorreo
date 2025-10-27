@@ -1,0 +1,97 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'sass:color';
+
+
+
+.btn-lila {
+  @include m.btn(v.$lila-easily, v.$blanco, 700, 1px, 1rem, 0.5rem);
+}
+.btn-verde {
+  @include m.btn(v.$verde, v.$blanco, 700, 1px, 1rem, 0.5rem);
+}
+
+.btn-eliminar {
+  @include m.btn(v.$rojo, v.$blanco, 700, 1px, 1rem, 0.5rem);
+
+}
+
+.btn-secundario {
+  background-color: v.$lila-easily;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: v.$lila-easily;
+  color: v.$blanco;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  z-index: 2;
+}
+
+// Botones de acción para tablas admin
+.btn-accion {
+    margin: 0 0.3rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: v.$border-radius-small;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all v.$transicion-base;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+
+    i {
+        font-size: 1rem;
+    }
+
+    &.btn-editar {
+        background-color: v.$azul;
+        color: v.$blanco;
+
+        &:hover {
+            background-color: color.adjust(v.$azul, $lightness: -10%);
+            transform: translateY(-1px);
+        }
+    }
+
+    &.btn-aprobar {
+        background-color: v.$verde;
+        color: v.$blanco;
+
+        &:hover {
+            background-color: color.adjust(v.$verde, $lightness: -10%);
+            transform: translateY(-1px);
+        }
+    }
+
+    &.btn-rechazar {
+        background-color: v.$rojo;
+        color: v.$blanco;
+
+        &:hover {
+            background-color: color.adjust(v.$rojo, $lightness: -10%);
+            transform: translateY(-1px);
+        }
+    }
+
+    @include m.telefono {
+        padding: 0.6rem 1rem;
+        font-size: 1.1rem;
+        margin: 0.2rem;
+    }
+}

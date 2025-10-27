@@ -1,0 +1,527 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Página de Exámenes - examenes.ejs
+.page-examenes {
+    .selector-anios {
+        @extend .selector-anios;
+    }
+
+    // Grid de exámenes
+    .examenes-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+        margin-bottom: 3rem;
+
+        @include m.telefono {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+    }
+
+    // examen individual
+    .examen-card {
+        @extend .examen-card;
+        
+        .examen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+
+            .examen-materia {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+                padding: 0.3rem 0.8rem;
+                border-radius: v.$border-radius;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            .examen-estado {
+                padding: 0.3rem 0.8rem;
+                border-radius: v.$border-radius;
+                font-size: 1.1rem;
+                font-weight: 600;
+
+                &.disponible {
+                    background-color: v.$verde;
+                    color: v.$blanco;
+                }
+
+                &.pendiente {
+                    background-color: v.$amarillo;
+                    color: v.$negro;
+                }
+
+                &.vencido {
+                    background-color: v.$rojo;
+                    color: v.$blanco;
+                }
+
+                &.completado {
+                    background-color: v.$azul;
+                    color: v.$blanco;
+                }
+            }
+        }
+
+        .examen-info {
+            margin-bottom: 1.5rem;
+
+            .info-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.8rem;
+                font-size: 1.3rem;
+
+                .info-label {
+                    color: v.$gris-oscuro;
+                    font-weight: 500;
+                }
+
+                .info-value {
+                    font-weight: 600;
+                    color: v.$color-texto;
+
+                    &.tiempo-limite {
+                        color: v.$amarillo;
+                    }
+
+                    &.intentos {
+                        color: v.$azul;
+                    }
+
+                    &.fecha-limite {
+                        color: v.$rojo;
+                    }
+                }
+            }
+        }
+
+        .examen-progress {
+            margin-bottom: 1.5rem;
+
+            .progress-label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+
+                .progress-text {
+                    color: v.$color-texto;
+                }
+
+                .progress-percentage {
+                    font-weight: 700;
+                    color: v.$lila-easily;
+                }
+            }
+
+            .progress-bar {
+                background-color: v.$gris;
+                border-radius: v.$border-radius;
+                overflow: hidden;
+                height: 6px;
+
+                .progress-fill {
+                    height: 100%;
+                    background-color: v.$lila-easily;
+                    transition: width v.$transicion-lenta;
+                }
+            }
+        }
+
+        .btn-comenzar {
+            width: 100%;
+            background-color: v.$lila-easily;
+            color: v.$blanco;
+            border: none;
+            padding: 1.2rem 2rem;
+            margin-top: 1rem;
+            border-radius: v.$border-radius;
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: all v.$transicion-base;
+
+            &:hover:not(:disabled) {
+                background-color: v.$lila-easily-hover;
+                transform: translateY(-2px);
+                box-shadow: v.$sombra-hover;
+            }
+
+            &:disabled {
+                background-color: v.$gris;
+                cursor: not-allowed;
+                transform: none;
+
+                &:hover {
+                    transform: none;
+                }
+            }
+
+            i {
+                margin-right: 0.5rem;
+            }
+        }
+
+        // Variantes según estado del examen
+        &.examen-disponible {
+            border-left-color: v.$verde;
+            
+            .btn-comenzar {
+                background-color: v.$verde;
+
+                &:hover {
+                    background-color: color.adjust(v.$verde, $lightness:-10%);
+                }
+            }
+        }
+
+        &.examen-vencido {
+            border-left-color: v.$rojo;
+            opacity: 0.7;
+        }
+
+        &.examen-completado {
+            border-left-color: v.$azul;
+
+            .btn-comenzar {
+                background-color: v.$azul;
+
+                &:hover {
+                    background-color: color.adjust(v.$azul, $lightness:-10%);
+                }
+            }
+        }
+    }
+
+    //exámenes como vista alternativa
+    .tabla-examenes {
+        @extend .tabla-examenes;
+        margin-top: 2rem;
+
+        .examen-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+
+            .btn-examen {
+                @extend .btn-examen;
+                padding: 0.4rem 0.8rem;
+                font-size: 1.1rem;
+
+                &:disabled {
+                    @extend .btn-examen--disabled !optional;
+                }
+            }
+
+            .btn-ver-resultado {
+                background-color: v.$azul;
+
+                &:hover {
+                    background-color: color.adjust(v.$azul, $lightness:-10%);
+                }
+            }
+
+            .btn-reintentar {
+                background-color: v.$amarillo;
+                color: v.$negro;
+
+                &:hover {
+                    background-color: color.adjust(v.$amarillo, $lightness:-10%);
+                }
+            }
+        }
+    }
+
+    // Vista de filtros
+    .examenes-filters {
+        background: v.$blanco;
+        padding: 2rem;
+        border-radius: v.$border-radius-large;
+        margin-bottom: 3rem;
+        box-shadow: v.$sombra-card;
+
+        .filters-header {
+            margin-bottom: 2rem;
+
+            h3 {
+                margin: 0 0 1rem 0;
+                font-size: 1.8rem;
+                color: v.$color-texto;
+            }
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+
+            @include m.telefono {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                label {
+                    display: block;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: v.$color-texto;
+                    margin-bottom: 0.5rem;
+                }
+
+                select, input {
+                    width: 100%;
+                    padding: 0.8rem;
+                    border: 1px solid v.$borde-1;
+                    border-radius: v.$border-radius;
+                    font-size: 1.3rem;
+                    background-color: v.$blanco;
+
+                    &:focus {
+                        outline: none;
+                        border-color: v.$lila-easily;
+                    }
+                }
+            }
+        }
+
+        .filter-badges {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+
+            .filter-badge {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+                padding: 0.3rem 0.8rem;
+                border-radius: v.$border-radius-large;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                .remove-filter {
+                    background: none;
+                    border: none;
+                    color: v.$blanco;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    padding: 0;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+
+    // Estadísticas de exámenes
+    .examenes-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+
+        .stat-card {
+            background: v.$blanco;
+            padding: 2rem;
+            border-radius: v.$border-radius-large;
+            box-shadow: v.$sombra-card;
+            text-align: center;
+            border-left: 4px solid v.$lila-easily;
+
+            .stat-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                color: v.$lila-easily;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: v.$color-texto;
+                margin: 0;
+            }
+
+            .stat-label {
+                font-size: 1.3rem;
+                color: v.$gris-oscuro;
+                margin: 0.5rem 0 0 0;
+            }
+
+            &.completados {
+                border-left-color: v.$verde;
+                .stat-icon { color: v.$verde; }
+            }
+
+            &.pendientes {
+                border-left-color: v.$amarillo;
+                .stat-icon { color: v.$amarillo; }
+            }
+
+            &.vencidos {
+                border-left-color: v.$rojo;
+                .stat-icon { color: v.$rojo; }
+            }
+        }
+    }
+
+    //calendario de exámenes
+    .examenes-calendario {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 2rem;
+        margin-bottom: 3rem;
+
+        .calendario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            .mes-navegacion {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .nav-btn {
+                    background: none;
+                    border: 1px solid v.$borde-1;
+                    border-radius: v.$border-radius;
+                    padding: 0.5rem;
+                    cursor: pointer;
+                    color: v.$lila-easily;
+                    transition: all v.$transicion-base;
+
+                    &:hover {
+                        background-color: v.$lila-easily;
+                        color: v.$blanco;
+                    }
+
+                    i {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .mes-actual {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: v.$color-texto;
+                    min-width: 200px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .calendario-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: v.$borde-1;
+            border: 1px solid v.$borde-1;
+
+            .dia-header {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+                padding: 1rem;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+
+            .dia-celda {
+                background-color: v.$blanco;
+                min-height: 80px;
+                padding: 0.5rem;
+                position: relative;
+
+                .dia-numero {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: v.$color-texto;
+                }
+
+                .examen-evento {
+                    background-color: v.$lila-easily;
+                    color: v.$blanco;
+                    padding: 0.2rem 0.4rem;
+                    border-radius: v.$border-radius-small;
+                    font-size: 1rem;
+                    margin-top: 0.2rem;
+                    cursor: pointer;
+                    transition: all v.$transicion-base;
+
+                    &:hover {
+                        background-color: v.$lila-easily-hover;
+                        transform: scale(1.05);
+                    }
+
+                    &.vencido {
+                        background-color: v.$rojo;
+                    }
+
+                    &.completado {
+                        background-color: v.$verde;
+                    }
+                }
+
+                &.otro-mes {
+                    background-color: v.$blanco-secundario;
+                    color: v.$gris-oscuro;
+                }
+
+                &.hoy {
+                    .dia-numero {
+                        background-color: v.$lila-easily;
+                        color: v.$blanco;
+                        border-radius: v.$border-radius-circle;
+                        width: 25px;
+                        height: 25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // Estado vacío
+    .examenes-empty {
+        text-align: center;
+        padding: 4rem 2rem;
+
+        .empty-icon {
+            font-size: 6rem;
+            color: v.$gris;
+            margin-bottom: 2rem;
+        }
+
+        .empty-title {
+            font-size: 2.4rem;
+            color: v.$color-texto;
+            margin-bottom: 1rem;
+        }
+
+        .empty-description {
+            font-size: 1.6rem;
+            color: v.$gris-oscuro;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+// .contenidoExamen {
+    
+// }

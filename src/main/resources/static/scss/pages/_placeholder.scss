@@ -1,0 +1,261 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Placeholder para páginas restantes que se pueden crear según necesidades específicas
+
+// Página de términos
+.page-terminos {
+    padding: 4rem 0;
+    background-color: v.$color-fondo-body;
+
+    .terminos-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 4rem;
+
+        @include m.telefono {
+            padding: 2rem;
+            margin: 0 1rem;
+        }
+
+        h1 {
+            color: v.$lila-easily;
+            font-family: v.$fuente-titulo;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+// Página de editar perfil
+.page-editarPerfil {
+    min-height: 100vh;
+    background-color: v.$color-fondo-body;
+    padding: 2rem 0;
+
+    .editar-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        @include m.telefono {
+            padding: 0 1rem;
+        }
+    }
+
+    .editar-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 4rem;
+        border: 2px solid v.$lila-easily;
+
+        @include m.telefono {
+            padding: 2rem;
+        }
+    }
+}
+
+// Página de tareas
+.page-tareas {
+    .tareas-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-bottom: 3rem;
+
+        @include m.telefono {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .tarea-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius;
+        box-shadow: v.$sombra-card;
+        padding: 2rem;
+        border-left: 5px solid v.$lila-easily;
+    }
+}
+
+// Página de resolver examen
+.page-resolverExamen {
+    padding: 2rem 0;
+    background-color: v.$color-fondo-body;
+
+    .examen-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .examen-header {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+
+        h1 {
+            color: v.$lila-easily;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .pregunta-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius;
+        box-shadow: v.$sombra-card;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: v.$borde-principal;
+    }
+}
+
+// mis cursos
+.page-misCursos {
+    .cursos-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-bottom: 3rem;
+
+        @include m.telefono {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .curso-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius;
+        box-shadow: v.$sombra-card;
+        padding: 2.5rem;
+        border-left: 5px solid v.$azul;
+    }
+}
+
+// crear exámenes 
+.page-crearExamenes {
+    padding: 2rem 0;
+    background-color: v.$color-fondo-body;
+
+    .crear-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .crear-form {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 3rem;
+
+        .form-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid v.$gris;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                font-weight: 700;
+                color: v.$lila-easily;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+// seguimiento (docente)
+.page-seguimiento {
+    background-color: v.$color-fondo-body;
+    
+    .seguimiento-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .seguimiento-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 3rem;
+    }
+}
+
+// detalles
+.page-detalles {
+    padding: 2rem 0;
+    background-color: v.$color-fondo-body;
+
+    .detalles-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        .detalles-card {
+            background: v.$blanco;
+            border-radius: v.$border-radius;
+            box-shadow: v.$sombra-card;
+            padding: 3rem;
+            border: v.$borde-principal;
+        }
+    }
+}
+
+//  home docente
+.page-homeDocente {
+    background-color: v.$color-fondo-body;
+    
+    .docente-dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+
+            .stat-card {
+                background: v.$blanco;
+                border-radius: v.$border-radius;
+                box-shadow: v.$sombra-card;
+                padding: 2rem;
+                border: v.$borde-principal;
+                text-align: center;
+                border-left: 5px solid v.$azul;
+
+                .stat-icon {
+                    font-size: 3rem;
+                    color: v.$azul;
+                    margin-bottom: 1rem;
+                }
+
+                .stat-number {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: v.$color-texto;
+                    margin-bottom: 0.5rem;
+                }
+
+                .stat-label {
+                    color: v.$gris-oscuro;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}

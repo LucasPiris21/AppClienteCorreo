@@ -1,0 +1,259 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+body {
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 24rem;
+  background-color: v.$color-sidebar;
+  border-right: .1rem solid #eee;
+  padding: 2rem;
+
+  h2 {
+    color: v.$lila-easily;
+    margin-bottom: 3rem;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 2rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: 0.3s;
+
+      i {
+        margin-right: 1rem;
+        color: v.$lila-easily;
+      }
+
+      &:hover {
+        color: v.$lila-easily-hover;
+      }
+    }
+  }
+}
+
+
+.topbar {
+  background-color: v.$color-topbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  border-bottom: .1rem solid v.$borde-1;
+
+  h1 {
+    margin: 0;
+    font-size: 2.4rem;
+  }
+
+
+
+    i {
+      margin-right: .5rem;
+    }
+}
+
+// Contenido principal
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 3rem;
+}
+
+table {
+  width: 100%;
+  background-color:v.$blanco;
+  border-radius: .8rem;
+  overflow: hidden;
+  box-shadow: 0 .2rem .8rem rgba(0, 0, 0, 0.05);
+  border-collapse: collapse;
+
+  th, td {
+    padding: 1.6rem;
+    text-align: left;
+    border-bottom: .1rem solid #eee;
+  }
+
+  th {
+    background-color: #f0f2f5;
+    color: v.$gris-oscuro;
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+}
+
+.acciones {
+  button {
+    margin-right: .5rem;
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    &.btn-aceptar {
+      background-color: v.$verde;
+      color: white;
+    }
+
+    &.btn-eliminar {
+      background-color: v.$rojo;
+      color: white;
+    }
+  }
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+// Estilos específicos para las páginas admin
+.admin-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: v.$color-fondo-body;
+    font-family: v.$fuente-principal;
+
+    @include m.telefono {
+        flex-direction: column;
+    }
+
+    // Sidebar admin específico
+    .sidebar {
+        width: 280px;
+        background-color: v.$color-sidebar;
+        border-right: 1px solid v.$borde-1;
+        box-shadow: v.$sombra-card;
+        z-index: v.$z-sidebar;
+
+        @include m.telefono {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid v.$borde-1;
+        }
+
+        h2 {
+            background: linear-gradient(135deg, v.$lila-easily 0%, v.$lila-easily-hover 100%);
+            color: v.$blanco;
+            margin: 0;
+            padding: 2rem;
+            font-size: 2rem;
+            font-family: v.$fuente-titulo;
+            text-align: center;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                border-bottom: 1px solid v.$gris;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &.has-submenu {
+                    .menu-item {
+                        cursor: pointer;
+                        
+                        &:hover {
+                            background-color: v.$blanco-secundario;
+                        }
+                    }
+                }
+
+                .menu-item {
+                    display: block;
+                    padding: 1.5rem 2rem;
+                    color: v.$color-texto;
+                    text-decoration: none;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    transition: all v.$transicion-base;
+                    border: none;
+                    background: none;
+                    width: 100%;
+                    text-align: left;
+
+                    i {
+                        margin-right: 1rem;
+                        color: v.$lila-easily;
+                    }
+
+                    &:hover {
+                        background-color: v.$blanco-secundario;
+                        padding-left: 2.5rem;
+                    }
+
+                    &.active {
+                        background-color: v.$lila-easily;
+                        color: v.$blanco;
+                        font-weight: 600;
+
+                        i {
+                            color: v.$blanco;
+                        }
+                    }
+                }
+
+                .submenu {
+                    background-color: v.$blanco-secundario;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height v.$transicion-base;
+
+                    &.open {
+                        max-height: 300px;
+                    }
+
+                    li {
+                        border-bottom: none;
+
+                        a {
+                            display: block;
+                            padding: 1rem 2rem 1rem 4rem;
+                            color: v.$color-texto;
+                            text-decoration: none;
+                            font-size: 1.3rem;
+                            transition: all v.$transicion-base;
+
+                            &:hover {
+                                background-color: v.$gris;
+                                padding-left: 4.5rem;
+                            }
+
+                            &.active {
+                                background-color: v.$lila-opaco;
+                                color: v.$lila-easily-hover;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

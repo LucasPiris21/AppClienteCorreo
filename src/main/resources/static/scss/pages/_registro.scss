@@ -1,0 +1,296 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Página de Registro 
+.page-registro {
+    min-height: 100vh;
+    background-color: v.$color-fondo-body;
+    padding: 2rem 0;
+
+    .registro-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        @include m.telefono {
+            padding: 0 1rem;
+        }
+    }
+
+    .registro-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 4rem;
+        border: 2px solid v.$lila-easily;
+
+        @include m.telefono {
+            padding: 2rem;
+        }
+
+        .registro-header {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            .registro-logo {
+                font-family: v.$fuente-titulo;
+                font-size: 3.5rem;
+                color: v.$lila-easily;
+                margin-bottom: 1rem;
+
+                @include m.telefono {
+                    font-size: 3rem;
+                }
+            }
+
+            .registro-subtitle {
+                font-size: 1.6rem;
+                color: v.$gris-oscuro;
+                margin: 0;
+            }
+        }
+
+        // Formulario de registro 
+        .registro-form {
+            .form-row {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+
+                @include m.telefono {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 2rem;
+
+                label {
+                    display: block;
+                    font-weight: 600;
+                    color: v.$lila-easily;
+                    margin-bottom: 0.8rem;
+                    font-size: 1.4rem;
+
+                    .required {
+                        color: v.$rojo;
+                        margin-left: 0.3rem;
+                    }
+                }
+
+                input, select, textarea {
+                    width: 100%;
+                    padding: 1.2rem 1.5rem;
+                    font-size: 1.4rem;
+                    border: 2px solid v.$gris;
+                    border-radius: v.$border-radius;
+                    font-family: v.$fuente-principal;
+                    transition: all v.$transicion-base;
+
+                    &:focus {
+                        outline: none;
+                        border-color: v.$lila-easily;
+                        box-shadow: 0 0 0 3px rgba(v.$lila-easily, 0.1);
+                    }
+
+                    &.error {
+                        border-color: v.$rojo;
+                        background-color: color.adjust(v.$rojo, $lightness:45%);
+                    }
+                }
+
+                select {
+                    cursor: pointer;
+                    appearance: none;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+                    background-position: right 1rem center;
+                    background-repeat: no-repeat;
+                    background-size: 1.5rem 1.5rem;
+                    padding-right: 4rem;
+                }
+
+                .form-error {
+                    color: v.$rojo;
+                    font-size: 1.2rem;
+                    margin-top: 0.5rem;
+                    display: none;
+
+                    &.show {
+                        display: block;
+                    }
+                }
+            }
+
+            .role-selection {
+                margin-bottom: 3rem;
+                
+                .role-title {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: v.$color-texto;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                }
+
+                .role-options {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+
+                    @include m.telefono {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .role-card {
+                        border: 2px solid v.$gris;
+                        border-radius: v.$border-radius;
+                        padding: 2rem;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: all v.$transicion-base;
+
+                        &:hover {
+                            border-color: v.$lila-easily;
+                            transform: translateY(-2px);
+                        }
+
+                        &.selected {
+                            border-color: v.$lila-easily;
+                            background-color: color.adjust(v.$lila-easily, $lightness:45%);
+                        }
+
+                        .role-icon {
+                            font-size: 3rem;
+                            color: v.$lila-easily;
+                            margin-bottom: 1rem;
+                        }
+
+                        .role-name {
+                            font-size: 1.6rem;
+                            font-weight: 700;
+                            color: v.$color-texto;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .role-description {
+                            font-size: 1.3rem;
+                            color: v.$gris-oscuro;
+                            margin: 0;
+                        }
+
+                        input[type="radio"] {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .terms-acceptance {
+                margin-bottom: 2rem;
+                
+                .terms-checkbox {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+
+                    input[type="checkbox"] {
+                        width: auto;
+                        margin-top: 0.3rem;
+                    }
+
+                    label {
+                        font-size: 1.4rem;
+                        color: v.$color-texto;
+                        line-height: 1.5;
+                        cursor: pointer;
+
+                        a {
+                            color: v.$lila-easily;
+                            text-decoration: none;
+                            font-weight: 600;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form-actions {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+
+                @include m.telefono {
+                    flex-direction: column;
+                }
+
+                .btn-registro {
+                    background-color: v.$lila-easily;
+                    color: v.$blanco;
+                    border: none;
+                    padding: 1.4rem 3rem;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    border-radius: v.$border-radius;
+                    cursor: pointer;
+                    transition: all v.$transicion-base;
+
+                    &:hover:not(:disabled) {
+                        background-color: v.$lila-easily-hover;
+                        transform: translateY(-2px);
+                        box-shadow: v.$sombra-hover;
+                    }
+
+                    &:disabled {
+                        background-color: v.$gris;
+                        cursor: not-allowed;
+                    }
+                }
+
+                .btn-limpiar {
+                    background-color: transparent;
+                    color: v.$gris-oscuro;
+                    border: 2px solid v.$gris;
+                    padding: 1.4rem 3rem;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    border-radius: v.$border-radius;
+                    cursor: pointer;
+                    transition: all v.$transicion-base;
+
+                    &:hover {
+                        background-color: v.$gris;
+                        color: v.$blanco;
+                    }
+                }
+            }
+        }
+
+        .registro-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid v.$gris;
+
+            .login-link {
+                font-size: 1.4rem;
+                color: v.$gris-oscuro;
+
+                a {
+                    color: v.$lila-easily;
+                    font-weight: 600;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

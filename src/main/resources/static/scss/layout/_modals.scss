@@ -1,0 +1,435 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Sistema de modales 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: v.$z-modal;
+    opacity: 0;
+    visibility: hidden;
+    transition: all v.$transicion-base;
+    padding: 2rem;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include m.telefono {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 5rem;
+    }
+}
+
+// Modal base
+.modal {
+    background: v.$blanco;
+    border-radius: v.$border-radius-large;
+    box-shadow: v.$sombra-modal;
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+    transform: scale(0.8) translateY(-50px);
+    transition: all v.$transicion-base;
+
+    .modal-overlay.active & {
+        transform: scale(1) translateY(0);
+    }
+
+    @include m.telefono {
+        max-width: 95%;
+        max-height: 90vh;
+    }
+
+    // Variantes de tamaño
+    &--small {
+        max-width: 400px;
+    }
+
+    &--large {
+        max-width: 800px;
+    }
+
+    &--full {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+}
+
+// Header 
+.modal-header {
+    padding: 2.5rem 3rem 1.5rem 3rem;
+    border-bottom: 1px solid v.$gris;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.telefono {
+        padding: 2rem 1.5rem 1rem 1.5rem;
+    }
+
+    .modal-title {
+        margin: 0;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: v.$color-texto;
+
+        @include m.telefono {
+            font-size: 2rem;
+        }
+    }
+
+    .modal-close {
+        background: none;
+        border: none;
+        font-size: 3rem;
+        color: v.$gris-oscuro;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: all v.$transicion-base;
+        line-height: 1;
+
+        &:hover {
+            color: v.$rojo;
+            transform: scale(1.1);
+        }
+
+        @include m.telefono {
+            font-size: 2.5rem;
+            padding: 0.2rem;
+        }
+    }
+}
+
+// Contenido 
+.modal-body {
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    max-height: 60vh;
+
+    @include m.telefono {
+        padding: 1.5rem;
+        max-height: 50vh;
+    }
+
+    p {
+        margin: 0 0 1.5rem 0;
+        line-height: 1.6;
+        color: v.$color-texto;
+        font-size: 1.6rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Footer 
+.modal-footer {
+    padding: 1.5rem 3rem 2.5rem 3rem;
+    border-top: 1px solid v.$gris;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+
+    @include m.telefono {
+        padding: 1rem 1.5rem 2rem 1.5rem;
+        flex-direction: column;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: v.$border-radius;
+        font-size: 1.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all v.$transicion-base;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+
+        @include m.telefono {
+            width: 100%;
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &--primary {
+            background-color: v.$lila-easily;
+            color: v.$blanco;
+
+            &:hover {
+                background-color: v.$lila-easily-hover;
+                transform: translateY(-2px);
+            }
+        }
+
+        &--secondary {
+            background-color: v.$gris;
+            color: v.$color-texto;
+
+            &:hover {
+                background-color: color.adjust(v.$gris, $lightness:-10%);
+            }
+        }
+
+        &--success {
+            background-color: v.$verde;
+            color: v.$blanco;
+
+            &:hover {
+                background-color: color.adjust(v.$verde, $lightness:-10%);
+            }
+        }
+
+        &--danger {
+            background-color: v.$rojo;
+            color: v.$blanco;
+
+            &:hover {
+                background-color: color.adjust(v.$rojo, $lightness:-10%);
+            }
+        }
+
+        &--outline {
+            background-color: transparent;
+            border: 2px solid v.$lila-easily;
+            color: v.$lila-easily;
+
+            &:hover {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+            }
+        }
+    }
+}
+
+//confirmación
+.modal-confirm {
+    @extend .modal;
+    @extend .modal--small;
+
+    .modal-body {
+        text-align: center;
+        padding: 3rem;
+
+        .confirm-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+
+            &.warning {
+                color: v.$amarillo;
+            }
+
+            &.danger {
+                color: v.$rojo;
+            }
+
+            &.info {
+                color: v.$azul;
+            }
+
+            &.success {
+                color: v.$verde;
+            }
+        }
+
+        .confirm-message {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: v.$color-texto;
+        }
+
+        .confirm-details {
+            font-size: 1.4rem;
+            color: v.$gris-oscuro;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+//loading/progreso
+.modal-loading {
+    @extend .modal;
+    @extend .modal--small;
+
+    .modal-body {
+        text-align: center;
+        padding: 4rem 3rem;
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid v.$gris;
+            border-top: 4px solid v.$lila-easily;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem auto;
+        }
+
+        .loading-message {
+            font-size: 1.6rem;
+            color: v.$color-texto;
+            margin: 0;
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+// Modal de formulario
+.modal-form {
+    .modal-body {
+        .form-group {
+            margin-bottom: 2rem;
+
+            label {
+                display: block;
+                font-weight: 600;
+                color: v.$color-texto;
+                margin-bottom: 0.5rem;
+                font-size: 1.4rem;
+            }
+
+            input, 
+            textarea, 
+            select {
+                width: 100%;
+                padding: 1.2rem;
+                border: 1px solid v.$borde-1;
+                border-radius: v.$border-radius;
+                font-size: 1.4rem;
+                font-family: v.$fuente-principal;
+                transition: border-color v.$transicion-base;
+
+                &:focus {
+                    outline: none;
+                    border-color: v.$lila-easily;
+                    box-shadow: 0 0 0 2px rgba(v.$lila-easily, 0.2);
+                }
+
+                &.error {
+                    border-color: v.$rojo;
+
+                    &:focus {
+                        border-color: v.$rojo;
+                        box-shadow: 0 0 0 2px rgba(v.$rojo, 0.2);
+                    }
+                }
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+
+            .error-message {
+                color: v.$rojo;
+                font-size: 1.2rem;
+                margin-top: 0.5rem;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//imagen/galería
+.modal-image {
+    @extend .modal;
+    @extend .modal--large;
+
+    .modal-body {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: v.$negro;
+
+        img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+    }
+
+    .modal-header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: v.$blanco;
+        z-index: 10;
+
+        .modal-close {
+            color: v.$blanco;
+
+            &:hover {
+                color: v.$lila-easily;
+            }
+        }
+    }
+}
+
+//entrada/salida
+.modal-fade-enter {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+}
+
+.modal-fade-enter-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition: all v.$transicion-base;
+}
+
+.modal-fade-exit {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.modal-fade-exit-active {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+    transition: all v.$transicion-base;
+}
+
+//botones que abren modales
+.modal-trigger {
+    cursor: pointer;
+    transition: all v.$transicion-base;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Prevenir scroll
+body.modal-open {
+    overflow: hidden;
+}

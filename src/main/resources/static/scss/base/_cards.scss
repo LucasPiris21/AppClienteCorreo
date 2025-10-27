@@ -1,0 +1,112 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Tarjeta base
+.card {
+    background: v.$blanco;
+    border-radius: v.$border-radius;
+    box-shadow: v.$sombra-card;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: v.$borde-principal;
+    transition: transform v.$transicion-rapida, box-shadow v.$transicion-rapida;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: v.$sombra-hover;
+    }
+
+    &--small {
+        padding: 1.5rem;
+        border-radius: v.$border-radius-small;
+    }
+
+    &--large {
+        padding: 3rem;
+        border-radius: v.$border-radius-large;
+    }
+
+    &--primary {
+        border-left: 5px solid v.$lila-easily;
+    }
+
+    &--success {
+        border-left: 5px solid v.$verde;
+    }
+
+    &--danger {
+        border-left: 5px solid v.$rojo;
+    }
+
+    &--warning {
+        border-left: 5px solid v.$amarillo;
+    }
+}
+
+// materias/cursos
+.materia-card {
+    @extend .card;
+    @extend .card--primary;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+// para exámenes  
+.examen-card {
+    @extend .card;
+    background-color: v.$color-card;
+    
+    h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.3rem;
+        color: v.$lila-easily;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        color: v.$color-texto;
+    }
+}
+
+//perfil de usuario
+.profile-card {
+    @extend .card;
+    text-align: center;
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: v.$border-radius-circle;
+        object-fit: cover;
+        border: 3px solid v.$lila-easily;
+        margin: 0 auto 2rem auto;
+        display: block;
+    }
+
+    .profile-name {
+        margin: 0 0 1rem 0;
+        font-size: 2rem;
+        color: v.$color-texto;
+    }
+
+    .profile-info {
+        margin: 0.5rem 0;
+        font-size: 1.4rem;
+        color: v.$gris-oscuro;
+    }
+}
+
+// Grid responsivo
+.cards-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 1rem;
+
+    @include m.tablet {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}

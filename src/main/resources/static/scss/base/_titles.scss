@@ -1,0 +1,15 @@
+@use 'variables' as v;
+
+.titulo_pacifico {
+        font-family: v.$fuente-titulo;
+        color: v.$azul-complementario;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 6rem;
+}
+
+.titulo-form {
+    margin: 2rem;
+    align-items: start;
+}

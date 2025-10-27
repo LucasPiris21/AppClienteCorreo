@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.background-login {
+  background: v.$lila-easily;
+  background: linear-gradient(135deg, v.$lila-easily, v.$lila-easily-hover);
+//   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;   
+  padding: .1rem;
+  margin: 10rem 0 7rem 0;
+
+  @include m.tablet {
+    margin: 10rem 0 34rem 0;
+  }
+
+  @include m.desktop {
+    margin: 10rem 0 23.5rem 0;
+  }
+}

@@ -1,0 +1,599 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Páginas de Perfil 
+.page-perfil {
+    .perfil-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        padding: 2rem;
+
+        @include m.telefono {
+            padding: 1rem;
+        }
+    }
+
+    // Tarjeta principal del perfil
+    .perfil-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius;
+        box-shadow: v.$sombra-card;
+        padding: 4rem;
+        margin-bottom: 2rem;
+        border: v.$borde-principal;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+
+        @include m.telefono {
+            padding: 2rem;
+        }
+
+        .perfil-header {
+            position: relative;
+            margin-bottom: 3rem;
+
+            .perfil-banner {
+                height: 120px;
+                background: linear-gradient(135deg, v.$lila-easily 0%, v.$lila-easily-hover 100%);
+                border-radius: v.$border-radius-large;
+                position: relative;
+                margin-bottom: 2rem;
+
+                &.docente {
+                    background: linear-gradient(135deg, v.$azul 0%, color.adjust(v.$azul, $lightness:-15%) 100%);
+                }
+
+                .banner-overlay {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    color: v.$blanco;
+                    opacity: 0.8;
+
+                    .role-badge {
+                        background: rgba(255, 255, 255, 0.2);
+                        padding: 0.5rem 1rem;
+                        border-radius: v.$border-radius-large;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        backdrop-filter: blur(10px);
+                    }
+                }
+            }
+
+            .perfil-image-wrapper {
+                position: relative;
+                display: inline-block;
+                margin-bottom: 2rem;
+
+                .perfil-image {
+                    border-radius: v.$border-radius-circle;
+                    object-fit: cover;
+                    display: block;
+                    width: 140px;
+                    height: 140px;
+                    border: 4px solid v.$blanco;
+                    box-shadow: v.$sombra-card;
+
+                    @include m.telefono {
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+
+                .image-upload {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: v.$lila-easily;
+                    color: v.$blanco;
+                    border: none;
+                    border-radius: v.$border-radius-circle;
+                    width: 35px;
+                    height: 35px;
+                    cursor: pointer;
+                    font-size: 1.4rem;
+                    transition: all v.$transicion-base;
+
+                    &:hover {
+                        background-color: v.$lila-easily-hover;
+                        transform: scale(1.1);
+                    }
+
+                    i {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        .perfil-info {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            .perfil-nombre {
+                font-weight: 700;
+                color: v.$color-texto;
+                line-height: 1.2;
+                margin: 0;
+                font-size: 2.4rem;
+                margin-bottom: 0.5rem;
+
+                @include m.telefono {
+                    font-size: 2rem;
+                }
+            }
+
+            .perfil-titulo {
+                font-size: 1.6rem;
+                color: v.$lila-easily;
+                font-weight: 600;
+                margin-bottom: 2rem;
+
+                &.docente {
+                    color: v.$azul;
+                }
+            }
+
+            .perfil-stats {
+                display: flex;
+                justify-content: space-around;
+                gap: 2rem;
+                margin-bottom: 2rem;
+
+                @include m.telefono {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .stat-item {
+                    text-align: center;
+
+                    .stat-number {
+                        display: block;
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                        color: v.$lila-easily;
+                        margin-bottom: 0.3rem;
+
+                        &.docente {
+                            color: v.$azul;
+                        }
+                    }
+
+                    .stat-label {
+                        font-size: 1.3rem;
+                        color: v.$gris-oscuro;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+
+        .perfil-details {
+            background: color.adjust(v.$gris, $lightness:3%);
+            border-radius: v.$border-radius;
+            padding: 2rem;
+            text-align: left;
+            margin-bottom: 3rem;
+
+            .detail-section {
+                margin-bottom: 2rem;
+
+                .section-title {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: v.$color-texto;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    i {
+                        color: v.$lila-easily;
+                        font-size: 1.4rem;
+
+                        &.docente {
+                            color: v.$azul;
+                        }
+                    }
+                }
+
+                .detail-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+
+                    @include m.telefono {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .detail-item {
+                        padding: 1rem 0;
+                        border-bottom: 1px solid v.$gris;
+                        text-align: left;
+                        
+                        .label {
+                            display: block;
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            color: v.$lila-easily;
+                            margin-bottom: 0.3rem;
+                            text-transform: uppercase;
+                            letter-spacing: 0.3px;
+
+                            &.docente {
+                                color: v.$azul;
+                            }
+                        }
+
+                        .value {
+                            font-size: 1.4rem;
+                            color: v.$color-texto;
+                            word-break: break-word;
+                        }
+                    }
+                }
+            }
+        }
+
+        .perfil-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+
+            @include m.telefono {
+                flex-direction: column;
+            }
+
+            .btn-editar {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+                border: none;
+                border-radius: v.$border-radius;
+                cursor: pointer;
+                transition: all v.$transicion-base;
+                font-weight: 600;
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+                
+                &:hover {
+                    background-color: v.$lila-easily-hover;
+                    transform: translateY(-2px);
+                    box-shadow: v.$sombra-hover;
+                }
+                
+                i {
+                    margin-right: 0.5rem;
+                }
+                
+                padding: 1.2rem 2.5rem;
+                font-size: 1.5rem;
+
+                @include m.telefono {
+                    padding: 1rem 2rem;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .btn-cambiar-password {
+                background-color: v.$gris-oscuro;
+                color: v.$blanco;
+                border: none;
+                padding: 1.2rem 2.5rem;
+                font-size: 1.5rem;
+                border-radius: v.$border-radius;
+                cursor: pointer;
+                transition: all v.$transicion-base;
+                font-weight: 600;
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+
+                &:hover {
+                    background-color: color.adjust(v.$gris-oscuro, $lightness:-10%);
+                    transform: translateY(-2px);
+                    box-shadow: v.$sombra-hover;
+                }
+
+                i {
+                    margin-right: 0.5rem;
+                }
+
+                @include m.telefono {
+                    padding: 1rem 2rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    // Actividad reciente (para estudiantes)
+    .perfil-actividad {
+        max-width: 600px;
+        margin: 3rem auto;
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 3rem;
+
+        @include m.telefono {
+            margin: 2rem 1rem;
+            padding: 2rem;
+        }
+
+        .actividad-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: v.$color-texto;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+                color: v.$lila-easily;
+                font-size: 1.8rem;
+            }
+        }
+
+        .actividad-lista {
+            .actividad-item {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+                border-bottom: 1px solid v.$gris;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .actividad-icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: v.$border-radius-circle;
+                    background-color: v.$lila-easily;
+                    color: v.$blanco;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.6rem;
+                    flex-shrink: 0;
+
+                    &.examen {
+                        background-color: v.$amarillo;
+                        color: v.$negro;
+                    }
+
+                    &.tarea {
+                        background-color: v.$verde;
+                    }
+
+                    &.login {
+                        background-color: v.$azul;
+                    }
+                }
+
+                .actividad-content {
+                    flex: 1;
+
+                    .actividad-texto {
+                        font-size: 1.4rem;
+                        color: v.$color-texto;
+                        margin: 0 0 0.3rem 0;
+                    }
+
+                    .actividad-fecha {
+                        font-size: 1.2rem;
+                        color: v.$gris-oscuro;
+                        margin: 0;
+                    }
+                }
+
+                .actividad-estado {
+                    padding: 0.3rem 0.8rem;
+                    border-radius: v.$border-radius;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+
+                    &.completado {
+                        background-color: v.$verde;
+                        color: v.$blanco;
+                    }
+
+                    &.pendiente {
+                        background-color: v.$amarillo;
+                        color: v.$negro;
+                    }
+
+                    &.vencido {
+                        background-color: v.$rojo;
+                        color: v.$blanco;
+                    }
+                }
+            }
+        }
+
+        .actividad-empty {
+            text-align: center;
+            padding: 3rem;
+
+            .empty-icon {
+                font-size: 4rem;
+                color: v.$gris;
+                margin-bottom: 1rem;
+            }
+
+            .empty-text {
+                font-size: 1.6rem;
+                color: v.$gris-oscuro;
+            }
+        }
+    }
+
+    // Progreso académico (para estudiantes)
+    .perfil-progreso {
+        max-width: 600px;
+        margin: 3rem auto;
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        padding: 3rem;
+
+        @include m.telefono {
+            margin: 2rem 1rem;
+            padding: 2rem;
+        }
+
+        .progreso-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: v.$color-texto;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+                color: v.$lila-easily;
+                font-size: 1.8rem;
+            }
+        }
+
+        .progreso-general {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            .progreso-circular {
+                position: relative;
+                width: 120px;
+                height: 120px;
+                margin: 0 auto 2rem auto;
+
+                .progreso-circle {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background: conic-gradient(
+                        v.$lila-easily 0deg,
+                        v.$lila-easily var(--progreso-angle, 180deg),
+                        v.$gris var(--progreso-angle, 180deg),
+                        v.$gris 360deg
+                    );
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        content: '';
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background: v.$blanco;
+                    }
+                }
+
+                .progreso-texto {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: v.$lila-easily;
+                }
+            }
+
+            .progreso-label {
+                font-size: 1.4rem;
+                color: v.$gris-oscuro;
+                margin: 0;
+            }
+        }
+
+        .progreso-detalles {
+            .progreso-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+                border-bottom: 1px solid v.$gris;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .progreso-materia {
+                    font-size: 1.4rem;
+                    color: v.$color-texto;
+                    font-weight: 600;
+                }
+
+                .progreso-porcentaje {
+                    font-size: 1.4rem;
+                    color: v.$lila-easily;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // Variantes para diferentes roles
+    &.perfil-docente {
+        .perfil-card {
+            .perfil-banner {
+                background: linear-gradient(135deg, v.$azul 0%, color.adjust(v.$azul, $lightness:-15%) 100%);
+            }
+
+            .perfil-titulo,
+            .stat-number,
+            .section-title i,
+            .detail-item .label,
+            .actividad-title i,
+            .progreso-title i {
+                color: v.$azul;
+            }
+
+            .btn-editar {
+                background-color: v.$azul;
+
+                &:hover {
+                    background-color: color.adjust(v.$azul, $lightness:-10%);
+                }
+            }
+        }
+    }
+
+    &.perfil-admin {
+        .perfil-card {
+            .perfil-banner {
+                background: linear-gradient(135deg, v.$verde 0%, color.adjust(v.$verde, $lightness:-15%) 100%);
+            }
+
+            .perfil-titulo,
+            .stat-number,
+            .section-title i,
+            .detail-item .label,
+            .actividad-title i,
+            .progreso-title i {
+                color: v.$verde;
+            }
+
+            .btn-editar {
+                background-color: v.$verde;
+
+                &:hover {
+                    background-color: color.adjust(v.$verde, $lightness:-10%);
+                }
+            }
+        }
+    }
+}
+// Fin de Páginas de Perfil 

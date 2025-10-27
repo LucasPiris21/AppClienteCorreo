@@ -1,0 +1,122 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+
+.contenedorHomeEstudiante {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+  
+  min-height: calc(100vh - 8rem);
+
+  @include m.tablet {
+    @include m.grid(4);
+  }
+}
+
+.acerca {
+    grid-column: 2 / 5;
+    
+    h2 {
+      font-size: 24px;
+      color: v.$lila-easily;
+      margin-bottom: 15px;
+    }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: v.$negro;
+    margin-bottom: 10px;
+  }
+}
+.perfil {
+  background-color: v.$blanco;
+  width: 28rem;
+  min-width: 28rem;
+  padding: 3rem;
+  border-right: .4rem solid v.$lila-easily;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  @include m.tablet {
+    display: flex;
+  }
+
+  // 🔹 botón toggle fijo arriba a la izquierda del aside
+  .toggle-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: v.$lila-easily;
+    color: v.$blanco;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+
+    &:hover {
+      background: color.adjust(v.$lila-easily, $lightness:-10%);
+    }
+  }
+
+  img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid v.$lila-easily;
+    margin-top: 3rem; // 🔹 espacio para que el botón no tape la foto
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    display: inline-block; // 🔹 Sobrescribe el display: block global
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: v.$negro;
+  }
+
+  p {
+    margin: .5rem 0;
+    font-size: 1.4rem;
+    color: v.$negro;
+  }
+
+  &.colapsado {
+    width: 8rem;
+    min-width: 8rem;
+    padding: 2rem 1rem;
+
+    h2,
+    p,
+    .boton-editar {
+      display: none;
+    }
+
+    img {
+      width: 5rem;
+      height: 5rem;
+      margin: 3rem 0 0 0; // centrada debajo del botón
+    }
+
+    // mantiene todo centrado
+    align-items: center;
+  }
+}

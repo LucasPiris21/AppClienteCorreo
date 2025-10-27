@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-terminos {
+    .term-h1 {
+        font-family: v.$fuente-titulo;
+        color: v.$lila-easily;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 6rem;
+    }
+}

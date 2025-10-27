@@ -1,0 +1,360 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Sidebar de perfil
+.profile-sidebar {
+    background-color: v.$color-sidebar;
+    width: 280px;
+    padding: 3rem;
+    border-right: v.$borde-grueso;
+    text-align: center;
+    position: relative;
+    transition: all v.$transicion-base;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: v.$z-sidebar;
+
+    @include m.tablet {
+        width: 240px;
+        padding: 2rem;
+    }
+
+    @include m.telefono {
+        width: 100%;
+        min-height: auto;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        z-index: v.$z-modal;
+        box-shadow: v.$sombra-modal;
+        
+        &.active {
+            left: 0;
+        }
+    }
+
+    // Estado colapsado del sidebar
+    &.colapsado {
+        width: 80px;
+        padding: 2rem 1rem;
+
+        .profile-info,
+        .profile-name,
+        .profile-details,
+        .btn-editar {
+            display: none;
+        }
+
+        .profile-image {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .toggle-btn .toggle-icon::before {
+            content: '→';
+        }
+
+        @include m.telefono {
+            width: 100%;
+            
+            .profile-info,
+            .profile-name,
+            .profile-details,
+            .btn-editar {
+                display: block;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+
+    .toggle-btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background-color: v.$lila-easily;
+        color: v.$blanco;
+        border: none;
+        border-radius: v.$border-radius-circle;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 1.6rem;
+        z-index: 10;
+        transition: all v.$transicion-base;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: v.$lila-easily-hover;
+            transform: scale(1.1);
+        }
+
+        .toggle-icon::before {
+            content: '←';
+            font-weight: bold;
+        }
+
+        @include m.telefono {
+            top: 1rem;
+            right: 1rem;
+            left: auto;
+            
+            .toggle-icon::before {
+                content: '×';
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .profile-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 3rem;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: v.$border-radius-circle;
+        object-fit: cover;
+        border: 3px solid v.$lila-easily;
+        margin-bottom: 2rem;
+        transition: all v.$transicion-base;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+            border-color: v.$lila-easily-hover;
+        }
+
+        @include m.telefono {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .profile-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-name {
+        margin: 0 0 1rem 0;
+        font-size: 2rem;
+        color: v.$color-texto;
+        font-weight: 700;
+
+        @include m.telefono {
+            font-size: 1.8rem;
+        }
+    }
+
+    .profile-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+
+        .profile-detail {
+            font-size: 1.4rem;
+            color: v.$gris-oscuro;
+            
+            .label {
+                font-weight: 600;
+                color: v.$lila-easily;
+            }
+
+            @include m.telefono {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .btn-editar {
+        background-color: v.$lila-easily;
+        color: v.$blanco;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+        border-radius: v.$border-radius;
+        cursor: pointer;
+        transition: all v.$transicion-base;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+            background-color: v.$lila-easily-hover;
+            transform: translateY(-2px);
+            box-shadow: v.$sombra-hover;
+        }
+
+        i {
+            margin-right: 0.5rem;
+        }
+
+        @include m.telefono {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    // Variante para docente
+    &--docente {
+        .profile-image {
+            border-color: v.$azul;
+        }
+
+        .toggle-btn {
+            background-color: v.$azul;
+
+            &:hover {
+                background-color: color.adjust(v.$azul, $lightness:-10%);
+            }
+        }
+
+        .profile-name {
+            color: v.$azul;
+        }
+
+        .profile-details .profile-detail .label {
+            color: v.$azul;
+        }
+
+        .btn-editar {
+            background-color: v.$azul;
+
+            &:hover {
+                background-color: color.adjust(v.$azul, $lightness:10%);
+            }
+        }
+    }
+
+    // Variante para administrador
+    &--admin {
+        .profile-image {
+            border-color: v.$verde;
+        }
+
+        .toggle-btn {
+            background-color: v.$verde;
+
+            &:hover {
+                background-color: color.adjust(v.$verde, $lightness:-10%);
+            }
+        }
+
+        .profile-name {
+            color: v.$verde;
+        }
+
+        .profile-details .profile-detail .label {
+            color: v.$verde;
+        }
+
+        .btn-editar {
+            background-color: v.$verde;
+
+            &:hover {
+                background-color: color.adjust(v.$verde, $lightness:10%);
+            }
+        }
+    }
+}
+
+// Overlay para móvil 
+.profile-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: v.$z-sidebar - 1;
+
+    @include m.telefono {
+        &.active {
+            display: block;
+        }
+    }
+}
+
+// Botón para abrir sidebar 
+.profile-sidebar-trigger {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    background-color: v.$lila-easily;
+    color: v.$blanco;
+    border: none;
+    border-radius: v.$border-radius;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: v.$z-sidebar + 1;
+    box-shadow: v.$sombra-card;
+    transition: all v.$transicion-base;
+
+    @include m.telefono {
+        display: block;
+    }
+
+    &:hover {
+        background-color: v.$lila-easily-hover;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    i {
+        font-size: 1.8rem;
+    }
+}
+
+// Layout principal 
+.layout-with-sidebar {
+    display: flex;
+    min-height: calc(100vh - 80px);
+
+    @include m.telefono {
+        flex-direction: column;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 4rem;
+        background-color: v.$color-fondo-body;
+        min-height: calc(100vh - 80px);
+
+        @include m.tablet {
+            padding: 2rem;
+        }
+
+        @include m.telefono {
+            padding: 1rem;
+            min-height: auto;
+        }
+    }
+
+    //el contenido principal se expande
+    &.sidebar-collapsed .main-content {
+        margin-left: 80px;
+
+        @include m.telefono {
+            margin-left: 0;
+        }
+    }
+}

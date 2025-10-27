@@ -1,0 +1,150 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.contact-container {
+    max-width: 40rem;
+    margin: 4rem auto;
+    background-color: v.$blanco;
+    border: 0.2rem solid v.$lila-easily;
+    border-radius: 0.8rem;
+    
+    @include m.tablet {
+        max-width: 50rem;
+        margin: 5rem auto 0 auto;
+    }
+
+    .titulo-pacifico {
+        margin: 2.5rem;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin: 2rem 0 0.8rem;
+    }
+    
+}
+
+.padding {
+    @include m.padding(2rem);
+}
+
+.formulario-materia {
+    margin: 7.5rem;
+}
+
+// Contenedor para formularios de administración
+.form-container {
+    background-color: v.$blanco;
+    padding: 3rem;
+    border-radius: v.$border-radius-large;
+    margin-bottom: 3rem;
+    box-shadow: v.$sombra-card;
+
+    h3 {
+        font-size: 2.2rem;
+        color: v.$color-texto;
+        margin: 0 0 2rem 0;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        i {
+            color: v.$lila-easily;
+            font-size: 2rem;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: v.$color-etiqueta;
+            font-size: 1.4rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid v.$borde-1;
+            border-radius: v.$border-radius;
+            font-size: 1.4rem;
+            font-family: v.$fuente-principal;
+            background-color: v.$blanco;
+            transition: all v.$transicion-base;
+
+            &:focus {
+                outline: none;
+                border-color: v.$lila-easily;
+                box-shadow: 0 0 0 3px rgba(146, 73, 188, 0.1);
+            }
+
+            &::placeholder {
+                color: v.$gris-oscuro;
+            }
+        }
+
+        textarea {
+            height: 10rem;
+            resize: vertical;
+            font-family: v.$fuente-principal;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'><path d='M7 10l5 5 5-5H7z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5rem;
+        }
+    }
+
+    @include m.telefono {
+        padding: 2rem;
+        margin-bottom: 2rem;
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            input, textarea, select {
+                padding: 1rem;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+.form-examen {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+     margin-top: 2rem;
+     align-self: center;
+     justify-content: center;
+
+     @include m.tablet {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 2rem;
+         align-items: start;
+         justify-items: center;
+    }
+}

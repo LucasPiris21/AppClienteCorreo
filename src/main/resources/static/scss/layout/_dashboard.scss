@@ -1,0 +1,588 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// Layout Dashboard
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: v.$color-fondo-body;
+    font-family: v.$fuente-principal;
+
+    @include m.telefono {
+        flex-direction: column;
+    }
+}
+
+// Sidebar del dashboard administrativo
+.dashboard-sidebar {
+    width: 240px;
+    background-color: v.$color-sidebar;
+    border-right: 1px solid v.$borde-1;
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: v.$z-sidebar;
+    transition: transform v.$transicion-base;
+
+    @include m.telefono {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        z-index: v.$z-modal;
+        box-shadow: v.$sombra-modal;
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    .dashboard-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid v.$gris;
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: v.$lila-easily;
+            border-radius: v.$border-radius;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: v.$blanco;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-family: v.$fuente-titulo;
+            color: v.$lila-easily;
+            font-size: 2.4rem;
+            margin: 0;
+        }
+    }
+
+    .dashboard-nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 0.5rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.2rem 1.5rem;
+                    color: v.$gris-oscuro;
+                    text-decoration: none;
+                    border-radius: v.$border-radius;
+                    transition: all v.$transicion-base;
+                    font-weight: 500;
+
+                    &:hover {
+                        background-color: v.$blanco-secundario;
+                        color: v.$lila-easily;
+                        transform: translateX(5px);
+                    }
+
+                    &.active {
+                        background-color: v.$lila-easily;
+                        color: v.$blanco;
+                    }
+
+                    i {
+                        font-size: 1.6rem;
+                        width: 20px;
+                        text-align: center;
+                        color: v.$lila-easily;
+                    }
+
+                    span {
+                        font-size: 1.4rem;
+                    }
+
+                    &.active i {
+                        color: v.$blanco;
+                    }
+                }
+
+                
+                &.has-submenu {
+                    .submenu {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height v.$transicion-base;
+                        margin-left: 2rem;
+                        
+                        &.active {
+                            max-height: 200px;
+                        }
+
+                        a {
+                            padding: 0.8rem 1rem;
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-footer {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid v.$gris;
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            .user-avatar {
+                width: 35px;
+                height: 35px;
+                border-radius: v.$border-radius-circle;
+                background-color: v.$lila-easily;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: v.$blanco;
+                font-weight: bold;
+            }
+
+            .user-name {
+                font-size: 1.3rem;
+                color: v.$color-texto;
+                font-weight: 600;
+            }
+        }
+
+        .logout-btn {
+            width: 100%;
+            background-color: v.$rojo;
+            color: v.$blanco;
+            border: none;
+            padding: 0.8rem;
+            border-radius: v.$border-radius;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: background-color v.$transicion-base;
+
+            &:hover {
+                background-color: color.adjust(v.$rojo, $lightness:-10%);
+            }
+        }
+    }
+}
+
+// Contenido principal 
+.dashboard-main {
+    flex: 1;
+    margin-left: 240px;
+    display: flex;
+    flex-direction: column;
+
+    @include m.telefono {
+        margin-left: 0;
+    }
+}
+
+// Barra superior 
+.dashboard-topbar {
+    background-color: v.$color-topbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 1px solid v.$borde-1;
+    position: sticky;
+    top: 0;
+    z-index: v.$z-header;
+
+    @include m.telefono {
+        padding: 1.5rem;
+    }
+
+    .topbar-left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .mobile-sidebar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: v.$lila-easily;
+            cursor: pointer;
+
+            @include m.telefono {
+                display: block;
+            }
+        }
+
+        .page-title {
+            margin: 0;
+            font-size: 2.4rem;
+            color: v.$color-texto;
+            font-weight: 700;
+
+            @include m.telefono {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            @include m.telefono {
+                display: none;
+            }
+
+            input {
+                padding: 0.8rem 1.5rem 0.8rem 4rem;
+                border: 1px solid v.$borde-1;
+                border-radius: v.$border-radius-large;
+                font-size: 1.4rem;
+                background-color: v.$blanco;
+                width: 250px;
+                
+                &:focus {
+                    outline: none;
+                    border-color: v.$lila-easily;
+                }
+            }
+
+            .search-icon {
+                position: absolute;
+                left: 1.5rem;
+                color: v.$gris-oscuro;
+                font-size: 1.4rem;
+            }
+        }
+
+        .notifications {
+            position: relative;
+            cursor: pointer;
+
+            .notification-icon {
+                font-size: 2rem;
+                color: v.$gris-oscuro;
+                transition: color v.$transicion-base;
+
+                &:hover {
+                    color: v.$lila-easily;
+                }
+            }
+
+            .notification-badge {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background-color: v.$rojo;
+                color: v.$blanco;
+                border-radius: v.$border-radius-circle;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+
+        .admin-menu {
+            position: relative;
+
+            .admin-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: v.$border-radius-circle;
+                cursor: pointer;
+                border: 2px solid v.$lila-easily;
+            }
+        }
+    }
+}
+
+// Contenido 
+.dashboard-content {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+
+    @include m.tablet {
+        padding: 2rem;
+    }
+
+    @include m.telefono {
+        padding: 1.5rem;
+    }
+}
+
+// Cards de estadísticas
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .stat-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        padding: 2.5rem;
+        box-shadow: v.$sombra-card;
+        border-left: 4px solid v.$lila-easily;
+        transition: all v.$transicion-base;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: v.$sombra-hover;
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: v.$border-radius;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: v.$blanco;
+            }
+
+            &.students .stat-icon {
+                background-color: v.$lila-easily;
+            }
+
+            &.teachers .stat-icon {
+                background-color: v.$azul;
+            }
+
+            &.courses .stat-icon {
+                background-color: v.$verde;
+            }
+
+            &.exams .stat-icon {
+                background-color: v.$amarillo;
+            }
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: v.$color-texto;
+            margin: 0;
+        }
+
+        .stat-label {
+            font-size: 1.4rem;
+            color: v.$gris-oscuro;
+            margin: 0.5rem 0 0 0;
+        }
+
+        .stat-change {
+            font-size: 1.2rem;
+            font-weight: 600;
+            
+            &.positive {
+                color: v.$verde;
+            }
+
+            &.negative {
+                color: v.$rojo;
+            }
+        }
+    }
+}
+
+// Overlay para móvil
+.dashboard-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: v.$z-sidebar - 1;
+
+    @include m.telefono {
+        &.active {
+            display: block;
+        }
+    }
+}
+
+// Widget de actividad reciente
+.dashboard-widget {
+    background: v.$blanco;
+    border-radius: v.$border-radius-large;
+    box-shadow: v.$sombra-card;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+
+    .widget-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid v.$gris;
+
+        .widget-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: v.$color-texto;
+            margin: 0;
+        }
+
+        .widget-actions {
+            display: flex;
+            gap: 1rem;
+
+            .btn-widget {
+                padding: 0.5rem 1rem;
+                font-size: 1.2rem;
+                border: 1px solid v.$borde-1;
+                background: v.$blanco;
+                border-radius: v.$border-radius;
+                cursor: pointer;
+                transition: all v.$transicion-base;
+
+                &:hover {
+                    background-color: v.$lila-easily;
+                    color: v.$blanco;
+                    border-color: v.$lila-easily;
+                }
+            }
+        }
+    }
+
+    .widget-content {
+        font-size: 1.4rem;
+        color: v.$color-texto;
+        line-height: 1.6;
+    }
+}
+
+// Estilos específicos para el contenido principal admin
+.admin-page {
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .topbar {
+            background-color: v.$color-topbar;
+            padding: 2rem 3rem;
+            border-bottom: 1px solid v.$borde-1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: v.$sombra-tabla;
+
+            @include m.telefono {
+                padding: 1.5rem 2rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+                color: v.$color-texto;
+                margin: 0;
+                font-weight: 700;
+
+                @include m.telefono {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+
+            .btn-lila {
+                background-color: v.$lila-easily;
+                color: v.$blanco;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: v.$border-radius;
+                font-size: 1.4rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all v.$transicion-base;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                i {
+                    font-size: 1.2rem;
+                }
+
+                &:hover {
+                    background-color: v.$lila-easily-hover;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+
+        .contenido {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+
+            @include m.telefono {
+                padding: 2rem;
+            }
+
+            //bienvenida para panel principal
+            .dashboard-welcome {
+                text-align: center;
+                padding: 6rem 2rem;
+                background: linear-gradient(135deg, v.$lila-easily 0%, v.$lila-easily-hover 100%);
+                border-radius: v.$border-radius-large;
+                color: v.$blanco;
+                box-shadow: v.$sombra-card;
+
+                h2 {
+                    font-size: 3rem;
+                    margin: 0 0 1rem 0;
+                    font-family: v.$fuente-titulo;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    margin: 0;
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

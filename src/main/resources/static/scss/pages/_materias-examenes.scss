@@ -1,0 +1,982 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+// ============= PÁGINA DE MATERIAS =============
+.materias-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+
+  @include m.tablet {
+    @include m.grid(4);
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .materias-header {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: v.$lila-easily;
+      margin: 0 0 1rem 0;
+
+      @include m.tablet {
+        font-size: 3rem;
+      }
+
+      i {
+        font-size: 2.8rem;
+
+        @include m.tablet {
+          font-size: 3.2rem;
+        }
+      }
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: v.$gris-oscuro;
+      margin: 0 0 2rem 0;
+
+      @include m.tablet {
+        font-size: 1.6rem;
+      }
+    }
+
+    .search-bar {
+      margin-top: 2rem;
+
+      .search-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+
+        i {
+          position: absolute;
+          left: 1.5rem;
+          color: v.$gris-oscuro;
+          font-size: 1.6rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 1.2rem 1.5rem 1.2rem 4.5rem;
+          border: 1px solid v.$gris;
+          border-radius: v.$border-radius;
+          font-size: 1.4rem;
+          transition: all v.$transicion-base;
+
+          &:focus {
+            outline: none;
+            border-color: v.$lila-easily;
+            box-shadow: 0 0 0 3px rgba(146, 73, 188, 0.1);
+          }
+        }
+
+        .clear-search {
+          position: absolute;
+          right: 1rem;
+          background: none;
+          border: none;
+          color: v.$gris-oscuro;
+          font-size: 1.4rem;
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: v.$border-radius-small;
+          transition: all v.$transicion-base;
+
+          &:hover {
+            background: v.$gris-claro;
+            color: v.$lila-easily;
+          }
+        }
+      }
+    }
+  }
+
+  .selector-anios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .btn-anio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.5rem;
+      border: 2px solid v.$gris;
+      background: v.$blanco;
+      color: v.$gris-oscuro;
+      border-radius: v.$border-radius;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all v.$transicion-base;
+      cursor: pointer;
+      min-width: 80px;
+
+      &:hover {
+        border-color: v.$lila-easily;
+        background: color.adjust(v.$lila-easily, $lightness: 45%);
+        color: v.$lila-easily;
+      }
+
+      &.active {
+        border-color: v.$lila-easily;
+        background: v.$lila-easily;
+        color: v.$blanco;
+      }
+
+      .anio-numero {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .anio-texto {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .materias-content {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      color: v.$gris-oscuro;
+
+      i {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        animation: spin 1s linear infinite;
+      }
+
+      p {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: v.$gris-oscuro;
+
+      i {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        opacity: 0.5;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+        color: v.$color-texto;
+      }
+
+      p {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+    }
+
+    .materias-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include m.tablet {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .materia-card {
+        background: v.$blanco;
+        border-radius: v.$border-radius-large;
+        box-shadow: v.$sombra-card;
+        overflow: hidden;
+        transition: all v.$transicion-base;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: v.$sombra-hover;
+        }
+
+        .materia-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2rem 2rem 1rem 2rem;
+          background: linear-gradient(135deg, v.$lila-easily 0%, v.$lila-easily-hover 100%);
+          color: v.$blanco;
+
+          .materia-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: v.$border-radius;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+          }
+
+          .materia-year-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: v.$border-radius-small;
+            font-size: 1.2rem;
+            font-weight: 600;
+          }
+        }
+
+        .materia-content {
+          padding: 2rem;
+
+          .materia-titulo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: v.$color-texto;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+          }
+
+          .materia-descripcion {
+            font-size: 1.4rem;
+            color: v.$gris-oscuro;
+            line-height: 1.5;
+            margin: 0 0 1.5rem 0;
+          }
+
+          .materia-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            .info-item {
+              display: flex;
+              align-items: center;
+              gap: 0.8rem;
+              font-size: 1.3rem;
+              color: v.$gris-oscuro;
+
+              i {
+                color: v.$lila-easily;
+                font-size: 1.4rem;
+                width: 1.6rem;
+              }
+            }
+          }
+        }
+
+        .materia-footer {
+          padding: 0 2rem 2rem 2rem;
+
+          .materia-acciones {
+            display: flex;
+            gap: 1rem;
+
+            @include m.telefono {
+              flex-direction: column;
+            }
+
+            .btn-action {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              padding: 1rem 1.5rem;
+              border: none;
+              border-radius: v.$border-radius;
+              font-size: 1.3rem;
+              font-weight: 600;
+              text-decoration: none;
+              cursor: pointer;
+              transition: all v.$transicion-base;
+              flex: 1;
+
+              &.btn-primary {
+                background: v.$lila-easily;
+                color: v.$blanco;
+
+                &:hover {
+                  background: v.$lila-easily-hover;
+                  transform: translateY(-1px);
+                }
+              }
+
+              &.btn-secondary {
+                background: v.$gris-claro;
+                color: v.$color-texto;
+                border: 1px solid v.$gris;
+
+                &:hover {
+                  background: v.$gris;
+                  border-color: v.$lila-easily;
+                }
+              }
+            }
+          }
+        }
+
+        // Animación de entrada
+        &.animate-fade-in {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+
+      .error-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 4rem 2rem;
+        background: color.adjust(v.$rojo, $lightness: 45%);
+        border: 1px solid v.$rojo;
+        border-radius: v.$border-radius;
+        color: v.$rojo;
+
+        i {
+          font-size: 4rem;
+          margin-bottom: 2rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+          margin: 0 0 1rem 0;
+        }
+
+        p {
+          font-size: 1.4rem;
+          margin: 0 0 2rem 0;
+        }
+
+        .btn-retry {
+          background: v.$rojo;
+          color: v.$blanco;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: v.$border-radius;
+          font-size: 1.3rem;
+          cursor: pointer;
+          transition: all v.$transicion-base;
+
+          &:hover {
+            background: color.adjust(v.$rojo, $lightness: -10%);
+          }
+        }
+      }
+    }
+  }
+
+  .materias-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: v.$blanco;
+      border-radius: v.$border-radius;
+      box-shadow: v.$sombra-card;
+      transition: all v.$transicion-base;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: v.$sombra-hover;
+      }
+
+      .stat-icon {
+        width: 5rem;
+        height: 5rem;
+        background: v.$lila-easily;
+        color: v.$blanco;
+        border-radius: v.$border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+      }
+
+      .stat-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        .stat-number {
+          font-size: 2.8rem;
+          font-weight: 700;
+          color: v.$lila-easily;
+          line-height: 1;
+        }
+
+        .stat-label {
+          font-size: 1.4rem;
+          color: v.$gris-oscuro;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+// ============= PÁGINA DE EXÁMENES =============
+.examenes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+
+  @include m.tablet {
+    @include m.grid(4);
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .examenes-header {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .page-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: v.$lila-easily;
+      margin: 0 0 1rem 0;
+
+      @include m.tablet {
+        font-size: 3rem;
+      }
+
+      i {
+        font-size: 2.8rem;
+
+        @include m.tablet {
+          font-size: 3.2rem;
+        }
+      }
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+      color: v.$gris-oscuro;
+      margin: 0 0 2rem 0;
+
+      @include m.tablet {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .examenes-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .filter-group {
+      .filter-label {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: v.$color-texto;
+        margin-bottom: 1rem;
+
+        i {
+          color: v.$lila-easily;
+          font-size: 1.6rem;
+        }
+      }
+
+      .selector-anios,
+      .selector-estados {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+
+        .btn-anio,
+        .btn-estado {
+          padding: 0.8rem 1.5rem;
+          border: 1px solid v.$gris;
+          background: v.$blanco;
+          color: v.$gris-oscuro;
+          border-radius: v.$border-radius-small;
+          font-size: 1.2rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all v.$transicion-base;
+          text-decoration: none;
+
+          &:hover {
+            border-color: v.$lila-easily;
+            background: color.adjust(v.$lila-easily, $lightness: 45%);
+            color: v.$lila-easily;
+          }
+
+          &.active {
+            background: v.$lila-easily;
+            border-color: v.$lila-easily;
+            color: v.$blanco;
+          }
+        }
+      }
+
+      .filter-select {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid v.$gris;
+        border-radius: v.$border-radius-small;
+        font-size: 1.3rem;
+        background: v.$blanco;
+        cursor: pointer;
+        transition: all v.$transicion-base;
+
+        &:focus {
+          outline: none;
+          border-color: v.$lila-easily;
+          box-shadow: 0 0 0 3px rgba(146, 73, 188, 0.1);
+        }
+      }
+    }
+  }
+
+  .materias-tabs {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .loading-materias {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+      color: v.$gris-oscuro;
+
+      i {
+        font-size: 2rem;
+        animation: spin 1s linear infinite;
+      }
+
+      span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .examenes-content {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .examenes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include m.tablet {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .loading-examenes {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        color: v.$gris-oscuro;
+
+        i {
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
+          animation: spin 1s linear infinite;
+        }
+
+        p {
+          font-size: 1.6rem;
+          margin: 0;
+        }
+      }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: v.$gris-oscuro;
+
+      i {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        opacity: 0.5;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+        color: v.$color-texto;
+      }
+
+      p {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .examenes-summary {
+    padding: 0 2rem;
+
+    @include m.tablet {
+      grid-column: 2 / 5;
+      padding: 0;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+
+      @include m.tablet {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+
+      .summary-card {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: v.$blanco;
+        border-radius: v.$border-radius;
+        box-shadow: v.$sombra-card;
+        transition: all v.$transicion-base;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: v.$sombra-hover;
+        }
+
+        .summary-icon {
+          width: 5rem;
+          height: 5rem;
+          border-radius: v.$border-radius;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2.4rem;
+          color: v.$blanco;
+
+          .fas {
+            font-size: 2rem;
+          }
+        }
+
+        .summary-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+
+          .summary-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1;
+          }
+
+          .summary-label {
+            font-size: 1.2rem;
+            color: v.$gris-oscuro;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+        }
+
+        &.pendientes {
+          .summary-icon {
+            background: v.$amarillo;
+          }
+          .summary-number {
+            color: v.$amarillo;
+          }
+        }
+
+        &.proximas {
+          .summary-icon {
+            background: v.$rojo;
+          }
+          .summary-number {
+            color: v.$rojo;
+          }
+        }
+
+        &.completadas {
+          .summary-icon {
+            background: v.$verde;
+          }
+          .summary-number {
+            color: v.$verde;
+          }
+        }
+
+        &.promedio {
+          .summary-icon {
+            background: v.$lila-easily;
+          }
+          .summary-number {
+            color: v.$lila-easily;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============= ANIMACIONES =============
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// ============= MODALES =============
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: v.$z-modal;
+  backdrop-filter: blur(5px);
+
+  .modal-content {
+    background: v.$blanco;
+    border-radius: v.$border-radius-large;
+    box-shadow: v.$sombra-modal;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+
+    @include m.tablet {
+      max-width: 600px;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid v.$gris;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: v.$color-texto;
+        margin: 0;
+
+        i {
+          color: v.$lila-easily;
+        }
+      }
+
+      .modal-close {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: v.$gris-oscuro;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: v.$border-radius;
+        transition: all v.$transicion-base;
+
+        &:hover {
+          background: v.$gris-claro;
+          color: v.$lila-easily;
+        }
+      }
+    }
+
+    .modal-body {
+      padding: 2rem;
+
+      .materia-detail-grid,
+      .detail-section {
+        .detail-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          padding: 1rem 0;
+          border-bottom: 1px solid v.$gris-claro;
+          font-size: 1.4rem;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          strong {
+            color: v.$lila-easily;
+            font-weight: 600;
+          }
+        }
+
+        .action-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 2rem;
+
+          @include m.tablet {
+            flex-direction: row;
+          }
+
+          .btn {
+            padding: 1rem 2rem;
+            border-radius: v.$border-radius;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all v.$transicion-base;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            border: none;
+
+            &.btn-primary {
+              background: v.$lila-easily;
+              color: v.$blanco;
+
+              &:hover {
+                background: v.$lila-easily-hover;
+              }
+            }
+
+            &.btn-secondary {
+              background: v.$azul;
+              color: v.$blanco;
+
+              &:hover {
+                background: color.adjust(v.$azul, $lightness: -10%);
+              }
+            }
+
+            &.btn-outline {
+              background: v.$blanco;
+              color: v.$lila-easily;
+              border: 1px solid v.$lila-easily;
+
+              &:hover {
+                background: v.$lila-easily;
+                color: v.$blanco;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes modalSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Estilos para body cuando modal está abierto
+body.modal-open {
+  overflow: hidden;
+}

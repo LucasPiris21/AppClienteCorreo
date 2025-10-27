@@ -1,0 +1,21 @@
+// Páginas principales
+@forward '_home';
+@forward '_homeEstudiante';
+
+// Páginas de autenticación
+@forward '_login';
+@forward '_registro';
+
+// Páginas de estudiantes
+@forward '_materias';
+@forward '_examenes';
+@forward '_perfil';
+
+// Páginas administrativas
+@forward '_panelAdmin';
+
+// Páginas generales
+@forward '_contacto';
+
+// Placeholder para páginas restantes
+@forward '_placeholder';

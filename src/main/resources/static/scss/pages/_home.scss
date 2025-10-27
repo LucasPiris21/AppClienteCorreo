@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        text-align: center;
+        font-size: 3.6rem;
+
+        @include m.tablet {
+            font-size: 4.6rem;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+    
+}

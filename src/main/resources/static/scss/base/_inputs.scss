@@ -1,0 +1,23 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+input, textarea, select {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f5f5f5;
+    &:focus {
+        outline: none;
+        border-color: v.$lila-easily-hover;
+        box-shadow: 0 0 0.8rem v.$lila-easily-hover;
+    }
+    margin: 1rem;
+}
+
+select {
+    margin-bottom: 2rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
