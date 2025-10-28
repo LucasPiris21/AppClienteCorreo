@@ -1,6 +1,9 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.flex {
+    display: flex;
+}
 .contenedor-form {
     display: flex;
     flex-direction: column;

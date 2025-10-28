@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "sass": "sass --load-path=src/main/resources/static/scss --watch src/main/resources/static/scss:src/main/resources/static/css --style=compressed"
+    "sass": "sass --load-path=src/main/resources/static/scss --watch src/main/resources/static/scss:src/main/resources/static/css --style=compressed"
   },
   "repository": {
     "type": "git",

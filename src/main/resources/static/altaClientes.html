@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Alta de Clientes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alta de Clientes</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<a href="clientes.html">Volver</a>
+	<header class="header__alt" >
+		<div class="contenedor">
+			<div class="barra">
+				<a href="index.html" class="logo">
+				<h1 class="logo__nombre no-margin centrar-texto">App<span  class="logo__bold">ClienteCorreo</span></h1>
+				</a>
+			</div>
+		</div>
+	</header>
+<button class="btn-lila" type="button" onclick="window.location.href='../'">
+        Volver
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        >
+        <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+        </svg>
+    </button>	
 	<h2>Alta de Clientes</h2>
 	<form id="altaClientesForm" method="get" target="salidaAltaClientes">
 		DNI: <input type="text" id="dni" name="dni"><br> 
 		Nombre: <input type="text" id="nombre" name="nombre"><br> 
 		Apellido: <input type="text" id="apellido" name="apellido"><br> 
-		<input type="submit" value="Enviar" name="Enviar">
+		<button class="btn-verde" type="submit" name="Enviar">
+			Enviar
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="30"
+				height="30"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				>
+				<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+			</svg>
+		</button>
 	</form>
 </body>
 

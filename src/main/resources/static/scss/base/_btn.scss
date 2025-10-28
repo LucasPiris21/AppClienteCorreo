@@ -11,6 +11,10 @@
   @include m.btn(v.$verde, v.$blanco, 700, 1px, 1rem, 0.5rem);
 }
 
+.btn-editar {
+  @include m.btn(v.$amarillo, v.$blanco, 700, 1px, 1rem, 0.5rem);
+}
+
 .btn-eliminar {
   @include m.btn(v.$rojo, v.$blanco, 700, 1px, 1rem, 0.5rem);
 

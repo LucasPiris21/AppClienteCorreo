@@ -5,7 +5,9 @@
     background-image: url(../img/fondo.avif);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 20rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    height: 40rem;
     background-position: center center;
     top: 0;
 
@@ -13,9 +15,14 @@
         text-align: center;
         color: v.$blanco;
         margin-top: 5rem;
-    }
-    @include m.tablet {
-        position: sticky;
+
+        @include m.tablet {
+            margin-top: 15rem;
+        }
+
+        p {
+            color: v.$blanco;
+        }
     }
 
     .contenido-header {
@@ -43,7 +50,59 @@
         }
     }
 }
+
+.header__alt {
+    background-image: url(../img/fondo.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    height: 10rem;
+    background-position: center center;
+    top: 0;
+
+    .header__texto {
+        text-align: center;
+        color: v.$blanco;
+        margin-top: 5rem;
+
+        @include m.tablet {
+            margin-top: 15rem;
+        }
+
+        p {
+            color: v.$blanco;
+        }
+    }
+
+    .contenido-header {
+        padding: 2rem;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+        @include m.tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    }
+    h1 {
+        flex-direction: column;
+        font-family: v.$fuente-titulo;
+        user-select: none;
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+            text-align: left;
+        }
+    }
+}
+
 .barra {
+    padding-top: 2rem;
     @include m.tablet {
         display: flex;
         justify-content: space-between;
@@ -55,9 +114,11 @@
     color: v.$blanco;
     font-weight: 400;
 }
-
+.logo__nombre {
+    font-weight: 400;
+}
 .logo__bold {
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .hamburger {

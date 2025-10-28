@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
-    <style>
-        table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a href="../">Volver</a>
+    <header class="header__alt" >
+        <div class="contenedor">
+            <div class="barra">
+                <a href="index.html" class="logo">
+                <h1 class="logo__nombre no-margin centrar-texto">App<span  class="logo__bold">ClienteCorreo</span></h1>
+                </a>
+            </div>
+        </div>
+  </header>
+    <button class="btn-lila" type="button" onclick="window.location.href='../'">
+        Volver
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        >
+        <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+        </svg>
+    </button>
+
     <h3>Clientes</h3>
-    <form action="GET" id="search">
-        <input type="text" name="searchTerm" id="searchTerm">
-        <input type="submit" value="Buscar" name="Buscar">
+    <form class="flex" action="GET" id="search">
+        <input style="padding: 15px;" type="text" placeholder="Buscar" name="searchTerm" id="searchTerm">
+        <button class="btn-lila">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            >
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+            </svg>
+
+        </button>
     </form>
     <br>
     <table style="text-align: left; border: 1px solid black; border-collapse: collapse;">
@@ -27,7 +68,7 @@
                 <th>DNI</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Acciones</th>
+                <th colspan="2" class="centrar-texto">Acciones</th>
             </tr>
         </thead>
         <tbody id="tabla-clientes">
@@ -35,7 +76,17 @@
         </tbody>
     </table>
     <br>
-    <a href="altaClientes.html">Agregar cliente</a>
+    <button class="btn-verde" type="button" class="btn-agregar" onclick="window.location.href='altaClientes.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+            <path d="M16 19h6" />
+            <path d="M19 16v6" />
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+        </svg>
+        Agregar cliente
+</button>
+
 </body>
 
 </html>
@@ -52,8 +103,45 @@
             <td>${cliente.nombre}</td>
             <td>${cliente.apellido}</td>
             <td>
-                <a href="editarClientes.html?dni=${cliente.dni}"><button>Editar</button></a>
-                <button class="buttonDelete" value="${cliente.dni}">Eliminar</button>
+                <button type="button" class="btn-editar" onclick="window.location.href='editarClientes.html?dni=${cliente.dni}'">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                    <path d="M16 5l3 3" />
+                </svg>
+                </button>
+    
+            </td>
+            <td>
+                <button class="btn-eliminar" value="${cliente.dni}">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        >
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                        </svg>
+                    </button>
             </td>
         </tr>
         `;
@@ -99,8 +187,45 @@
                 <td>${cliente.nombre}</td>
                 <td>${cliente.apellido}</td>
                 <td>
-                    <a href="editarClientes.html?dni=${cliente.dni}"><button>Editar</button></a>
-                    <button class="buttonDelete" value="${cliente.dni}">Eliminar</button>
+                    <button type="button" class="btn-editar" onclick="window.location.href='editarClientes.html?dni=${cliente.dni}'">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                        <path d="M16 5l3 3" />
+                    </svg>
+                    </button>
+        
+                </td>
+                <td>
+                    <button class="btn-eliminar" value="${cliente.dni}">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            >
+                            <path d="M4 7l16 0" />
+                            <path d="M10 11l0 6" />
+                            <path d="M14 11l0 6" />
+                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                            </svg>
+                        </button>
                 </td>
             </tr>
             `;

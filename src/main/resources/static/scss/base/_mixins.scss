@@ -50,6 +50,10 @@
     border: $border solid;
     padding: $padding;
     border-radius: $borderRadius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     
     &:hover {
         background-color: $color;
