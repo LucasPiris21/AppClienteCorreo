@@ -86,7 +86,7 @@
 
     document.getElementById("search").addEventListener("submit", (e) => {
         e.preventDefault()
-        const searchTerm = document.getElementById("searchTerm").value;
+        const searchTerm = document.getElementById("searchTerm").value.trim();
         fetch(`clientes/search?searchTerm=${searchTerm}`)
         .then(clientes => clientes.json())
         .then(clientes => {

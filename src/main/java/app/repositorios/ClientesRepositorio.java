@@ -3,7 +3,6 @@ package app.repositorios;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import app.entidades.Cliente06;
@@ -29,5 +28,5 @@ public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
 	
 	//Esta clase permite escalar la entidad Cliente06 en el futuro
 	// agregando nuevas funciones de negocio o consultas específicas
-	List<Cliente06> findByDniContainingOrNombreContainingOrApellidoAllIgnoreCase(String dni, String nombre, String apellido);
+	List<Cliente06> findByDniContainingOrNombreContainingOrApellidoContainingAllIgnoreCase(String dni, String nombre, String apellido);
 }

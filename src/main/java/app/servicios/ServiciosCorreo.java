@@ -3,7 +3,9 @@ package app.servicios;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Correo06;
 import app.projections.CorreoProjection;
@@ -25,6 +27,8 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 	
 	@Autowired
 	private CorreosRepositorio correosRepositorio;
+	@Autowired
+	private ServiciosCliente serviciosCliente;
 	@Override
 	public List<Correo06> listarTodos() {
         return correosRepositorio.findAll();
@@ -41,12 +45,19 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		} catch (Exception e) {
 			searchTermInt = -1;
 		}
+
+		if (searchTerm.isBlank()) {
+			return this.listarTodoProjection();
+		}
 		
 		return correosRepositorio.findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(searchTermInt, searchTerm, searchTerm);
 	}
 
 	@Override
 	public void actualizar(Correo06 correo) {
+		if (!this.existePorId(String.valueOf(correo.getIdCorreo()))) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Correo no encontrado con idCorreo: " + correo.getIdCorreo() + ". No se pudo actualizar.");
+		}
 		correosRepositorio.save(correo);
 	}
 	@Override
@@ -62,12 +73,23 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 
 	@Override
 	public void guardar(Correo06 correo) {
+		if (!serviciosCliente.existePorId(correo.getCliente06().getDni())) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe un cliente con el DNI: " + correo.getCliente06().getDni() + ". No se ha agregado un correo nuevo.");
+		}
+		if (this.existePorEmail(correo.getCorreo())) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se ha agregado un correo nuevo.");
+		}
 		correosRepositorio.save(correo);
     }
 	@Override
 	public void eliminarPorId(String id) {
-		int idInt = Integer.parseInt(id);
-		correosRepositorio.deleteById(idInt);
+		if (this.existePorId(id)) {
+			int idInt = Integer.parseInt(id);
+			correosRepositorio.deleteById(idInt);
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Correo no encontrado con idCorreo: " + id + ". No se pudo eliminar.");
+		}
+		
     }
 	public void eliminar(Correo06 correo) {
 		correosRepositorio.delete(correo);
@@ -77,6 +99,10 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		int idInt = Integer.parseInt(id);
         return correosRepositorio.existsById(idInt);
     }
+
+	public boolean existePorEmail(String correo) {
+		return correosRepositorio.existsByCorreo(correo);
+	}
 	// Métodos personalizados:
 	//Copilot necesito un método parecido a listar todos los registros de la tabla correos, 
 	//  pero que esten filtrados por el dni del cliente
