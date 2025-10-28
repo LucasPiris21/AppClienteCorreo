@@ -53,7 +53,7 @@ fetch('/clientes/listartodos')
     `;
     });
 
-    const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+    const deleteButtons = Array.from(document.getElementsByClassName("btn-eliminar"));
 
     deleteButtons.forEach(button => {
         button.addEventListener("click", (e) => {
@@ -137,7 +137,7 @@ document.getElementById("search").addEventListener("submit", (e) => {
         `;
         });
 
-        const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+        const deleteButtons = Array.from(document.getElementsByClassName("btn-eliminar"));
 
         deleteButtons.forEach(button => {
             button.addEventListener("click", (e) => {

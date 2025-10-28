@@ -10,7 +10,7 @@ fetch('/correos/listartodos')
             <td>${correo.correo}</td>
             <td>${correo.cliente06Dni}</td>
              <td>
-            <button type="button" class="btn-editar" onclick="window.location.href='editarCorreos.html?dni=${correo.idCorreo}'">
+            <button type="button" class="btn-editar" onclick="window.location.href='editarCorreos.html?idCorreo=${correo.idCorreo}'">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -54,7 +54,7 @@ fetch('/correos/listartodos')
         `;
         });
 
-        const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+        const deleteButtons = Array.from(document.getElementsByClassName("btn-eliminar"));
 
         deleteButtons.forEach(button => {
             button.addEventListener("click", (e) => {
@@ -95,7 +95,7 @@ document.getElementById("search").addEventListener("submit", (e) => {
             <td>${correo.correo}</td>
             <td>${correo.cliente06Dni}</td>
               <td>
-            <button type="button" class="btn-editar" onclick="window.location.href='editarCorreos.html?dni=${correo.idCorreo}'">
+            <button type="button" class="btn-editar" onclick="window.location.href='editarCorreos.html?idCorreo=${correo.idCorreo}'">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -139,7 +139,7 @@ document.getElementById("search").addEventListener("submit", (e) => {
         `;
         });
 
-        const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+        const deleteButtons = Array.from(document.getElementsByClassName("btn-eliminar"));
 
         deleteButtons.forEach(button => {
             button.addEventListener("click", (e) => {
