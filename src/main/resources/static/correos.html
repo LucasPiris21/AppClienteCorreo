@@ -101,98 +101,98 @@
 
 </html>
 
-<script>
-    fetch('/correos/listartodos')
-        .then(correos => correos.json())
-        .then(correos => {
-            const tablaCorreos = document.getElementById("tabla-correos");
-            console.log(correos)
-            correos.forEach(correo => {
-                tablaCorreos.innerHTML += `
-            <tr>
-                <td>${correo.idCorreo}</td>
-                <td>${correo.correo}</td>
-                <td>${correo.cliente06Dni}</td>
-                <td>
-                    <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
-                    <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
-                </td>
-            </tr>
-            `;
-            });
+<script src="js/correos.js">
+    // fetch('/correos/listartodos')
+    //     .then(correos => correos.json())
+    //     .then(correos => {
+    //         const tablaCorreos = document.getElementById("tabla-correos");
+    //         console.log(correos)
+    //         correos.forEach(correo => {
+    //             tablaCorreos.innerHTML += `
+    //         <tr>
+    //             <td>${correo.idCorreo}</td>
+    //             <td>${correo.correo}</td>
+    //             <td>${correo.cliente06Dni}</td>
+    //             <td>
+    //                 <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
+    //                 <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         });
 
-            const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+    //         const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
 
-            deleteButtons.forEach(button => {
-                button.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    if (confirm('¿Está seguro de querer eliminar este correo?')) {
-                        const idCorreo = button.value
-                        fetch(`correos/borrar/${idCorreo}`, {
-                            method: "DELETE"
-                        })
-                        .then(async results => {
-                            if (!results.ok) {
-                                const message = await results.text();
-                                return alert(message)
-                            }
+    //         deleteButtons.forEach(button => {
+    //             button.addEventListener("click", (e) => {
+    //                 e.preventDefault();
+    //                 if (confirm('¿Está seguro de querer eliminar este correo?')) {
+    //                     const idCorreo = button.value
+    //                     fetch(`correos/borrar/${idCorreo}`, {
+    //                         method: "DELETE"
+    //                     })
+    //                     .then(async results => {
+    //                         if (!results.ok) {
+    //                             const message = await results.text();
+    //                             return alert(message)
+    //                         }
 
-                            const message = await results.text();
-                            alert(message)
-                            window.location.replace(window.location.href);
-                        })
-                    };
-                })
-            });
+    //                         const message = await results.text();
+    //                         alert(message)
+    //                         window.location.replace(window.location.href);
+    //                     })
+    //                 };
+    //             })
+    //         });
 
-        })
+    //     })
 
-    document.getElementById("search").addEventListener("submit", (e) => {
-        e.preventDefault()
-        const searchTerm = document.getElementById("searchTerm").value;
-        fetch(`correos/search?searchTerm=${searchTerm}`)
-        .then(correos => correos.json())
-        .then(correos => {
-            const tablaCorreos = document.getElementById("tabla-correos");
-            tablaCorreos.replaceChildren();
-            correos.forEach(correo => {
-                tablaCorreos.innerHTML += `
-            <tr>
-                <td>${correo.idCorreo}</td>
-                <td>${correo.correo}</td>
-                <td>${correo.cliente06Dni}</td>
-                <td>
-                    <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
-                    <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
-                </td>
-            </tr>
-            `;
-            });
+    // document.getElementById("search").addEventListener("submit", (e) => {
+    //     e.preventDefault()
+    //     const searchTerm = document.getElementById("searchTerm").value;
+    //     fetch(`correos/search?searchTerm=${searchTerm}`)
+    //     .then(correos => correos.json())
+    //     .then(correos => {
+    //         const tablaCorreos = document.getElementById("tabla-correos");
+    //         tablaCorreos.replaceChildren();
+    //         correos.forEach(correo => {
+    //             tablaCorreos.innerHTML += `
+    //         <tr>
+    //             <td>${correo.idCorreo}</td>
+    //             <td>${correo.correo}</td>
+    //             <td>${correo.cliente06Dni}</td>
+    //             <td>
+    //                 <a href="editarCorreos.html?idCorreo=${correo.idCorreo}"><button>Editar</button></a>
+    //                 <button class="buttonDelete" value="${correo.idCorreo}">Eliminar</button>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         });
 
-            const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
+    //         const deleteButtons = Array.from(document.getElementsByClassName("buttonDelete"));
 
-            deleteButtons.forEach(button => {
-                button.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    if (confirm('¿Está seguro de querer eliminar este correo?')) {
-                        const idCorreo = button.value
-                        fetch(`correos/borrar/${idCorreo}`, {
-                            method: "DELETE"
-                        })
-                        .then(async results => {
-                            if (!results.ok) {
-                                const message = await results.text();
-                                return alert(message)
-                            }
+    //         deleteButtons.forEach(button => {
+    //             button.addEventListener("click", (e) => {
+    //                 e.preventDefault();
+    //                 if (confirm('¿Está seguro de querer eliminar este correo?')) {
+    //                     const idCorreo = button.value
+    //                     fetch(`correos/borrar/${idCorreo}`, {
+    //                         method: "DELETE"
+    //                     })
+    //                     .then(async results => {
+    //                         if (!results.ok) {
+    //                             const message = await results.text();
+    //                             return alert(message)
+    //                         }
 
-                            const message = await results.text();
-                            alert(message)
-                            window.location.replace(window.location.href);
-                        })
-                    };
-                })
-            });
+    //                         const message = await results.text();
+    //                         alert(message)
+    //                         window.location.replace(window.location.href);
+    //                     })
+    //                 };
+    //             })
+    //         });
 
-        })
-    });
+    //     })
+    // });
 </script>
