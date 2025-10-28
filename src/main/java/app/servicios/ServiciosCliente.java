@@ -53,7 +53,7 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
     }
 	@Override
 	public void guardar(Cliente06 cliente) {
-		if (clientesRepositorio.existsById(cliente.getDni())) {
+		if (!clientesRepositorio.existsById(cliente.getDni())) {
 			clientesRepositorio.save(cliente);
 		} else {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, "Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
