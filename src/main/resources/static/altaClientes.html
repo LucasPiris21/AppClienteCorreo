@@ -22,33 +22,13 @@
 			</div>
 		</div>
 	</header>
-<button class="btn-lila" type="button" onclick="window.location.href='../'">
-        Volver
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        >
-        <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
-        </svg>
-    </button>	
-	<h2>Alta de Clientes</h2>
-	<form id="altaClientesForm" method="get" target="salidaAltaClientes">
-		DNI: <input type="text" id="dni" name="dni"><br> 
-		Nombre: <input type="text" id="nombre" name="nombre"><br> 
-		Apellido: <input type="text" id="apellido" name="apellido"><br> 
-		<button class="btn-verde" type="submit" name="Enviar">
-			Enviar
-			<svg
+	<div class="contenedor">
+		<button class="btn-lila" type="button" onclick="window.location.href='../'">
+				Volver
+				<svg
 				xmlns="http://www.w3.org/2000/svg"
-				width="30"
-				height="30"
+				width="32"
+				height="32"
 				viewBox="0 0 24 24"
 				fill="none"
 				stroke="currentColor"
@@ -56,10 +36,34 @@
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				>
-				<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-			</svg>
-		</button>
-	</form>
+				<path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+				</svg>
+			</button>	
+		<div class="contenedor-form">
+				<h2>Alta de Clientes</h2>
+				<form id="altaClientesForm" method="get" target="salidaAltaClientes">
+					DNI: <input type="text" id="dni" name="dni"><br> 
+					Nombre: <input type="text" id="nombre" name="nombre"><br> 
+					Apellido: <input type="text" id="apellido" name="apellido"><br> 
+					<button class="btn-verde" type="submit" name="Enviar">
+						Enviar
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							>
+							<path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+						</svg>
+					</button>
+				</form>
+		</div>
+	</div>
 </body>
 
 <script>

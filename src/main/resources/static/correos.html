@@ -1,41 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Correos</title>
-    <style>
-        table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Correos</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <a href="../">Volver</a>
-    <h3>Correos</h3>
-    <form action="GET" id="search">
-        <input type="text" name="searchTerm" id="searchTerm">
-        <input type="submit" value="Buscar" name="Buscar">
-    </form>
-    <br>
-    <table>
-        <thead>
-            <tr>
-                <th>ID Correo</th>
-                <th>Correo</th>
-                <th>Cliente</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="tabla-correos">
-
-        </tbody>
-    </table>
-    <br>
-    <a href="altaCorreos.html">Agregar correo</a>
+    <header class="header__alt" >
+    <div class="contenedor">
+        <div class="barra">
+            <a href="index.html" class="logo">
+            <h1 class="logo__nombre no-margin centrar-texto">App<span  class="logo__bold">ClienteCorreo</span></h1>
+            </a>
+        </div>
+    </div>
+    </header>
+    <div class="contenedor">
+        <button class="btn-lila" type="button" onclick="window.location.href='../'">
+                Volver
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                >
+                <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+                </svg>
+            </button>
+        <h3>Correos</h3>
+        <form class="flex" action="GET" id="search">
+           <input type="text" placeholder="Buscar" name="searchTerm" id="searchTerm">
+                <button class="btn-lila">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M21 21l-6 -6" />
+                    </svg>
+                </button>
+        </form>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Correo</th>
+                    <th>Correo</th>
+                    <th>Cliente</th>
+                    <th colspan="2" class="centrar-texto">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-correos">
+    
+            </tbody>
+        </table>
+        <br>
+        <a href="altaCorreos.html">
+            <button class="btn-verde">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 19h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5.5" />
+                    <path d="M16 19h6" />
+                    <path d="M19 16v6" />
+                    <path d="M3 7l9 6l9 -6" />
+                </svg>
+                <span>Agregar correo</span>
+            </button>
+        </a>
+  
+    </div>
 </body>
 
 </html>
