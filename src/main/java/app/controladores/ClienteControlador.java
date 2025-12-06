@@ -17,7 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Cliente06;
+import app.entidades.Nacionalidad;
+import app.projections.ClienteDto;
+import app.projections.ClienteProjection;
 import app.servicios.ServiciosCliente;
+import app.servicios.ServiciosNacionalidad;
 ////////////////////////////////////
 //// Controlador REST para manejar operaciones CRUD de clientes
 @RestController
@@ -30,27 +34,46 @@ public class ClienteControlador {
 	@Autowired
 	private ServiciosCliente serviciosCliente;
 
+	@Autowired
+	private ServiciosNacionalidad serviciosNacionalidad;
+
 	// CRUD:Create, guardar dni, nombre y el apellido
 	@PostMapping("/guardar")
-	public ResponseEntity<String> guardar(@RequestBody Cliente06 clienteNuevo) {
+	public ResponseEntity<String> guardar(@RequestBody ClienteDto clienteNuevo) {
 		try {
-			serviciosCliente.guardar(clienteNuevo);
-			return new ResponseEntity<>("Cliente agregado correctamente: " + clienteNuevo.getNombre() + " " + clienteNuevo.getApellido() + " con DNI: " + clienteNuevo.getDni(), HttpStatus.CREATED);
+			Nacionalidad nacionalidad = serviciosNacionalidad.buscarPorId(clienteNuevo.nacionalidadId);
+			Cliente06 clienteFinal = new Cliente06(clienteNuevo.dni, clienteNuevo.nombre, clienteNuevo.apellido, clienteNuevo.fechaNacimiento, nacionalidad);
+			serviciosCliente.guardar(clienteFinal);
+			return new ResponseEntity<>("Cliente agregado correctamente: " + clienteFinal.getNombre() + " " + clienteFinal.getApellido() + " con DNI: " + clienteFinal.getDni(), HttpStatus.CREATED);
 		} catch (ResponseStatusException e) {
 			return new ResponseEntity<>(e.getReason(),e.getStatusCode());
 		}
+	}
 
+	// Lista de paises (para alta de Clientes)
+	@GetMapping("/nacionalidad")
+	public List<Nacionalidad> nacionalidad(){
+		return serviciosNacionalidad.listarTodos();
 	}
 	
 	// CRUD:Read, listar todos los clientes
 	@GetMapping("/listartodos")
-	public List<Cliente06> listarTodos() {
+	public List<ClienteProjection> listarTodos() {
 		return serviciosCliente.listarTodos();
 	}
 
 	@GetMapping("/search")
-	public List<Cliente06> search(@RequestParam String searchTerm) {
+	public List<ClienteProjection> search(@RequestParam String searchTerm) {
 		return serviciosCliente.search(searchTerm);
+	}
+
+	@GetMapping("/orderby/{column}/{order}")
+	public List<ClienteProjection> order(@PathVariable String column, @PathVariable String order, @RequestParam String searchTerm) {
+		if (searchTerm.isBlank()) {
+			return serviciosCliente.listarTodos(column, order);
+		}
+
+		return serviciosCliente.orderSearch(searchTerm, column, order);
 	}
 
 	@GetMapping("/buscarpordni")
@@ -60,11 +83,12 @@ public class ClienteControlador {
 	
 	// CRUD:Update, actualizar el nombre y el apellido dado el dni
 	@PutMapping("/actualizar/{dni}")
-	public ResponseEntity<String> actualizar(@PathVariable String dni, @RequestBody Cliente06 clienteActualizado) {
+	public ResponseEntity<String> actualizar(@PathVariable String dni, @RequestBody ClienteDto clienteActualizado) {
 		try {
-			clienteActualizado.setDni(dni);
-			serviciosCliente.actualizar(clienteActualizado);
-			return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteActualizado.getNombre() + " " + clienteActualizado.getApellido(), HttpStatus.OK);		
+			Nacionalidad nacionalidad = serviciosNacionalidad.buscarPorId(clienteActualizado.nacionalidadId);
+			Cliente06 clienteFinal = new Cliente06(dni, clienteActualizado.nombre, clienteActualizado.apellido, clienteActualizado.fechaNacimiento, nacionalidad);
+			serviciosCliente.actualizar(clienteFinal);
+			return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteFinal.getNombre() + " " + clienteFinal.getApellido(), HttpStatus.OK);		
 		} catch (ResponseStatusException e) {
 			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
 		}
@@ -81,4 +105,5 @@ public class ClienteControlador {
 		}
 		
 	}
+
 }

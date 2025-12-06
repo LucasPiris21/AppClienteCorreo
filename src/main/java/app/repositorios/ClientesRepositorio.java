@@ -1,11 +1,14 @@
 package app.repositorios;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import app.entidades.Cliente06;
+import app.projections.ClienteProjection;
 
 @Repository
 public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
@@ -28,5 +31,8 @@ public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
 	
 	//Esta clase permite escalar la entidad Cliente06 en el futuro
 	// agregando nuevas funciones de negocio o consultas específicas
-	List<Cliente06> findByDniContainingOrNombreContainingOrApellidoContainingAllIgnoreCase(String dni, String nombre, String apellido);
+	List<ClienteProjection> findByDniContainingOrNombreContainingOrApellidoContainingOrFechaNacimientoEqualsOrNacionalidadPaisContainingAllIgnoreCase(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String nacionalidadPais);
+	List<ClienteProjection> findByDniContainingOrNombreContainingOrApellidoContainingOrFechaNacimientoEqualsOrNacionalidadPaisContainingAllIgnoreCase(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String nacionalidadPais, Sort sort);
+	List<ClienteProjection> findAllProjectedBy();
+	List<ClienteProjection> findAllProjectedBy(Sort sort);
 }

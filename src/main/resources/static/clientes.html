@@ -43,25 +43,57 @@
             </button>
         
             <h3>Clientes</h3>
-            <form class="flex" action="GET" id="search">
-                <input type="text" placeholder="Buscar" name="searchTerm" id="searchTerm">
-                <button class="btn-lila">
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    >
-                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                    <path d="M21 21l-6 -6" />
-                    </svg>
-                </button>
-            </form>
+            <div style="display: flex; justify-content: space-between;">
+                <!-- <div style="display: block;"> -->
+                    <form class="flex" action="GET" id="search">
+                        <input type="text" placeholder="Buscar" name="searchTerm" id="searchTerm">
+                        <button class="btn-lila">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            >
+                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                            <path d="M21 21l-6 -6" />
+                            </svg>
+                        </button>
+                    </form>
+                    <!-- <div style="font-size: medium;">
+                        <form id="searchTypeForm">
+                            <input type="radio" id="dniSearch" name="searchType" value="dni" checked>
+                            DNI
+                            <input type="radio" id="nombreSearch" name="searchType" value="nombre">
+                            Nombre
+                            <input type="radio" id="apellidoSearch" name="searchType" value="apellido">
+                            Apellido <br>
+                            <input type="radio" id="fechaNacimientoSearch" name="searchType" value="fechaNacimiento">
+                            Fecha de Nacimiento
+                            <input type="radio" id="nacionalidadSearch" name="searchType" value="nacionalidad">
+                            Nacionalidad
+                        </form>
+                    </div>
+                </div> -->
+                <form action="GET" id="orderTableForm">
+                    <label for="column">Ordenar por: </label>
+                    <select name="column" id="column" style="width: auto; text-align: left;">
+                        <option value="dni" selected>DNI</option>
+                        <option value="nombre">Nombre</option>
+                        <option value="apellido">Apellido</option>
+                        <option value="fechaNacimiento">Fecha de Nacimiento</option>
+                        <option value="nacionalidad">Nacionalidad</option>
+                    </select>
+                    <select name="order" id="order" style="width: auto; text-align: left;">
+                        <option value="asc" selected>Ascendente</option>
+                        <option value="desc">Descendente</option> 
+                    </select>
+                </form>
+            </div>
             <br>
             <table style="text-align: left; border: 1px solid black; border-collapse: collapse;">
                 <thead>
@@ -69,6 +101,8 @@
                         <th>DNI</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Nacionalidad</th>
                         <th colspan="2" class="centrar-texto">Acciones</th>
                     </tr>
                 </thead>

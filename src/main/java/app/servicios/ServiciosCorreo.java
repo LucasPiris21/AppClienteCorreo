@@ -1,8 +1,10 @@
 package app.servicios;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,13 +31,24 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 	private CorreosRepositorio correosRepositorio;
 	@Autowired
 	private ServiciosCliente serviciosCliente;
-	@Override
-	public List<Correo06> listarTodos() {
-        return correosRepositorio.findAll();
-    }
 
-	public List<CorreoProjection> listarTodoProjection() {
+	@Override
+	public List<CorreoProjection> listarTodos() {
 		return correosRepositorio.findAllProjectedBy();
+	}
+
+	public List<CorreoProjection> listarTodos(String column, String order){
+		List<CorreoProjection> lista;
+		if (order.equals("asc")) {
+			lista = correosRepositorio.findAllProjectedBy(Sort.by(column).ascending());
+		} else {
+			lista = correosRepositorio.findAllProjectedBy(Sort.by(column).descending());
+		}
+
+		if (lista == null || lista.isEmpty() || lista.size() == 0) {
+			return List.of();
+		}
+		return lista;
 	}
 
 	public List<CorreoProjection> search(String searchTerm) {
@@ -47,10 +60,29 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		}
 
 		if (searchTerm.isBlank()) {
-			return this.listarTodoProjection();
+			return this.listarTodos();
 		}
 		
 		return correosRepositorio.findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(searchTermInt, searchTerm, searchTerm);
+	}
+
+	public List<CorreoProjection> orderSearch(String searchTerm, String column, String order){
+		List<CorreoProjection> lista;
+		LocalDate searchTermDate;
+		int searchTermInt;
+		try {
+			searchTermInt = Integer.valueOf(searchTerm);
+		} catch (Exception e) {
+			searchTermInt = -1;
+		}
+
+		if (order.equals("asc")) {
+			lista = correosRepositorio.findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(searchTermInt, searchTerm, searchTerm, Sort.by(column).ascending());
+		} else {
+			lista = correosRepositorio.findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(searchTermInt, searchTerm, searchTerm, Sort.by(column).descending());
+		}
+
+		return lista;
 	}
 
 	@Override

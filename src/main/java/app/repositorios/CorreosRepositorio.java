@@ -2,6 +2,7 @@ package app.repositorios;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -23,10 +24,12 @@ public interface CorreosRepositorio extends JpaRepository<Correo06, Integer> {
 	//Preguntar a la IA si es necesario agregar algo más
 	
 	List<CorreoProjection> findAllProjectedBy();
+	List<CorreoProjection> findAllProjectedBy(Sort sort);
 	CorreoProjection findByIdCorreo(int idCorreo);
-	@Query(value = "select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from cliente cl left join correo co on cl.dni = co.cliente06dnifk union select cl.dni, cl.apellido, cl.nombre, co.id_correo, co.correo, co.cliente06dnifk from correo co right join cliente cl on cl.dni = co.cliente06dnifk", nativeQuery = true)
+	@Query(value = "select cl.dni, cl.nombre, cl.apellido, cl.fecha_nacimiento, cl.nacionalidad, na.id, na.pais, co.id_correo, co.correo, co.cliente06dnifk from cliente cl left join nacionalidad na on cl.nacionalidad = na.id left join correo co on cl.dni = co.cliente06dnifk", nativeQuery = true)
 	List<?> findClienteCorreosFullOuterJoin();
 	List<CorreoProjection> findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(int idCorreo, String correo, String dniCliente);
+	List<CorreoProjection> findByIdCorreoEqualsOrCorreoContainingOrCliente06DniContainingAllIgnoreCase(int idCorreo, String correo, String dniCliente, Sort sort);
 	Boolean existsByCorreo(String correo);
 	
 }

@@ -1,0 +1,13 @@
+-- CREATE VIEW v_cliente
+-- AS
+-- SELECT
+--     cliente.dni,
+--     cliente.nombre,
+--     cliente.apellido,
+--     cliente.fecha_nacimiento,
+--     nacionalidad.pais AS nacionalidad
+-- FROM
+--     cliente, nacionalidad
+-- WHERE
+--     cliente.nacionalidad = nacionalidad.id
+-- ;   

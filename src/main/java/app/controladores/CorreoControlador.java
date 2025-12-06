@@ -53,7 +53,7 @@ public class CorreoControlador {
 	// CRUD:Read, listar todos los correos
 	@GetMapping("/listartodos")
 	public List<CorreoProjection> listarTodo() {
-		return serviciosCorreo.listarTodoProjection();
+		return serviciosCorreo.listarTodos();
 	}
 
 	@GetMapping("/buscarporid")
@@ -71,6 +71,14 @@ public class CorreoControlador {
 		return serviciosCorreo.search(searchTerm);
 	}
 	
+	@GetMapping("/orderby/{column}/{order}")
+	public List<CorreoProjection> order(@PathVariable String column, @PathVariable String order, @RequestParam String searchTerm) {
+		if (searchTerm.isBlank()) {
+			return serviciosCorreo.listarTodos(column, order);
+		}
+
+		return serviciosCorreo.orderSearch(searchTerm, column, order);
+	}
 
 	// CRUD:Update, actualizar el correo dado el id de correo
 	@PutMapping("/actualizar/{idCorreo}")

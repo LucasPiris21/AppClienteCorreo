@@ -42,9 +42,13 @@
 		<div class="contenedor-form">
 				<h2>Alta de Clientes</h2>
 				<form id="altaClientesForm" method="get" target="salidaAltaClientes">
-					DNI: <input type="text" id="dni" name="dni"><br> 
-					Nombre: <input type="text" id="nombre" name="nombre"><br> 
-					Apellido: <input type="text" id="apellido" name="apellido"><br> 
+					DNI: <input type="text" id="dni" name="dni" required><br> 
+					Nombre: <input type="text" id="nombre" name="nombre" required><br> 
+					Apellido: <input type="text" id="apellido" name="apellido" required><br> 
+					Fecha de Nacimiento: <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+					Nacionalidad: <select id="nacionalidad" name="nacionalidad" required>
+						<option value="" selected disabled hidden>-- Seleccionar Nacionalidad --</option>
+					</select>
 					<button class="btn-verde" type="submit" name="Enviar">
 						Enviar
 						<svg
@@ -67,12 +71,27 @@
 </body>
 
 <script>
+	window.addEventListener("DOMContentLoaded", () => {
+		const nacionalidadSelect = document.getElementById("nacionalidad");
+		fetch("clientes/nacionalidad")
+		.then(results => results.json())
+		.then(results => {
+			results.forEach(nacionalidad => {
+				const option = new Option(nacionalidad.pais, nacionalidad.id);
+				nacionalidadSelect.add(option)
+			});
+		})
+	});
+
 	document.getElementById("altaClientesForm").onsubmit = function(event) {
 		event.preventDefault(); // Evita el envío predeterminado del formulario
 		const dni = document.getElementById("dni").value.trim();
 		const nombre = document.getElementById("nombre").value.trim();
 		const apellido = document.getElementById("apellido").value.trim();
+		const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+		const nacionalidad = document.getElementById("nacionalidad").value;
 
+		console.log(dni, nombre, apellido, fechaNacimiento, nacionalidad)
 		fetch("/clientes/guardar", {
 			method: "POST",
 			headers: {
@@ -81,7 +100,9 @@
 			body: JSON.stringify({
 				dni: dni,
 				nombre: nombre,
-				apellido: apellido
+				apellido: apellido,
+				fechaNacimiento: fechaNacimiento,
+				nacionalidadId: nacionalidad
 			})
 		})
 		.then(async results => {
