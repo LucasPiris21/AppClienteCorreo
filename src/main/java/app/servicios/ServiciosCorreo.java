@@ -90,6 +90,9 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06>, Requerimie
 		if (!this.existePorId(String.valueOf(correo.getIdCorreo()))) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Correo no encontrado con idCorreo: " + correo.getIdCorreo() + ". No se pudo actualizar.");
 		}
+		if (this.existePorEmail(correo.getCorreo())) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se pudo actualizar.");
+		}
 		correosRepositorio.save(correo);
 	}
 	@Override

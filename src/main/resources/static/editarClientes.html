@@ -99,7 +99,9 @@
         fetch(`clientes/buscarpordni?dni=${dniParam}`)
         .then(results => results.json())
         .then(results => {
-            console.log(results)
+            if (results.dni == null) {
+                window.location.replace("clientes.html");
+            }
             dni.value = results.dni
             nombre.value = results.nombre
             apellido.value = results.apellido
