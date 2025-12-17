@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Cliente06;
 import app.projections.ClienteDto;
@@ -35,12 +34,8 @@ public class ClienteControlador {
 	// CRUD:Create, guardar dni, nombre y el apellido
 	@PostMapping("/guardar")
 	public ResponseEntity<String> guardar(@RequestBody ClienteDto clienteNuevo) {
-		try {
-			serviciosCliente.guardar(clienteNuevo);
-			return new ResponseEntity<>("Cliente agregado correctamente: " + clienteNuevo.getNombre() + " " + clienteNuevo.getApellido() + " con DNI: " + clienteNuevo.getDni(), HttpStatus.CREATED);
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(),e.getStatusCode());
-		}
+		serviciosCliente.guardar(clienteNuevo);
+		return new ResponseEntity<>("Cliente agregado correctamente: " + clienteNuevo.getNombre() + " " + clienteNuevo.getApellido() + " con DNI: " + clienteNuevo.getDni(), HttpStatus.CREATED);
 	}
 	
 	// CRUD:Read, listar todos los clientes
@@ -71,25 +66,23 @@ public class ClienteControlador {
 	// CRUD:Update, actualizar el nombre y el apellido dado el dni
 	@PutMapping("/actualizar/{dni}")
 	public ResponseEntity<String> actualizar(@PathVariable String dni, @RequestBody ClienteDto clienteActualizado) {
-		try {
-			clienteActualizado.setDni(dni);
-			serviciosCliente.actualizar(clienteActualizado);
-			return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteActualizado.getNombre() + " " + clienteActualizado.getApellido(), HttpStatus.OK);		
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+		clienteActualizado.setDni(dni);
+		serviciosCliente.actualizar(clienteActualizado);
+		return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteActualizado.getNombre() + " " + clienteActualizado.getApellido(), HttpStatus.OK);
+		// try {
+		// 	clienteActualizado.setDni(dni);
+		// 	serviciosCliente.actualizar(clienteActualizado);
+		// 	return new ResponseEntity<>("Cliente actualizado correctamente: " + clienteActualizado.getNombre() + " " + clienteActualizado.getApellido(), HttpStatus.OK);		
+		// } catch (ResponseStatusException e) {
+		// 	return new ResponseEntity<>(e.getReason(), e.getStatusCode());
+		// }
 
 	}
 	// CRUD:Delete por DNI
 	@DeleteMapping("/borrar/{dni}")
 	public ResponseEntity<String> eliminarPorId(@PathVariable String dni) {
-		try {
-			serviciosCliente.eliminarPorId(dni);
-			return new ResponseEntity<>("Cliente eliminado correctamente con DNI: " + dni, HttpStatus.OK);
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
-		
+		serviciosCliente.eliminarPorId(dni);
+		return new ResponseEntity<>("Cliente eliminado correctamente con DNI: " + dni, HttpStatus.OK);
 	}
 
 }

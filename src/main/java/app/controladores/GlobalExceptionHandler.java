@@ -8,7 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.NoHandlerFoundException;
+
+import app.exceptions.ClientAlreadyExistException;
+import app.exceptions.ClientNotFoundException;
+import app.exceptions.EmailAlreadyExistException;
+import app.exceptions.EmailNotFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -99,4 +105,28 @@ public class GlobalExceptionHandler {
 		}
 		return sb.toString();
 	}
+
+    @ExceptionHandler(value = ClientAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<String> handleClientAlreadyExistException(ClientAlreadyExistException ex){
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(value = ClientNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<String> handleClientNotFoundException(ClientNotFoundException ex){
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(value = EmailNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<String> handleEmailNotFoundException(EmailNotFoundException ex){
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(value = EmailAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<String> handleEmailAlreadyExistException(EmailAlreadyExistException ex){
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.CONFLICT);
+    }
 }

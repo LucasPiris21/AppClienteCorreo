@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Cliente06;
 import app.entidades.Nacionalidad;
+import app.exceptions.ClientAlreadyExistException;
+import app.exceptions.ClientNotFoundException;
 import app.projections.ClienteDto;
 import app.projections.ClienteProjection;
 import app.repositorios.ClientesRepositorio;
@@ -60,7 +60,7 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06, ClienteDt
 		if (clientesRepositorio.existsById(cliente.getDni())) {
 			clientesRepositorio.save(cliente);
 		} else {
-			throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + cliente.getDni() + ". No se pudo actualizar.");
+			throw new ClientNotFoundException("Cliente no encontrado con DNI: " + cliente.getDni() + ". No se pudo actualizar.");
 		}
 	}
 	@Override
@@ -77,14 +77,15 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06, ClienteDt
 		if (!clientesRepositorio.existsById(cliente.getDni())) {
 			clientesRepositorio.save(cliente);
 		} else {
-			throw new ResponseStatusException(HttpStatus.CONFLICT, "Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
+			throw new ClientAlreadyExistException("Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
+			// throw new ResponseStatusException(HttpStatus.CONFLICT, "Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
 		}
 
     }
 	@Override
 	public void eliminarPorId(String dni) {
 		if (!clientesRepositorio.existsById(dni)) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.");
+			throw new ClientNotFoundException("Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.");
 		}
 		clientesRepositorio.deleteById(dni);
     }

@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Cliente06;
 import app.entidades.Correo06;
+import app.exceptions.ClientNotFoundException;
+import app.exceptions.EmailAlreadyExistException;
+import app.exceptions.EmailNotFoundException;
 import app.projections.CorreoDto;
 import app.projections.CorreoProjection;
 import app.repositorios.CorreosRepositorio;
@@ -92,10 +93,13 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06, CorreoDto>,
 		Cliente06 cliente = serviciosCliente.buscarPorId(correoDto.getClienteDni());
 		Correo06 correo = new Correo06(correoDto.getIdCorreo(), correoDto.getCorreo(), cliente);
 		if (!this.existePorId(String.valueOf(correo.getIdCorreo()))) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Correo no encontrado con idCorreo: " + correo.getIdCorreo() + ". No se pudo actualizar.");
+			throw new EmailNotFoundException("Correo no encontrado con idCorreo: " + correo.getIdCorreo() + ". No se pudo actualizar.");
 		}
-		if (this.existePorEmail(correo.getCorreo())) {
-			throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se pudo actualizar.");
+
+		Correo06 originalCorreo = this.buscarPorId(String.valueOf(correo.getIdCorreo()));
+
+		if (this.existePorEmail(correo.getCorreo()) && originalCorreo.getCliente06().getDni() == correo.getCliente06().getDni()) {
+			throw new EmailAlreadyExistException("Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se pudo actualizar.");
 		}
 		correosRepositorio.save(correo);
 	}
@@ -116,10 +120,10 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06, CorreoDto>,
 		Cliente06 cliente = serviciosCliente.buscarPorId(correoDto.getClienteDni());
 		Correo06 correo = new Correo06(correoDto.getCorreo(), cliente);
 		if (!serviciosCliente.existePorId(correo.getCliente06().getDni())) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe un cliente con el DNI: " + correo.getCliente06().getDni() + ". No se ha agregado un correo nuevo.");
+			throw new ClientNotFoundException("No existe un cliente con el DNI: " + correo.getCliente06().getDni() + ". No se ha agregado un correo nuevo.");
 		}
 		if (this.existePorEmail(correo.getCorreo())) {
-			throw new ResponseStatusException(HttpStatus.CONFLICT, "Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se ha agregado un correo nuevo.");
+			throw new EmailAlreadyExistException("Ya existe un correo con el nombre: " + correo.getCorreo() + ". No se ha agregado un correo nuevo.");
 		}
 		correosRepositorio.save(correo);
     }
@@ -129,7 +133,7 @@ public class ServiciosCorreo implements RequerimientosCRUD<Correo06, CorreoDto>,
 			int idInt = Integer.parseInt(id);
 			correosRepositorio.deleteById(idInt);
 		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Correo no encontrado con idCorreo: " + id + ". No se pudo eliminar.");
+			throw new EmailNotFoundException("Correo no encontrado con idCorreo: " + id + ". No se pudo eliminar.");
 		}
 		
     }

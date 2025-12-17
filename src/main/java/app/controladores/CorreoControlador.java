@@ -14,12 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
-import app.entidades.Cliente06;
 import app.entidades.Correo06;
 import app.projections.*;
-import app.servicios.ServiciosCliente;
 import app.servicios.ServiciosCorreo;
 
 @RestController
@@ -38,12 +35,8 @@ public class CorreoControlador {
 	// CRUD:Create, guardar el correo dado el dni de un cliente
 	@PostMapping("/guardar")
 	public ResponseEntity<String> guardar(@RequestBody CorreoDto nuevoCorreo) {
-		try {
-			serviciosCorreo.guardar(nuevoCorreo);
-			return new ResponseEntity<>("Correo agregado correctamente para el dni: " + nuevoCorreo.getClienteDni()+ " - " + nuevoCorreo.getCorreo(), HttpStatus.CREATED);
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+		serviciosCorreo.guardar(nuevoCorreo);
+		return new ResponseEntity<>("Correo agregado correctamente para el dni: " + nuevoCorreo.getClienteDni()+ " - " + nuevoCorreo.getCorreo(), HttpStatus.CREATED);
 	}
 
 	// CRUD:Read, listar todos los correos
@@ -79,28 +72,20 @@ public class CorreoControlador {
 	// CRUD:Update, actualizar el correo dado el id de correo
 	@PutMapping("/actualizar/{idCorreo}")
 	public ResponseEntity<String> actualizar(@PathVariable int idCorreo, @RequestBody CorreoDto correoActualizado) {
-		try {
-			correoActualizado.setIdCorreo(idCorreo);
-			serviciosCorreo.actualizar(correoActualizado);
-			return new ResponseEntity<>("Correo actualizado correctamente: " + idCorreo + " - " + correoActualizado.getCorreo() + " - para el cliente con el dni: "
-					+ correoActualizado.getClienteDni(), HttpStatus.OK);
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+		correoActualizado.setIdCorreo(idCorreo);
+		serviciosCorreo.actualizar(correoActualizado);
+		return new ResponseEntity<>("Correo actualizado correctamente: " + idCorreo + " - " + correoActualizado.getCorreo() + " - para el cliente con el dni: "
+				+ correoActualizado.getClienteDni(), HttpStatus.OK);
 	}
 
 	// CRUD:Delete, borrar correo por idCorreo
 	@DeleteMapping("/borrar/{idCorreo}")
 	public ResponseEntity<String> eliminarPorId(@PathVariable String idCorreo) {
-		try {
-			Correo06 correo = serviciosCorreo.buscarPorId(idCorreo);
-			serviciosCorreo.eliminarPorId(idCorreo);
-			return new ResponseEntity<>("Correo eliminado correctamente con idCorreo: " + idCorreo + " - " + correo.getCorreo()
-					+ " - para el cliente: " + correo.getCliente06().getNombre() + " "
-					+ correo.getCliente06().getApellido() + " - DNI del cliente: "
-					+ correo.getCliente06().getDni(), HttpStatus.OK);
-		} catch (ResponseStatusException e) {
-			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
-		}
+		Correo06 correo = serviciosCorreo.buscarPorId(idCorreo);
+		serviciosCorreo.eliminarPorId(idCorreo);
+		return new ResponseEntity<>("Correo eliminado correctamente con idCorreo: " + idCorreo + " - " + correo.getCorreo()
+				+ " - para el cliente: " + correo.getCliente06().getNombre() + " "
+				+ correo.getCliente06().getApellido() + " - DNI del cliente: "
+				+ correo.getCliente06().getDni(), HttpStatus.OK);
 	}
 }
