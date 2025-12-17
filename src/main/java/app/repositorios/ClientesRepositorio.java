@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import app.entidades.Cliente06;
@@ -33,6 +34,8 @@ public interface ClientesRepositorio extends JpaRepository<Cliente06, String> {
 	// agregando nuevas funciones de negocio o consultas específicas
 	List<ClienteProjection> findByDniContainingOrNombreContainingOrApellidoContainingOrFechaNacimientoEqualsOrNacionalidadPaisContainingAllIgnoreCase(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String nacionalidadPais);
 	List<ClienteProjection> findByDniContainingOrNombreContainingOrApellidoContainingOrFechaNacimientoEqualsOrNacionalidadPaisContainingAllIgnoreCase(String dni, String nombre, String apellido, LocalDate fechaNacimiento, String nacionalidadPais, Sort sort);
+	@Query(value = "select cl.dni, cl.nombre, cl.apellido, cl.fecha_nacimiento, cl.nacionalidad, na.id, na.pais, co.id_correo, co.correo, co.cliente06dnifk from cliente cl left join nacionalidad na on cl.nacionalidad = na.id left join correo co on cl.dni = co.cliente06dnifk", nativeQuery = true)
+	List<?> findClienteCorreosFullOuterJoin();
 	List<ClienteProjection> findAllProjectedBy();
 	List<ClienteProjection> findAllProjectedBy(Sort sort);
 }

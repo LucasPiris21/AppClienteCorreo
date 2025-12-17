@@ -34,17 +34,13 @@ public class CorreoControlador {
 	// Declaración de las referencias a los servicios administrados por Spring Boot
 	@Autowired
 	private ServiciosCorreo serviciosCorreo;
-	@Autowired
-	private ServiciosCliente serviciosCliente;
 
 	// CRUD:Create, guardar el correo dado el dni de un cliente
 	@PostMapping("/guardar")
 	public ResponseEntity<String> guardar(@RequestBody CorreoDto nuevoCorreo) {
-		Cliente06 cliente = serviciosCliente.buscarPorId(nuevoCorreo.clienteDni);
-		Correo06 correo = new Correo06(nuevoCorreo.correo, cliente);
 		try {
-			serviciosCorreo.guardar(correo);
-			return new ResponseEntity<>("Correo agregado correctamente para el dni: " + nuevoCorreo.clienteDni+ " - " + nuevoCorreo.correo, HttpStatus.CREATED);
+			serviciosCorreo.guardar(nuevoCorreo);
+			return new ResponseEntity<>("Correo agregado correctamente para el dni: " + nuevoCorreo.getClienteDni()+ " - " + nuevoCorreo.getCorreo(), HttpStatus.CREATED);
 		} catch (ResponseStatusException e) {
 			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
 		}
@@ -84,13 +80,10 @@ public class CorreoControlador {
 	@PutMapping("/actualizar/{idCorreo}")
 	public ResponseEntity<String> actualizar(@PathVariable int idCorreo, @RequestBody CorreoDto correoActualizado) {
 		try {
-			Cliente06 cliente = serviciosCliente.buscarPorId(correoActualizado.clienteDni);
-			Correo06 finalCorreoActualizado = new Correo06(correoActualizado.correo, cliente);
-			finalCorreoActualizado.setIdCorreo(idCorreo);
-			
-			serviciosCorreo.actualizar(finalCorreoActualizado);
-			return new ResponseEntity<>("Correo actualizado correctamente: " + idCorreo + " - " + correoActualizado.correo + " - para el cliente: "
-					+ cliente.getNombre() + " " + cliente.getApellido(), HttpStatus.OK);
+			correoActualizado.setIdCorreo(idCorreo);
+			serviciosCorreo.actualizar(correoActualizado);
+			return new ResponseEntity<>("Correo actualizado correctamente: " + idCorreo + " - " + correoActualizado.getCorreo() + " - para el cliente con el dni: "
+					+ correoActualizado.getClienteDni(), HttpStatus.OK);
 		} catch (ResponseStatusException e) {
 			return new ResponseEntity<>(e.getReason(), e.getStatusCode());
 		}

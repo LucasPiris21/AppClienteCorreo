@@ -10,18 +10,26 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import app.entidades.Cliente06;
+import app.entidades.Nacionalidad;
+import app.projections.ClienteDto;
 import app.projections.ClienteProjection;
 import app.repositorios.ClientesRepositorio;
 import app.requerimientos.RequerimientosCRUD;
+import app.requerimientos.RequerimientosFuncionesDeNegocio;
 
 @Service
-public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
+public class ServiciosCliente implements RequerimientosCRUD<Cliente06, ClienteDto>, RequerimientosFuncionesDeNegocio {
     
 	public ServiciosCliente() {
 		// TODO Auto-generated constructor stub
 	}
+
 	@Autowired
 	private ClientesRepositorio clientesRepositorio;
+
+	@Autowired
+	private ServiciosNacionalidad serviciosNacionalidad;
+
 	@Override
 	public List<ClienteProjection> listarTodos() {
 		List<ClienteProjection> lista = clientesRepositorio.findAllProjectedBy();
@@ -45,6 +53,51 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
 		return lista; // Reemplaza con la lista de clientes obtenida
     }
 
+	@Override
+	public void actualizar(ClienteDto clienteDto) {
+		Nacionalidad nacionalidad = serviciosNacionalidad.buscarPorId(clienteDto.getNacionalidadId());
+		Cliente06 cliente = new Cliente06(clienteDto.getDni(), clienteDto.getNombre(), clienteDto.getApellido(), clienteDto.getFechaNacimiento(), nacionalidad);
+		if (clientesRepositorio.existsById(cliente.getDni())) {
+			clientesRepositorio.save(cliente);
+		} else {
+			throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + cliente.getDni() + ". No se pudo actualizar.");
+		}
+	}
+	@Override
+	public Cliente06 buscarPorId(String dni) {
+		if (!clientesRepositorio.existsById(dni)) {
+			return new Cliente06();
+		}
+        return clientesRepositorio.findById(dni).orElse(null);
+    }
+	@Override
+	public void guardar(ClienteDto clienteDto) {
+		Nacionalidad nacionalidad = serviciosNacionalidad.buscarPorId(clienteDto.getNacionalidadId());
+		Cliente06 cliente = new Cliente06(clienteDto.getDni(), clienteDto.getNombre(), clienteDto.getApellido(), clienteDto.getFechaNacimiento(), nacionalidad);
+		if (!clientesRepositorio.existsById(cliente.getDni())) {
+			clientesRepositorio.save(cliente);
+		} else {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, "Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
+		}
+
+    }
+	@Override
+	public void eliminarPorId(String dni) {
+		if (!clientesRepositorio.existsById(dni)) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.");
+		}
+		clientesRepositorio.deleteById(dni);
+    }
+	@Override
+	public void eliminar(Cliente06 cliente) {
+		clientesRepositorio.delete(cliente);
+    }
+	@Override
+	public boolean existePorId(String dni) {
+        return clientesRepositorio.existsById(dni);
+    }
+	
+	@Override
 	public List<ClienteProjection> search(String searchTerm){
 		searchTerm = searchTerm.trim();
 		if (searchTerm.isBlank()){
@@ -79,49 +132,8 @@ public class ServiciosCliente implements RequerimientosCRUD<Cliente06> {
 	}
 
 	@Override
-	public void actualizar(Cliente06 cliente) {
-		if (clientesRepositorio.existsById(cliente.getDni())) {
-			clientesRepositorio.save(cliente);
-		} else {
-			throw new ResponseStatusException( HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + cliente.getDni() + ". No se pudo actualizar.");
-		}
+	public List<?> listarCorreosConClientes() {
+		return clientesRepositorio.findClienteCorreosFullOuterJoin();
 	}
-	@Override
-	public Cliente06 buscarPorId(String dni) {
-		if (!clientesRepositorio.existsById(dni)) {
-			return new Cliente06();
-		}
-        return clientesRepositorio.findById(dni).orElse(null);
-    }
-	@Override
-	public void guardar(Cliente06 cliente) {
-		if (!clientesRepositorio.existsById(cliente.getDni())) {
-			clientesRepositorio.save(cliente);
-		} else {
-			throw new ResponseStatusException(HttpStatus.CONFLICT, "Existe un cliente con ese DNI: " + cliente.getDni() + ". No se ha agregado un Cliente nuevo.");
-		}
-
-    }
-	@Override
-	public void eliminarPorId(String dni) {
-		if (!clientesRepositorio.existsById(dni)) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente no encontrado con DNI: " + dni + ". No se pudo eliminar.");
-		}
-		clientesRepositorio.deleteById(dni);
-    }
-	@Override
-	public void eliminar(Cliente06 cliente) {
-		clientesRepositorio.delete(cliente);
-    }
-	@Override
-	public boolean existePorId(String dni) {
-        return clientesRepositorio.existsById(dni);
-    }
-	//Escribir servicios adicionales si es necesario que no estén 
-	// definidos en la interfaz RequerimientosCRUD<T> de forma genérica.
-	//Por ejemplo, si se necesita buscar un cliente por su nombre, se puede definir un método específico.
-	//public Optional<Cliente06> buscarPorNombre(String nombre) {
-	//	return clientesRepositorio.findByNombre(nombre);
-	//}
 	
 }

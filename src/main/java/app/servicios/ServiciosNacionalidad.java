@@ -10,7 +10,7 @@ import app.repositorios.NacionalidadRepositorio;
 import app.requerimientos.RequerimientosCRUD;
 
 @Service
-public class ServiciosNacionalidad implements RequerimientosCRUD<Nacionalidad>{
+public class ServiciosNacionalidad {
     
     public ServiciosNacionalidad(){
         super();
@@ -19,43 +19,11 @@ public class ServiciosNacionalidad implements RequerimientosCRUD<Nacionalidad>{
     @Autowired
     private NacionalidadRepositorio nacionalidadRepositorio;
 
-    @Override
-    public void actualizar(Nacionalidad unaEntidad) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
     public Nacionalidad buscarPorId(String id) {
         int idInt = Integer.valueOf(id);
         return nacionalidadRepositorio.findById(idInt).orElse(new Nacionalidad());
     }
 
-    @Override
-    public void eliminar(Nacionalidad unaEntidad) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void eliminarPorId(String id) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public boolean existePorId(String id) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public void guardar(Nacionalidad unaEntidad) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
     public List<Nacionalidad> listarTodos() {
         return nacionalidadRepositorio.findAll();
     }

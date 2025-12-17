@@ -1,5 +1,4 @@
 package app.entidades;
-import jakarta.persistence.CascadeType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,17 +26,18 @@ public class Correo06 {
     @Column(name = "correo", length = 100, unique=true, nullable=false)
     private String correo;
     
-    //////////////////////////////////////////////
-    //En el caso que el requerimiernto solicite la relación:
-    // un cliente tiene solamente un correo
-    //@OneToOne(fetch = FetchType.LAZY)
-    /////////////////////////////////////////////////////
     @JoinColumn(name = "cliente06DNIfk", referencedColumnName = "dni", nullable=false)
-    
     @ManyToOne(fetch = FetchType.EAGER) //Un cliente muchos correos
     private Cliente06 cliente06; //Se creará la columna foránea en la tabla correo.
     //Fin mapeo //////////////////////////////////////
     
+    public Correo06(int idCorreo, String correo, Cliente06 cliente06) {
+        super();
+        this.idCorreo = idCorreo;
+        this.correo = correo;
+        this.cliente06 = cliente06; //El cliente relacionado con este correo
+    }
+
     public Correo06(String correo, Cliente06 cliente06) {
         super();
         this.correo = correo;

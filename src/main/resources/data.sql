@@ -112,6 +112,7 @@ INSERT IGNORE INTO nacionalidad(pais) VALUES
     ("Marruecos"),
     ("Mauricio"),
     ("Mauritania"),
+    ("México"),
     ("Micronesia"),
     ("Moldavia"),
     ("Mónaco"),
